@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>p5s</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/base.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/main2.css"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="nav-top">
+        <div class="nav-container grid wide">
+          <div class="nav-logo col">
+            <a href="#">
+              <img src="/img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
+            </a>
+          </div>
+          <div class="nav-ul c-9">
+            <ul class="ul-list">
+              <a href="">
+                <li class="li-listitems">media</li>
+              </a>
+              <a href="">
+                <li class="li-listitems">features</li>
+              </a>
+              <a href="">
+                <li class="li-listitems">characters</li>
+              </a>
+            </ul>
+          </div>
+          <div class="country-navigation-wrapper">
+            <div class="country-nav__selected" onclick="clickHandlerNav()">
+              <img
+                src="/img/common/us_flag.jpg"
+                alt=""
+                class="nav-country-logo__img"
+              />
+            </div>
+            <div class="country-nav" id="myDropdown">
+              <div class="flag">
+                <a href="#" id="US">
+                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                </a>
+              </div>
+              <div class="flag">
+                <a href="#" id="US">
+                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                </a>
+              </div>
+              <div class="flag">
+                <a href="#" id="US">
+                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                </a>
+              </div>
+              <div class="flag">
+                <a href="#" id="US">
+                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hero">
+        <video class="hero-video" autoplay loop>
+          <source src="/img/video/bgVideo.mp4" onerror="" />
+          <img src="/img/hero/bg_video_desktop.png" class="hero-img" alt="" />
+        </video>
+        <div class="img-esrb">
+          <img src="/img/common/esrb_m.png" alt="Esrb" />
+        </div>
+        <div class="hero-center">
+          <div class="logo-center">
+            <img src="/img/hero/p5s_logo.png" alt="" />
+          </div>
+          <div class="text-bottom">available now</div>
+          <br />
+          <div class="buy">
+            <a href="#"><div class="buy-now">buy now</div></a>
+            <a href="#"><div class="watch-trailer">watch the trailer</div></a>
+          </div>
+        </div>
+      </div>
+      <div id="media" class="media">
+        <div class="inner-container grid wide">
+          <h2 class="media-title">STRIKE BACK!</h2>
+          <br />
+          <p class="media-main__text">
+            JOIN THE PHANTOM THIEVES AND STRIKE BACK AGAINST THE CORRUPTION
+            OVERTAKING CITIES ACROSS JAPAN. A SUMMER VACATION WITH CLOSE FRIENDS
+            TAKES A SUDDEN TURN AS A DISTORTED REALITY EMERGES; REVEAL THE TRUTH
+            AND REDEEM THE HEARTS OF THOSE IMPRISONED AT THE CENTER OF THE
+            CRISIS!
+          </p>
+          <br />
+          <div class="trailer-container">
+            <img src="img/media/arrow_lt.png" alt="" id="trailer-prev__btn" />
+            <div class="trailer-siema">
+              <div class="trailer-siema__slider">
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/liberatehearts.mp4"
+                      autoplay
+                      loop
+                      id="lastClone"
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/actionTrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/announceTrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/launchtrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/sizzleTrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/sizzleTrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/launchtrailer.mp4"
+                      autoplay
+                      loop
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos">
+                  <a href="#">
+                    <img
+                      src="img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="img/video/liberatehearts.mp4"
+                      autoplay
+                      loop
+                      id="firstClone"
+                    ></video>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <img src="img/media/arrow_rt.png" alt="" id="trailer-next__btn" />
+          </div>
+        </div>
+      </div>
+    <script src="/js/app2.js"></script>
+  </body>
+</html>
