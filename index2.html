@@ -9,14 +9,14 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/css/base.css"
+      href="./css/base.css"
     />
 
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/css/main2.css"
+      href="./css/main2.css"
     />
   </head>
   <body>
@@ -25,12 +25,12 @@
         <div class="nav-container grid wide">
           <div class="nav-logo col">
             <a href="#">
-              <img src="/img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
+              <img src="img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
             </a>
           </div>
           <div class="nav-ul c-9">
             <ul class="ul-list">
-              <a href="">
+              <a href="#media">
                 <li class="li-listitems">media</li>
               </a>
               <a href="">
@@ -44,7 +44,7 @@
           <div class="country-navigation-wrapper">
             <div class="country-nav__selected" onclick="clickHandlerNav()">
               <img
-                src="/img/common/us_flag.jpg"
+                src="img/common/us_flag.jpg"
                 alt=""
                 class="nav-country-logo__img"
               />
@@ -52,22 +52,22 @@
             <div class="country-nav" id="myDropdown">
               <div class="flag">
                 <a href="#" id="US">
-                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                  <img src="img/common/us_flag.jpg" alt="United State" />
                 </a>
               </div>
               <div class="flag">
                 <a href="#" id="US">
-                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                  <img src="img/common/us_flag.jpg" alt="United State" />
                 </a>
               </div>
               <div class="flag">
                 <a href="#" id="US">
-                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                  <img src="img/common/us_flag.jpg" alt="United State" />
                 </a>
               </div>
               <div class="flag">
                 <a href="#" id="US">
-                  <img src="./img/common/us_flag.jpg" alt="United State" />
+                  <img src="img/common/us_flag.jpg" alt="United State" />
                 </a>
               </div>
             </div>
@@ -76,22 +76,22 @@
       </div>
 
       <div id="hero">
-        <video class="hero-video" autoplay loop>
-          <source src="/img/video/bgVideo.mp4" onerror="" />
-          <img src="/img/hero/bg_video_desktop.png" class="hero-img" alt="" />
+        <video class="hero-video" autoplay loop muted>
+          <source src="img/video/bgVideo.mp4" muted onerror="" />
+          <img src="img/hero/bg_video_desktop.png" class="hero-img" alt="" />
         </video>
         <div class="img-esrb">
-          <img src="/img/common/esrb_m.png" alt="Esrb" />
+          <img src="img/common/esrb_m.png" alt="Esrb" />
         </div>
         <div class="hero-center">
           <div class="logo-center">
-            <img src="/img/hero/p5s_logo.png" alt="" />
+            <img src="img/hero/p5s_logo.png" alt="" />
           </div>
           <div class="text-bottom">available now</div>
           <br />
           <div class="buy">
             <a href="#"><div class="buy-now">buy now</div></a>
-            <a href="#"><div class="watch-trailer">watch the trailer</div></a>
+            <a href="https://www.youtube.com/watch?v=nihTJrochFI" target="_blank"><div class="watch-trailer">watch the trailer</div></a>
           </div>
         </div>
       </div>
@@ -122,6 +122,7 @@
                       src="img/video/liberatehearts.mp4"
                       autoplay
                       loop
+                      muted
                       id="lastClone"
                     ></video>
                   </a>
@@ -137,6 +138,7 @@
                       src="img/video/actionTrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -151,6 +153,7 @@
                       src="img/video/announceTrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -165,6 +168,7 @@
                       src="img/video/launchtrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -179,6 +183,7 @@
                       src="img/video/sizzleTrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -193,6 +198,7 @@
                       src="img/video/sizzleTrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -207,6 +213,7 @@
                       src="img/video/launchtrailer.mp4"
                       autoplay
                       loop
+                      muted
                     ></video>
                   </a>
                 </div>
@@ -218,6 +225,7 @@
                       class="play-button"
                     />
                     <video
+                    muted
                       src="img/video/liberatehearts.mp4"
                       autoplay
                       loop
@@ -231,6 +239,8 @@
           </div>
         </div>
       </div>
-    <script src="/js/app2.js"></script>
+    <script src="./js/app2.js">
+      videos.play();
+    </script>
   </body>
 </html>

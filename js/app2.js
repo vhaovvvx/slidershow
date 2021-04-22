@@ -1,5 +1,9 @@
 const carouselSlide = document.querySelector(".trailer-siema__slider");
 const carouselVideos = document.querySelectorAll(".slider-videos video");
+
+const videos = document.getElementsByTagName("video");
+videos.autoplay = true;
+
 //buttons
 const prevBtn = document.querySelector("#trailer-prev__btn");
 const nextBtn = document.querySelector("#trailer-next__btn");
@@ -56,3 +60,5 @@ clickHandlerNav = () => {
     }
   }
 };
+
+// Close the dropdown menu if the user clicks outside of it

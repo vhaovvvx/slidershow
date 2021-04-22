@@ -74,7 +74,7 @@
 
 #hero {
   position: relative;
-  width: 2114px;
+  width: 2132px;
   height: 800px;
 }
 #hero .hero-video {
@@ -157,7 +157,7 @@
 
 #hero::before {
   position: absolute;
-  background-image: url(/img/hero/overlay.png);
+  background-image: url(../img/hero/overlay.png);
   background-repeat: repeat;
   content: "";
   width: 100%;
@@ -167,7 +167,7 @@
 
 #media {
   position: relative;
-  width: 100%;
+  width: 101%;
 }
 
 .media {
@@ -249,7 +249,7 @@
 #trailer-next__btn {
   position: absolute;
   top: 50%;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
   right: 0;
   cursor: pointer;
 }
