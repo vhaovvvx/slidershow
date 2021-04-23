@@ -42,18 +42,26 @@ carouselSlide.addEventListener("transitionend", () => {
 });
 
 const itemsDrp = document.querySelectorAll(".flag img");
-let i = 0;
+let i;
+let timeDeplay = 0;
 let a = 100;
+
+let btnDrpIndex = itemsDrp.length - 1;
 clickHandlerNav = () => {
   const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
   if (btnDrp == true) {
+    timeDeplay = 0;
     for (i of itemsDrp) {
-      i.style.transition = "transform 0.2s ease-in-out";
+      timeDeplay += 0.1;
+      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
       i.style.transform = "translateX(0px)";
     }
   } else {
+    timeDeplay = 0;
     for (i of itemsDrp) {
-      i.style.transition = "transform 0.2s ease-in-out";
+      console.log(i);
+      timeDeplay += 0.1;
+      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
       i.style.transform = "translateX(" + a + "px)";
     }
   }

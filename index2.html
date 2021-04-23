@@ -22,56 +22,68 @@
   <body>
     <div class="app">
       <div class="nav-top">
-        <div class="nav-container grid wide">
-          <div class="nav-logo col">
-            <a href="#">
-              <img src="img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
-            </a>
-          </div>
-          <div class="nav-ul c-9">
-            <ul class="ul-list">
-              <a href="#media">
-                <li class="li-listitems">media</li>
+        <div class="nav-nav grid wide">
+          <section class="nav-container">
+            <div class="nav-logo col">
+              <a href="#">
+                <img src="img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
               </a>
-              <a href="">
-                <li class="li-listitems">features</li>
-              </a>
-              <a href="">
-                <li class="li-listitems">characters</li>
-              </a>
-            </ul>
-          </div>
-          <div class="country-navigation-wrapper">
-            <div class="country-nav__selected" onclick="clickHandlerNav()">
-              <img
-                src="img/common/us_flag.jpg"
-                alt=""
-                class="nav-country-logo__img"
-              />
             </div>
-            <div class="country-nav" id="myDropdown">
-              <div class="flag">
-                <a href="#" id="US">
-                  <img src="img/common/us_flag.jpg" alt="United State" />
+            <div class="nav-ul c-10">
+              <ul class="ul-list">
+                <a href="#media">
+                  <li class="li-listitems">media</li>
                 </a>
+                <a href="#features">
+                  <li class="li-listitems">features</li>
+                </a>
+                <a href="">
+                  <li class="li-listitems">characters</li>
+                </a>
+              </ul>
+            </div>
+            <div class="country-navigation-wrapper">
+              <div class="country-nav__selected" onclick="clickHandlerNav()">
+                <img
+                  src="img/common/us_flag.jpg"
+                  alt=""
+                  class="nav-country-logo__img"
+                />
               </div>
-              <div class="flag">
-                <a href="#" id="US">
-                  <img src="img/common/us_flag.jpg" alt="United State" />
-                </a>
-              </div>
-              <div class="flag">
-                <a href="#" id="US">
-                  <img src="img/common/us_flag.jpg" alt="United State" />
-                </a>
-              </div>
-              <div class="flag">
-                <a href="#" id="US">
-                  <img src="img/common/us_flag.jpg" alt="United State" />
-                </a>
+              <div class="country-nav" id="myDropdown">
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/au_flag.jpg" alt="United State" />
+                  </a>
+                </div>
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/fr_flag.jpg" alt="United State" />
+                  </a>
+                </div>
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/de_flag.jpg" alt="United State" />
+                  </a>
+                </div>
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/it_flag.jpg" alt="United State" />
+                  </a>
+                </div>
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/es_flag.jpg" alt="United State" />
+                  </a>
+                </div>
+                <div class="flag">
+                  <a href="#" id="US">
+                    <img src="img/common/uk_flag.jpg" alt="United State" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
 
@@ -91,7 +103,11 @@
           <br />
           <div class="buy">
             <a href="#"><div class="buy-now">buy now</div></a>
-            <a href="https://www.youtube.com/watch?v=nihTJrochFI" target="_blank"><div class="watch-trailer">watch the trailer</div></a>
+            <a
+              href="https://www.youtube.com/watch?v=nihTJrochFI"
+              target="_blank"
+              ><div class="watch-trailer">watch the trailer</div></a
+            >
           </div>
         </div>
       </div>
@@ -225,7 +241,7 @@
                       class="play-button"
                     />
                     <video
-                    muted
+                      muted
                       src="img/video/liberatehearts.mp4"
                       autoplay
                       loop
@@ -239,8 +255,155 @@
           </div>
         </div>
       </div>
-    <script src="./js/app2.js">
-      videos.play();
-    </script>
+      <div id="features" class="features">
+        <div class="grid-l features-group">
+          <div class="grid wide">
+            <h1 class="features-heading">features</h1>
+
+            <div class="features-content row">
+              <div class="description-text l-3">
+                <p>
+                  Looking for some rest and relaxation, the Phantom Thieves set
+                  out to begin their road trip, until a ruthless Kyoto detective
+                  enlists their help investigating a series of strange cases
+                  occurring across Japan... otherwise, he'll arrest Joker. As
+                  they dig deeper into the mystery, they discover another realm
+                  where innocent people are being jailed and forced to forfeit
+                  their hearts' desires by the whims of its ruler. In typical
+                  Phantom Thieves style, they're going to use everything they've
+                  got to liberate the imprisoned, return their hearts, and
+                  strike back against the corruption in their most explosive
+                  fight yet!
+                </p>
+              </div>
+              <div class="features-img l-9"></div>
+            </div>
+          </div>
+
+          <div class="features-content-2 row">
+            <div class="description-box l-4">
+              <div class="small-feature-group bg-1">
+                <div>
+                  <h4>NEW STORY AND SIGHTS</h4>
+                  <p class="description-text-2">
+                    Persona 5 Strikers features a deep story campaign and
+                    thrilling combat that makes for a true Persona experience.
+                    Visit 6 different cities across Japan, cook tantalizing
+                    regional recipes, and lend a helping hand to those in need.
+                    Then, fight against the Shadows to uncover the source of the
+                    corruption within the Metaverse dungeons. Jump into the
+                    story whether you are a newcomer to the series or a longtime
+                    fan!
+                  </p>
+                  <div class="description-img ss1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="description-box l-4">
+              <div class="small-feature-group bg-2">
+                <div>
+                  <h4>FIGHT WITH STYLE</h4>
+                  <p class="description-text-2">
+                    Attack enemies in the hybrid battle system that fuses
+                    explosive action-combat with pause-and-plan sequences to
+                    decide your next strategic move. Gain an advantage over your
+                    enemies by ambushing them, striking their elemental
+                    weaknesses to knock them down, and deal the finishing blow
+                    with an All-Out Attack!
+                  </p>
+                  <div class="description-img ss2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="description-box l-4">
+              <div class="small-feature-group bg-3">
+                <div>
+                  <h4>HARNESS THE PHANTOM THIEVES' FULL STRENGTH</h4>
+                  <p class="description-text-2">
+                    All Phantom Thieves are fully playable, so utilize each
+                    character's specific skills and summon their Personas for
+                    smooth, elegant combat! Strengthen their skills and
+                    abilities and fight with your own style. Each character has
+                    their own unique suite of wide-ranging, flashy spells and
+                    magic to clear out big hordes. Have you ever wanted to fight
+                    as a giant cat bus? Well, look no further. Persona 5
+                    Strikers is purrfect for you.
+                  </p>
+                  <div class="description-img ss3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="character" id="character">
+        <div class="grid-l character-group">
+          <div class="character grid wide l-6">
+            <div class="character-heading">
+              <h1 class="features-heading">character</h1>
+
+              <ul class="character-selector row">
+                <li>
+                  <img
+                    src="/slidershow/img/characters/joker_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/morgana_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/makoto_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/futaba_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/sophia_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/yusuke_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img src="/slidershow/img/characters/haru_thumb.png" alt="" />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/ryuji_thumb.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img src="/slidershow/img/characters/anne_thumb.png" alt="" />
+                </li>
+                <li>
+                  <img
+                    src="/slidershow/img/characters/zenkichi_thumb.png"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="character-img l-6"></div>
+        </div>
+      </div>
+      <script src="./js/app2.js"></script>
+    </div>
   </body>
 </html>
