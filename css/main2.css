@@ -1,5 +1,6 @@
 * {
   font-family: "Roboto" !important;
+  color: var(--while);
 }
 
 .nav-top {
@@ -10,7 +11,6 @@
 .nav-nav {
   height: 74px;
   width: 100%;
-  padding-top: 11px;
 }
 
 .nav-container {
@@ -66,8 +66,8 @@
   position: relative;
   transform: translateX(100px);
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  height: 37px;
+  width: 37px;
   cursor: pointer;
 }
 
@@ -78,8 +78,8 @@
 
 .nav-country-logo__img {
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  height: 37px;
+  width: 37px;
   margin: 12px 0;
   cursor: pointer;
 }
@@ -310,13 +310,13 @@
 .description-text {
   color: var(--while);
   font-size: 16px;
-  padding-right: 3%;
+  padding-right: 6%;
 }
 
 .features-img {
   border: 3px solid var(--while);
   height: 490px;
-  background: url(/slidershow/img/features/mainimage.jpg) no-repeat;
+  background: url(/img/features/mainimage.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
@@ -391,7 +391,6 @@
 
 #character {
   position: relative;
-  height: 700px;
   width: 100%;
   background: url(../img/characters/characters_bg.jpg) no-repeat;
   background-position: center;
@@ -403,11 +402,116 @@
 }
 
 .character-selector {
-  max-width: 600px;
-  left: 0;
+  max-width: 500px;
 }
 
-.character-selector > li {
-  margin: 14px;
+.character-selector li {
+  margin: 7px;
   cursor: pointer;
+}
+
+.character-selector .characterActive,
+.character-persona.characterActive,
+.character-selector > li:hover {
+  box-shadow: -5px -5px 0 #000;
+  cursor: pointer;
+}
+
+.character-info-heading {
+  margin-top: 44px;
+  font-size: 26px;
+  color: var(--while);
+  text-transform: uppercase;
+}
+
+.character-info {
+  margin: 44px 0;
+  font-size: 16px;
+}
+
+.character-img {
+  padding-top: 70px;
+  padding-left: 100px;
+}
+
+.character-img img {
+  position: absolute;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 5px 5px 0 #000;
+}
+
+#avaliable {
+  background: url(../img/purchase/purchase_bg.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.available-now::before {
+  background-image: url(../img/purchase/status_sophia.png);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  content: "";
+  height: 300px;
+  left: -250px;
+  position: absolute;
+  top: -17px;
+  width: 720px;
+}
+
+.available-group {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.available-heading {
+  font-size: 73px;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: -5px 5px rgb(0 0 0 / 35%);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 1.85px;
+  padding-top: 82px;
+}
+
+.choose-flatform {
+  margin-left: 10px;
+}
+
+.heading-flatform {
+  margin-top: 25px;
+  text-transform: uppercase;
+
+  font-size: 26px;
+}
+
+.choose-box-contain {
+  display: flex;
+}
+
+.choose-box {
+  margin-right: 10px;
+  border: 2px solid red;
+  width: 189px;
+  height: 35px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 1px 1px 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.choose-box.selected,
+.choose-box:hover {
+  background-color: red;
+}
+
+.available-content {
+  margin-top: 50px;
 }

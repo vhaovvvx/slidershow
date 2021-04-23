@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>p5s</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -22,69 +23,75 @@
   <body>
     <div class="app">
       <div class="nav-top">
-        <div class="nav-nav grid wide">
-          <section class="nav-container">
-            <div class="nav-logo col">
-              <a href="#">
-                <img src="img/hero/p5s_logo.png" alt="" class="nav-logo__img" />
-              </a>
-            </div>
-            <div class="nav-ul c-10">
-              <ul class="ul-list">
-                <a href="#media">
-                  <li class="li-listitems">media</li>
+        <nav>
+          <div class="nav-nav grid wide">
+            <section class="nav-container">
+              <div class="nav-logo col">
+                <a href="#">
+                  <img
+                    src="img/hero/p5s_logo.png"
+                    alt=""
+                    class="nav-logo__img"
+                  />
                 </a>
-                <a href="#features">
-                  <li class="li-listitems">features</li>
-                </a>
-                <a href="">
-                  <li class="li-listitems">characters</li>
-                </a>
-              </ul>
-            </div>
-            <div class="country-navigation-wrapper">
-              <div class="country-nav__selected" onclick="clickHandlerNav()">
-                <img
-                  src="img/common/us_flag.jpg"
-                  alt=""
-                  class="nav-country-logo__img"
-                />
               </div>
-              <div class="country-nav" id="myDropdown">
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/au_flag.jpg" alt="United State" />
+              <div class="nav-ul c-10">
+                <ul class="ul-list">
+                  <a href="#media">
+                    <li class="li-listitems">media</li>
                   </a>
+                  <a href="#features">
+                    <li class="li-listitems">features</li>
+                  </a>
+                  <a href="">
+                    <li class="li-listitems">characters</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="country-navigation-wrapper">
+                <div class="country-nav__selected" onclick="clickHandlerNav()">
+                  <img
+                    src="img/common/us_flag.jpg"
+                    alt=""
+                    class="nav-country-logo__img"
+                  />
                 </div>
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/fr_flag.jpg" alt="United State" />
-                  </a>
-                </div>
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/de_flag.jpg" alt="United State" />
-                  </a>
-                </div>
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/it_flag.jpg" alt="United State" />
-                  </a>
-                </div>
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/es_flag.jpg" alt="United State" />
-                  </a>
-                </div>
-                <div class="flag">
-                  <a href="#" id="US">
-                    <img src="img/common/uk_flag.jpg" alt="United State" />
-                  </a>
+                <div class="country-nav" id="myDropdown">
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/au_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/fr_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/de_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/it_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/es_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
+                  <div class="flag">
+                    <a href="#" id="US">
+                      <img src="img/common/uk_flag.jpg" alt="United State" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+          </div>
+        </nav>
       </div>
 
       <div id="hero">
@@ -338,69 +345,90 @@
       </div>
       <div class="character" id="character">
         <div class="grid-l character-group">
-          <div class="character grid wide l-6">
-            <div class="character-heading">
+          <div class="character grid wide">
+            <div class="character-heading l-6">
               <h1 class="features-heading">character</h1>
 
-              <ul class="character-selector row">
-                <li>
-                  <img
-                    src="/slidershow/img/characters/joker_thumb.png"
-                    alt=""
-                  />
+              <ul class="character-selector row" id="abc">
+                <li class="character-persona characterActive" id="joker">
+                  <img src="img/characters/joker_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/morgana_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="morgana">
+                  <img src="img/characters/morgana_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/makoto_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="makoto">
+                  <img src="img/characters/makoto_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/futaba_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="futaba">
+                  <img src="img/characters/futaba_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/sophia_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="sophia">
+                  <img src="img/characters/sophia_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/yusuke_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="yusuke">
+                  <img src="img/characters/yusuke_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img src="/slidershow/img/characters/haru_thumb.png" alt="" />
+                <li class="character-persona" id="haru">
+                  <img src="img/characters/haru_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/ryuji_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="ryuji">
+                  <img src="img/characters/ryuji_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img src="/slidershow/img/characters/anne_thumb.png" alt="" />
+                <li class="character-persona" id="anne">
+                  <img src="img/characters/anne_thumb.png" alt="" />
                 </li>
-                <li>
-                  <img
-                    src="/slidershow/img/characters/zenkichi_thumb.png"
-                    alt=""
-                  />
+                <li class="character-persona" id="zenkichi">
+                  <img src="img/characters/zenkichi_thumb.png" alt="" />
                 </li>
               </ul>
+              <div>
+                <h2 class="character-info-heading">codename: joker</h2>
+                <p class="character-info">
+                  His Persona awakened in the midst of a series of
+                  psychotic-breakdown incidents. This lead to the creation of
+                  the "Phantom Thieves of Hearts," dedicated to changing the
+                  hearts of rotten adults and responsible for foiling a menacing
+                  conspiracy.
+                </p>
+                <p class="character-info">
+                  Joker has high attack power and mobility, darting in with his
+                  dagger for quick close-range attacks.
+                </p>
+              </div>
+            </div>
+            <a class="character-img l-6">
+              <img src="img/characters/anne_framed.jpg" />
+              <img src="img/characters/futaba_framed.jpg" />
+              <img src="img/characters/haru_framed.jpg" />
+              <img src="img/characters/makoto_framed.jpg" />
+              <img src="img/characters/yusuke_framed.jpg" />
+              <img src="img/characters/sophia_framed.jpg" />
+              <img src="img/characters/ryuji_framed.jpg" />
+              <img src="img/characters/morgana_framed.jpg" />
+              <img src="img/characters/zenkichi_framed.jpg" />
+              <img src="img/characters/joker_framed.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="available-now" id="avaliable">
+        <div class="grid-l">
+          <div class="available-group">
+            <h1 class="available-heading">available now</h1>
+            <div class="choose-flatform">
+              <h2 class="heading-flatform">choose a platform</h2>
+              <div class="choose-box-contain">
+                <div class="choose-box selected">Nintendo Switch™</div>
+                <div class="choose-box">PlayStation®4</div>
+                <div class="choose-box">steam</div>
+              </div>
             </div>
           </div>
-          <div class="character-img l-6"></div>
+
+          <div class="available-group available-content">
+            s
+            <section class="grid wide available-content2"></section>
+          </div>
         </div>
       </div>
       <script src="./js/app2.js"></script>

@@ -14,14 +14,12 @@ nextBtn.addEventListener("click", () => {
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
   carouselSlide.style.transform = "translateX(" + -changImg * counter + "%)";
   counter++;
-  console.log(counter);
 });
 
 prevBtn.addEventListener("click", () => {
   if (counter <= 0) return;
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
   counter--;
-  console.log(counter);
   carouselSlide.style.transform = "translateX(" + -changImg * counter + "%)";
 });
 
@@ -66,3 +64,22 @@ clickHandlerNav = () => {
     }
   }
 };
+
+//ActiveElement
+
+const activeElement = document.getElementById("abc");
+const elementActives = activeElement.getElementsByClassName(
+  "character-persona"
+);
+let j = 0;
+for (j; j < elementActives.length; j++) {
+  elementActives[j].addEventListener("click", function () {
+    let current = document.getElementsByClassName("characterActive");
+    current[0].className = current[0].className.replace(" characterActive", "");
+    this.className += " characterActive";
+  });
+}
+
+//
+// const imgElement = document.getElementsByClassName("character-img");
+// console.log(imgElement);
