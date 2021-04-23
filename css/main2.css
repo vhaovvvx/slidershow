@@ -316,7 +316,7 @@
 .features-img {
   border: 3px solid var(--while);
   height: 490px;
-  background: url(/img/features/mainimage.jpg) no-repeat;
+  background: url(../img/features/mainimage.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
