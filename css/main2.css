@@ -59,7 +59,6 @@
   overflow: hidden;
   margin: 10px auto;
   padding-right: 10px;
-  z-index: 1;
 }
 
 .flag > a > img {
@@ -339,11 +338,11 @@
 }
 
 .small-feature-group h4 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: bold;
 }
 .small-feature-group p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -374,11 +373,10 @@
 
 .small-feature-group {
   position: relative;
-  border-radius: 11px;
+  border-radius: 12px;
   background-position: top center;
-  width: 358px;
+  width: 400px;
   height: 535px;
-  margin: 0 auto;
 }
 
 .small-feature-group.bg-1 {
