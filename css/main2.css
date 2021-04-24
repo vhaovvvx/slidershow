@@ -338,11 +338,11 @@
 }
 
 .small-feature-group h4 {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: bold;
 }
 .small-feature-group p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -377,6 +377,7 @@
   background-position: top center;
   width: 400px;
   height: 535px;
+  margin: 0 auto;
 }
 
 .small-feature-group.bg-1 {
