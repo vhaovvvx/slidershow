@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -119,7 +119,7 @@
         </div>
       </div>
       <div id="media" class="media">
-        <div class="inner-container grid wide">
+        <div class="inner-container grid-l wide">
           <h2 class="media-title">STRIKE BACK!</h2>
           <br />
           <p class="media-main__text">
@@ -349,39 +349,45 @@
             <div class="character-heading l-6">
               <h1 class="features-heading">character</h1>
 
-              <ul class="character-selector row" id="abc">
-                <li class="character-persona characterActive" id="joker">
+              <ul class="character-selector row" id="activeElements">
+                <li
+                  class="character-persona characterActive"
+                  id="joker"
+                  name="joker"
+                  value="joker"
+                  data="joker"
+                >
                   <img src="img/characters/joker_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="morgana">
+                <li class="character-persona" id="morgana" name="morgana">
                   <img src="img/characters/morgana_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="makoto">
+                <li class="character-persona" id="makoto" name="makoto">
                   <img src="img/characters/makoto_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="futaba">
+                <li class="character-persona" id="futaba" name="futaba">
                   <img src="img/characters/futaba_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="sophia">
+                <li class="character-persona" id="sophia" name="sophia">
                   <img src="img/characters/sophia_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="yusuke">
+                <li class="character-persona" id="yusuke" name="yusuke">
                   <img src="img/characters/yusuke_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="haru">
+                <li class="character-persona" id="haru" name="haru">
                   <img src="img/characters/haru_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="ryuji">
+                <li class="character-persona" id="ryuji" name="ryuji">
                   <img src="img/characters/ryuji_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="anne">
+                <li class="character-persona" id="anne" name="anne">
                   <img src="img/characters/anne_thumb.png" alt="" />
                 </li>
-                <li class="character-persona" id="zenkichi">
+                <li class="character-persona" id="zenkichi" name="zenkichi">
                   <img src="img/characters/zenkichi_thumb.png" alt="" />
                 </li>
               </ul>
-              <div>
+              <div id="render-character">
                 <h2 class="character-info-heading">codename: joker</h2>
                 <p class="character-info">
                   His Persona awakened in the midst of a series of
@@ -396,17 +402,8 @@
                 </p>
               </div>
             </div>
-            <a class="character-img l-6">
-              <img src="img/characters/anne_framed.jpg" />
-              <img src="img/characters/futaba_framed.jpg" />
-              <img src="img/characters/haru_framed.jpg" />
-              <img src="img/characters/makoto_framed.jpg" />
-              <img src="img/characters/yusuke_framed.jpg" />
-              <img src="img/characters/sophia_framed.jpg" />
-              <img src="img/characters/ryuji_framed.jpg" />
-              <img src="img/characters/morgana_framed.jpg" />
-              <img src="img/characters/zenkichi_framed.jpg" />
-              <img src="img/characters/joker_framed.jpg" />
+            <a class="character-img l-6" id="img-append">
+              <img class="img-appendd" src="img/characters/joker_framed.jpg" />
             </a>
           </div>
         </div>

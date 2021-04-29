@@ -231,7 +231,7 @@
   margin: 0 auto;
   position: relative;
   text-align: center;
-  max-width: 1322px;
+  max-width: 1350px;
 }
 
 #trailer-prev__btn {
@@ -254,7 +254,7 @@
 }
 
 .slider-videos {
-  border: 5px solid black;
+  border: 5px solid #ffffff;
   position: relative;
   margin: 0 10px;
 }
