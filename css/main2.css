@@ -496,6 +496,7 @@
 }
 
 .choose-box {
+  background: none;
   margin-right: 10px;
   border: 2px solid red;
   width: 189px;
@@ -503,7 +504,6 @@
   font-size: 10px;
   cursor: pointer;
   text-align: center;
-  padding: 8px 1px 1px 1px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -515,4 +515,145 @@
 
 .available-content {
   margin-top: 50px;
+}
+
+#img-append > img {
+  transition: fadeIn 0.5s ease-in-out;
+}
+
+.grid.wide.available-content2 {
+  position: relative;
+  max-width: 1070px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.editionText {
+  position: absolute;
+  display: inline-block;
+  text-align: left;
+  width: 30%;
+  bottom: 0;
+  left: 2%;
+}
+
+.editionTitle {
+  font-size: 26px;
+}
+
+.versionButtonGroup {
+  display: block;
+  left: 2%;
+  position: absolute;
+  top: 0;
+  width: 35%;
+  text-align: left;
+}
+
+.versionTitle {
+  font-size: 26px;
+}
+
+.versionButtonsContainer {
+  width: 100%;
+  left: 2%;
+}
+
+.versionButton {
+  margin: 5px 0;
+  max-width: 250px;
+  width: 100%;
+  background: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid red;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 10px;
+}
+
+.VersionActive {
+  background-color: red;
+}
+
+.versionButton:hover {
+  background-color: red;
+}
+
+.titleGroup {
+  max-width: 725px;
+  width: 65.5%;
+  left: 35%;
+  position: relative;
+  max-width: 725px;
+  width: 65.5%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.gameCoverRetail {
+  display: inline-block;
+  width: 60%;
+  vertical-align: top;
+  max-height: 400px;
+}
+
+.gameCoverRetail > img {
+  max-width: 200px;
+}
+
+.steelToHide {
+}
+
+.gwpToHide {
+}
+
+.launch-header {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 10px auto;
+}
+
+.buynowButton {
+  background: red;
+  max-width: 135px;
+  width: 100%;
+  text-transform: uppercase;
+  border: none;
+  padding: 9px 0;
+  cursor: pointer;
+}
+
+.grid.wide.available-content3 {
+  position: relative;
+  max-width: 1070px;
+  margin: 0 auto;
+  display: block;
+  /* text-align: center; */
+}
+
+.base-game {
+  padding: 10px 0;
+  background-color: yellow;
+  color: #000;
+  text-align: center;
+  border: 1px solid black;
+  font-style: italic;
+}
+
+.base-game .base-game-header {
+  color: #000;
+  text-align: left;
+  padding-left: 4%;
+  text-transform: uppercase;
+}
+
+.base-game > img {
+  padding: 1px;
+  width: 20px;
 }

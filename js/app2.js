@@ -1,6 +1,5 @@
 const carouselSlide = document.querySelector(".trailer-siema__slider");
 const carouselVideos = document.querySelectorAll(".slider-videos video");
-console.log(carouselVideos);
 const videos = document.getElementsByTagName("video");
 //buttons
 const prevBtn = document.querySelector("#trailer-prev__btn");
@@ -75,7 +74,8 @@ clickHandlerNav = () => {
 //ActiveElement
 
 const imgElement = document.getElementsByClassName("character-img");
-var charactersApi = "http://localhost:3000/en";
+var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
+const charactersRender = document.getElementById("render-character");
 
 let charactersHTML = "";
 
@@ -91,7 +91,8 @@ start();
 function clickHandler() {
   getCharacter()
     .then((characters) => {
-      characters.forEach((character) => {
+      characters[0].en.forEach((character) => {
+        // console.log(character.joker[0]);
         let joker = character.joker[0];
         charactersHTML += `
       <p class="character-info-heading">
@@ -100,28 +101,33 @@ function clickHandler() {
       <p class="character-info"> ${joker.desc}
       </p>
       `;
-        document.getElementById("render-character").innerHTML = charactersHTML;
+        charactersRender.innerHTML = charactersHTML;
         let charElements = [
           ...document.getElementsByClassName("character-persona"),
         ];
         charElements.forEach((charEl) => {
-          charEl.addEventListener("click", () => {
-            characters.forEach((char) => {
+          charEl.addEventListener("click", function (e) {
+            let current = document.getElementsByClassName("characterActive");
+            current[0].className = current[0].className.replace(
+              " characterActive",
+              ""
+            );
+            this.classList += " characterActive";
+            characters[0].en.forEach((char) => {
               let selectedCharacterId = charEl.getAttribute("name");
               let a = char[`${selectedCharacterId}`]; // luoi dat ten class qua
               let c = a[0];
-              document.getElementById("render-character").innerHTML = `
+              charactersRender.innerHTML = `
               <p class="character-info-heading">
                   ${c.name}
               <p>
               <p class="character-info"> ${c.desc}
               </p>
                 `;
-              let node = document.createElement("img");
-              node.className = "img-appendd";
-              document.getElementById("img-append").appendChild(node);
 
-              node.src = `${c.image}`;
+              document.getElementById("img-append").innerHTML = `
+              <img src=${c.image}>
+              `;
             });
           });
         });
@@ -131,4 +137,15 @@ function clickHandler() {
       console.log(error);
     })
     .finally();
+}
+
+//purchar
+
+const chooseBox = document.getElementsByClassName("choose-box");
+for (i = 0; i < chooseBox.length; i++) {
+  chooseBox[i].addEventListener("click", function (e) {
+    let current = document.getElementsByClassName("selected");
+    current[0].className = current[0].className.replace(" selected", "");
+    this.className += " selected";
+  });
 }

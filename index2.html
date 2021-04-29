@@ -403,7 +403,11 @@
               </div>
             </div>
             <a class="character-img l-6" id="img-append">
-              <img class="img-appendd" src="img/characters/joker_framed.jpg" />
+              <img
+                class="img-appendd"
+                id="renderImg"
+                src="img/characters/joker_framed.jpg"
+              />
             </a>
           </div>
         </div>
@@ -415,16 +419,177 @@
             <div class="choose-flatform">
               <h2 class="heading-flatform">choose a platform</h2>
               <div class="choose-box-contain">
-                <div class="choose-box selected">Nintendo Switch™</div>
-                <div class="choose-box">PlayStation®4</div>
-                <div class="choose-box">steam</div>
+                <button class="choose-box selected">Nintendo Switch™</button>
+                <button class="choose-box">PlayStation®4</button>
+                <button class="choose-box">steam</button>
               </div>
             </div>
           </div>
 
           <div class="available-group available-content">
-            s
-            <section class="grid wide available-content2"></section>
+            <section class="grid wide available-content2">
+              <div class="editionText">
+                <h3 class="editionTitle">Select An Edition</h3>
+              </div>
+              <section class="versionButtonGroup">
+                <h3 class="versionTitle">Select A Version</h3>
+                <div class="versionButtonsContainer">
+                  <h3 class="versionButton VersionActive">retail</h3>
+                  <h3 class="versionButton digitalText">digital</h3>
+                </div>
+              </section>
+              <div class="titleGroup">
+                <div class="gameCoverRetail launchToHide" style="width: 33%">
+                  <img src="img/purchase/p5s_sq.jpg" alt="" />
+                  <p class="launch-header">launch edition</p>
+                  <button class="buynowButton">buy now</button>
+                </div>
+                <div class="gameCoverRetail steelToHide" style="width: 33%">
+                  <img src="img/purchase/steelbook.jpg" alt="" />
+                  <p class="launch-header">steelbook edition</p>
+                  <button class="buynowButton">buy now</button>
+                </div>
+                <div class="gameCoverRetail gwpToHide" style="width: 33%">
+                  <img src="img/purchase/gwp.jpg" alt="" />
+                  <p class="launch-header">gift with purchase</p>
+                  <button class="buynowButton">buy now</button>
+                </div>
+              </div>
+            </section>
+            <div class="grid wide available-content3 row">
+              <div class="base-game-container">
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">base game</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">soundtrack</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">DIGITAL ART BOOK</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">BEHIND-THE-SCENES VIDEO</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">STEELBOOK</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  ></div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  ></div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  ></div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  ></div>
+                  <div
+                    class="base-game"
+                    style="width: 21.66667%; max-width: 21.66667%"
+                  >
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
