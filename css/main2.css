@@ -1,6 +1,6 @@
 * {
   font-family: "Roboto" !important;
-  color: var(--while);
+  color: var(--white);
 }
 
 .nav-top {
@@ -40,7 +40,7 @@
   font-size: 14px;
   font-weight: bold;
   position: relative;
-  color: var(--while);
+  color: var(--white);
   text-transform: uppercase;
   margin: 0 65px;
   z-index: 99;
@@ -115,7 +115,7 @@
   width: 100%;
 }
 .text-bottom {
-  color: var(--while);
+  color: var(--white);
   text-transform: uppercase;
   font-size: 28px;
   font-weight: 700;
@@ -151,7 +151,7 @@
   border: 3px solid black;
   font-size: 14px;
 
-  color: var(--while);
+  color: var(--white);
 }
 
 .img-esrb {
@@ -199,7 +199,7 @@
 .media-title {
   text-shadow: (0, 0, 0, 0.35) -5px 5px 0px;
   margin-top: 120px;
-  color: var(--while);
+  color: var(--white);
   text-align: center;
   font-size: 95px;
   font-weight: 700;
@@ -216,7 +216,7 @@
 .media-main__text {
   margin: 0 auto;
   max-width: 1036px;
-  color: var(--while);
+  color: var(--white);
   text-align: center;
   text-transform: uppercase;
   font-size: 16px;
@@ -296,7 +296,7 @@
   display: block;
   padding-top: 82px;
   font-size: 110px;
-  color: var(--while);
+  color: var(--white);
   text-transform: uppercase;
   font-style: italic;
   font-weight: bold;
@@ -308,13 +308,13 @@
 }
 
 .description-text {
-  color: var(--while);
+  color: var(--white);
   font-size: 16px;
   padding-right: 6%;
 }
 
 .features-img {
-  border: 3px solid var(--while);
+  border: 3px solid var(--white);
   height: 490px;
   background: url(../img/features/mainimage.jpg) no-repeat;
   background-position: center;
@@ -330,7 +330,7 @@
 }
 
 .description-box {
-  color: var(--while);
+  color: var(--white);
 }
 
 .small-feature-group > div {
@@ -348,7 +348,7 @@
 
 .description-img {
   position: absolute;
-  border: 5px solid var(--while);
+  border: 5px solid var(--white);
   box-shadow: 4px 4px #000;
   height: 200px;
   width: 90%;
@@ -421,7 +421,7 @@
 .character-info-heading {
   margin-top: 44px;
   font-size: 26px;
-  color: var(--while);
+  color: var(--white);
   text-transform: uppercase;
 }
 
@@ -498,7 +498,7 @@
 .choose-box {
   background: none;
   margin-right: 10px;
-  border: 2px solid red;
+  border: 2px solid var(--red);
   width: 189px;
   height: 35px;
   font-size: 10px;
@@ -510,7 +510,7 @@
 
 .choose-box.selected,
 .choose-box:hover {
-  background-color: red;
+  background-color: var(--red);
 }
 
 .available-content {
@@ -521,11 +521,22 @@
   transition: fadeIn 0.5s ease-in-out;
 }
 
+.available-group.available-content {
+}
+
 .grid.wide.available-content2 {
   position: relative;
   max-width: 1070px;
   margin: 0 auto;
   display: block;
+  text-align: center;
+}
+
+.grid.wide.available-content-small {
+  position: relative;
+  max-width: 1070px;
+  margin: 0 auto;
+  display: none;
   text-align: center;
 }
 
@@ -543,10 +554,8 @@
 }
 
 .versionButtonGroup {
-  display: block;
   left: 2%;
   position: absolute;
-  top: 0;
   width: 35%;
   text-align: left;
 }
@@ -567,18 +576,18 @@
   background: none;
   cursor: pointer;
   text-transform: uppercase;
-  border: 2px solid red;
+  border: 2px solid var(--red);
   text-align: center;
   padding: 10px 0;
   font-size: 10px;
 }
 
 .VersionActive {
-  background-color: red;
+  background-color: var(--red);
 }
 
 .versionButton:hover {
-  background-color: red;
+  background-color: var(--red);
 }
 
 .titleGroup {
@@ -586,8 +595,6 @@
   width: 65.5%;
   left: 35%;
   position: relative;
-  max-width: 725px;
-  width: 65.5%;
   margin: 0;
   padding: 0;
   display: flex;
@@ -595,9 +602,9 @@
 
 .gameCoverRetail {
   display: inline-block;
-  width: 60%;
   vertical-align: top;
   max-height: 400px;
+  margin: 0 2px;
 }
 
 .gameCoverRetail > img {
@@ -612,15 +619,14 @@
 
 .launch-header {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
-  letter-spacing: -1px;
   text-transform: uppercase;
   margin: 10px auto;
 }
 
 .buynowButton {
-  background: red;
+  background: var(--red);
   max-width: 135px;
   width: 100%;
   text-transform: uppercase;
@@ -631,10 +637,19 @@
 
 .grid.wide.available-content3 {
   position: relative;
-  max-width: 1070px;
+  max-width: 1050px;
   margin: 0 auto;
   display: block;
-  /* text-align: center; */
+}
+.grid.wide.available-content-small {
+  position: relative;
+  max-width: 795px;
+  margin: 0 auto;
+  display: none;
+}
+
+.gameCoverRetail {
+  width: 50%;
 }
 
 .base-game {
@@ -646,14 +661,163 @@
   font-style: italic;
 }
 
+.base-game-container {
+  border-radius: 5px;
+}
+
 .base-game .base-game-header {
   color: #000;
   text-align: left;
   padding-left: 4%;
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 .base-game > img {
   padding: 1px;
   width: 20px;
+}
+
+.base-game.end {
+  border-radius: 0 0 0 10px;
+}
+.base-game.start {
+  border-radius: 10px 0 0 0;
+}
+
+#footer {
+}
+
+.footer {
+  background-color: #262626;
+  width: 100%;
+}
+
+.whitebox-connect {
+  position: absolute;
+  display: inline-block;
+  background-color: var(--white);
+  height: 76px;
+  width: 100%;
+  right: 58%;
+}
+
+.whitebox-connect::after {
+  content: "";
+  background: url(../img/purchase//triangle.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  height: 76px;
+  width: 22.2px;
+  top: 0;
+  right: -22px;
+}
+.topbar-footer {
+  display: flex;
+}
+
+.connect-with-atlus {
+  background: var(--white);
+  margin: auto 0;
+  font-weight: bold;
+}
+
+.connect {
+  margin-left: 20px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.topbar-footer {
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+  text-align: center;
+  height: 76px;
+}
+
+.navbar-footer {
+  margin: auto 0;
+  padding-left: 64px;
+}
+
+.footer__nav-bar {
+  display: flex;
+}
+
+.footer__nav-bar li {
+  font-size: 16px;
+}
+
+.footer__nav-bar img {
+  height: 44px;
+  margin: 0 2px;
+}
+
+.subscribe-btn {
+  margin: auto 0;
+  padding-left: 40px;
+  margin-bottom: 16px;
+}
+
+.subscribe-btn__content {
+  background-color: var(--white);
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 14px 0;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.logo-group.grid.wide {
+  max-width: 1050px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo-group .atlus-logo {
+  height: 50px;
+}
+.logo-group .p-studio {
+  height: 90px;
+}
+.logo-group .ps4 {
+  height: 40px;
+}
+
+.logo-group .esrb {
+  height: 70px;
+}
+
+.logo-group .esrb-2 {
+  height: 70px;
+}
+
+.logo-group img {
+  margin: 10px;
+}
+
+.footer-copy {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.policy-group {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px;
+}
+.policy-group a {
+  margin: 0 10px;
 }

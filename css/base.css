@@ -144,8 +144,9 @@ summary {
 }
 
 :root {
-  --while: rgb(255, 255, 255);
+  --white: rgb(255, 255, 255);
   --yellow: #ffcd0d;
+  --red: #be0000;
 }
 
 .grid {

@@ -1,4 +1,5 @@
 const carouselSlide = document.querySelector(".trailer-siema__slider");
+// console.log(carouselSlide);
 const carouselVideos = document.querySelectorAll(".slider-videos video");
 const videos = document.getElementsByTagName("video");
 //buttons
@@ -29,6 +30,10 @@ prevBtn.addEventListener("click", () => {
   prev();
 });
 
+setInterval(() => {
+  // next();
+}, 4 * 1000);
+
 carouselSlide.addEventListener("transitionend", () => {
   if (carouselVideos[counter].id === "lastClone") {
     carouselSlide.style.transition = "none";
@@ -43,9 +48,6 @@ carouselSlide.addEventListener("transitionend", () => {
     carouselSlide.style.transform = "translateX(" + -changImg * counter + "%)";
   }
 });
-// setInterval(() => {
-//   next();
-// }, 1 * 2000);
 
 const itemsDrp = document.querySelectorAll(".flag img");
 let i;
@@ -71,10 +73,12 @@ clickHandlerNav = () => {
   }
 };
 
+//event target available now
+
 //ActiveElement
+var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
 
 const imgElement = document.getElementsByClassName("character-img");
-var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
 const charactersRender = document.getElementById("render-character");
 
 let charactersHTML = "";
@@ -92,16 +96,17 @@ function clickHandler() {
   getCharacter()
     .then((characters) => {
       characters[0].en.forEach((character) => {
-        // console.log(character.joker[0]);
         let joker = character.joker[0];
         charactersHTML += `
-      <p class="character-info-heading">
-      ${joker.name}
-      <p>
-      <p class="character-info"> ${joker.desc}
-      </p>
-      `;
+          <p class="character-info-heading">
+            ${joker.name}
+          <p>
+          <p class="character-info"> ${joker.desc}
+          </p>
+          `;
         charactersRender.innerHTML = charactersHTML;
+
+        //add class after click
         let charElements = [
           ...document.getElementsByClassName("character-persona"),
         ];
@@ -124,7 +129,6 @@ function clickHandler() {
               <p class="character-info"> ${c.desc}
               </p>
                 `;
-
               document.getElementById("img-append").innerHTML = `
               <img src=${c.image}>
               `;
@@ -140,12 +144,50 @@ function clickHandler() {
 }
 
 //purchar
-
+const largeScreenElement = document.getElementById("largeSreenElement");
+const largeContent = document.getElementById("largeContent");
+const smallScreenElement = document.getElementById("smallSreenElement");
+const smallContent = document.getElementById("smallContent");
 const chooseBox = document.getElementsByClassName("choose-box");
+
 for (i = 0; i < chooseBox.length; i++) {
   chooseBox[i].addEventListener("click", function (e) {
+    e.preventDefault();
     let current = document.getElementsByClassName("selected");
     current[0].className = current[0].className.replace(" selected", "");
     this.className += " selected";
+
+    let steamHiddenElement = e.target.name == "steam";
+    if (steamHiddenElement) {
+      smallScreenElement.style.display = "block";
+      largeScreenElement.style.display = "none";
+      largeContent.style.display = "none";
+      smallContent.style.display = "block";
+    } else {
+      let current = document.getElementsByClassName("VersionActive");
+      current[0].className = current[0].className.replace(" VersionActive", "");
+      versionBtn[0].className += " VersionActive";
+      largeScreenElement.style.display = "block";
+      largeContent.style.display = "block";
+      smallContent.style.display = "none";
+      smallScreenElement.style.display = "none";
+    }
+  });
+}
+
+const versionBtn = document.getElementsByClassName("versionButton");
+for (i = 0; i < versionBtn.length; i++) {
+  versionBtn[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    let current = document.getElementsByClassName("VersionActive");
+    current[0].className = current[0].className.replace(" VersionActive", "");
+    this.className += " VersionActive";
+    let digitalHidden = e.target.id == "digital";
+    if (digitalHidden) {
+      smallScreenElement.style.display = "block";
+      largeScreenElement.style.display = "none";
+      largeContent.style.display = "none";
+      smallContent.style.display = "block";
+    }
   });
 }

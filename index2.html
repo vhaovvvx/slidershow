@@ -135,7 +135,9 @@
             <div class="trailer-siema">
               <div class="trailer-siema__slider">
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -151,7 +153,10 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=21yPAJnm2ck&feature=emb_title"
+                    target="_blank"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -166,7 +171,10 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI"
+                    target="_blank"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -181,7 +189,9 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -196,7 +206,9 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -211,7 +223,9 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -226,7 +240,9 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -241,7 +257,9 @@
                   </a>
                 </div>
                 <div class="slider-videos">
-                  <a href="#">
+                  <a
+                    href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
+                  >
                     <img
                       src="img/media/playbutton.png"
                       alt=""
@@ -421,13 +439,16 @@
               <div class="choose-box-contain">
                 <button class="choose-box selected">Nintendo Switch™</button>
                 <button class="choose-box">PlayStation®4</button>
-                <button class="choose-box">steam</button>
+                <button class="choose-box" name="steam">steam</button>
               </div>
             </div>
           </div>
 
           <div class="available-group available-content">
-            <section class="grid wide available-content2">
+            <section
+              class="grid wide available-content2"
+              id="largeSreenElement"
+            >
               <div class="editionText">
                 <h3 class="editionTitle">Select An Edition</h3>
               </div>
@@ -435,11 +456,20 @@
                 <h3 class="versionTitle">Select A Version</h3>
                 <div class="versionButtonsContainer">
                   <h3 class="versionButton VersionActive">retail</h3>
-                  <h3 class="versionButton digitalText">digital</h3>
+                  <h3
+                    class="versionButton digitalText"
+                    name="digital"
+                    id="digital"
+                  >
+                    digital
+                  </h3>
                 </div>
               </section>
               <div class="titleGroup">
-                <div class="gameCoverRetail launchToHide" style="width: 33%">
+                <div
+                  class="gameCoverRetail launchToHide"
+                  style="width: 33%; max-width: 33%"
+                >
                   <img src="img/purchase/p5s_sq.jpg" alt="" />
                   <p class="launch-header">launch edition</p>
                   <button class="buynowButton">buy now</button>
@@ -456,10 +486,131 @@
                 </div>
               </div>
             </section>
-            <div class="grid wide available-content3 row">
+            <section
+              class="grid wide available-content-small"
+              id="smallSreenElement"
+            >
+              <div class="editionText">
+                <h3 class="editionTitle">Select An Edition</h3>
+              </div>
+              <section class="versionButtonGroup">
+                <h3 class="versionTitle">Select A Version</h3>
+                <div class="versionButtonsContainer">
+                  <h3 class="versionButton VersionActive digitalText">
+                    digital
+                  </h3>
+                </div>
+              </section>
+              <div class="titleGroup">
+                <div class="gameCoverRetail launchToHide">
+                  <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
+                  <p class="launch-header">launch edition</p>
+
+                  <a
+                    href="https://store.steampowered.com/app/1382330"
+                    target="_blank"
+                  >
+                    <button class="buynowButton">buy now</button>
+                  </a>
+                </div>
+                <div class="gameCoverRetail steelToHide">
+                  <img src="img/purchase/p5s_sq_standard.jpg" alt="" />
+                  <p class="launch-header">steelbook edition</p>
+
+                  <a
+                    href="https://store.steampowered.com/app/1382330"
+                    target="_blank"
+                  >
+                    <button class="buynowButton">buy now</button>
+                  </a>
+                </div>
+              </div>
+            </section>
+            <div
+              class="grid wide available-content-small row"
+              id="smallContent"
+            >
               <div class="base-game-container">
                 <div class="row">
+                  <div
+                    class="base-game start"
+                    style="width: 35%; max-width: 35%"
+                  >
+                    <h3 class="base-game-header">base game</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
                   <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">soundtrack</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">DIGITAL ART BOOK</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">BEHIND-THE-SCENES VIDEO</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="base-game" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">STEELBOOK</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 32.5%; max-width: 32.5%"
+                  ></div>
+                </div>
+                <div class="row">
+                  <div class="base-game end" style="width: 35%; max-width: 35%">
+                    <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
+                  </div>
+                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                    <img src="img/purchase/checkmark.png" alt="" />
+                  </div>
+                  <div
+                    class="base-game"
+                    style="width: 32.5%; max-width: 32.5%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="grid wide available-content3 row" id="largeContent">
+              <div class="base-game-container">
+                <div class="row">
+                  <div
+                    class="base-game start"
+                    style="width: 35%; max-width: 35%"
+                  >
                     <h3 class="base-game-header">base game</h3>
                   </div>
                   <div
@@ -475,7 +626,7 @@
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
-                    class="base-game"
+                    class="base-game gwpToHide"
                     style="width: 21.66667%; max-width: 21.66667%"
                   >
                     <img src="img/purchase/checkmark.png" alt="" />
@@ -498,7 +649,7 @@
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
-                    class="base-game"
+                    class="base-game gwpToHide"
                     style="width: 21.66667%; max-width: 21.66667%"
                   >
                     <img src="img/purchase/checkmark.png" alt="" />
@@ -521,8 +672,8 @@
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
-                    class="base-game"
-                    style="width: 21.66667%; max-width: 21.66667%"
+                    class="base-game gwpToHide"
+                    style="max-width: 21.66667%; width: 21.66667%"
                   >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
@@ -544,7 +695,7 @@
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
-                    class="base-game"
+                    class="base-game gwpToHide"
                     style="width: 21.66667%; max-width: 21.66667%"
                   >
                     <img src="img/purchase/checkmark.png" alt="" />
@@ -565,12 +716,12 @@
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
-                    class="base-game"
+                    class="base-game gwpToHide"
                     style="width: 21.66667%; max-width: 21.66667%"
                   ></div>
                 </div>
                 <div class="row">
-                  <div class="base-game" style="width: 35%; max-width: 35%">
+                  <div class="base-game end" style="width: 35%; max-width: 35%">
                     <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
                   </div>
                   <div
@@ -582,7 +733,7 @@
                     style="width: 21.66667%; max-width: 21.66667%"
                   ></div>
                   <div
-                    class="base-game"
+                    class="base-game gwpToHide"
                     style="width: 21.66667%; max-width: 21.66667%"
                   >
                     <img src="img/purchase/checkmark.png" alt="" />
@@ -591,6 +742,86 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="footer" id="footer">
+        <div class="whitebox-connect"></div>
+        <div class="topbar-footer row">
+          <div class="connect-with-atlus l-4">
+            <p class="connect">connect with atlus</p>
+          </div>
+          <div class="navbar-footer l-4">
+            <ul class="footer__nav-bar">
+              <li class="nav-items">
+                <a href="https://www.facebook.com/AtlusWest/" target="_blank">
+                  <img src="img/footer/facebook_icon.png" alt="facebook" />
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="https://twitter.com/atlus_west" target="_blank"
+                  ><img src="img/footer/twitter_icon.png" alt="twitter_icon"
+                /></a>
+              </li>
+              <li class="nav-items">
+                <a href="https://www.youtube.com/c/atlus" target="_blank"
+                  ><img src="img/footer/youtube_icon.png" alt="youtube_icon"
+                /></a>
+              </li>
+              <li class="nav-items">
+                <a href="https://www.twitch.tv/atlus_west" target="_blank"
+                  ><img src="img/footer/twitch_icon.png" alt="twitch_icon"
+                /></a>
+              </li>
+              <li class="nav-items">
+                <a href="https://www.instagram.com/atlus_west/" target="_blank"
+                  ><img
+                    src="img/footer/instagram_icon.png"
+                    alt="instagram_icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="subscribe-btn l-4">
+            <a href="">
+              <div class="subscribe-btn__content">
+                subcribe to the newsletter
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="logo-group grid wide">
+          <img src="img/footer/atlus_logo.png" alt="" class="atlus-logo" />
+          <img src="img/footer/P-Studio.png" alt="" class="p-studio" />
+          <img
+            src="img/footer/platform_switch.png"
+            alt=""
+            class="nintendo-switch"
+          />
+          <img src="img/footer/ps4.png" alt="" class="ps4" />
+          <img src="img/footer/steam.png" alt="" class="steam" />
+          <a href="https://www.esrb.org/EPCConfirm/896/" target="_blank">
+            <img src="img/footer/esrb_privacycert.png" alt="" class="esrb" />
+          </a>
+          <img src="img/footer/esrb_m.png" alt="" class="esrb-2" />
+        </div>
+        <p class="footer-copy">
+          ©ATLUS. ©SEGA. / ©KOEI TECMO GAMES. All rights reserved.<br />
+          ATLUS and SEGA are registered in the U.S. Patent and Trademark Office.
+          ATLUS, the ATLUS logo, PERSONA and PERSONA 5 STRIKERS are either
+          registered trademarks or trademarks of ATLUS Co., Ltd. or its
+          affiliates. SEGA is either a registered trademark or a trademark of
+          SEGA CORPORATION. All other trademarks, logos and copyrights are
+          property of their respective owners.<br />
+          The ESRB rating icons are registered trademarks of the Entertainment
+          Software Association.
+        </p>
+        <div class="policy-group">
+          <a href="https://www.sega.com/cookiepolicy" target="_blank"
+            >COOKIE POLICY</a
+          >
+          <a href="https://www.sega.com/Privacy" target="_blank"
+            >PRIVACY POLICY</a
+          >
         </div>
       </div>
       <script src="./js/app2.js"></script>
