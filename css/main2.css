@@ -197,7 +197,6 @@
 }
 
 .media-title {
-  text-shadow: (0, 0, 0, 0.35) -5px 5px 0px;
   margin-top: 120px;
   color: var(--white);
   text-align: center;
@@ -208,7 +207,7 @@
   line-height: 2;
   margin-bottom: 10px;
   position: relative;
-  text-shadow: -5px 5px rgb(0 0 0 / 35%);
+  text-shadow: -10px 10px rgb(0 0 0 / 35%);
   text-transform: uppercase;
   z-index: 1;
 }
@@ -304,7 +303,7 @@
   line-height: 1;
   margin-bottom: 10px;
   position: relative;
-  text-shadow: -5px 5px rgb(0 0 0 / 35%);
+  text-shadow: -10px 10px rgb(0 0 0 / 35%);
 }
 
 .description-text {
@@ -473,7 +472,7 @@
   font-size: 73px;
   font-style: italic;
   font-weight: bold;
-  text-shadow: -5px 5px rgb(0 0 0 / 35%);
+  text-shadow: -10px 10px rgb(0 0 0 / 35%);
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1.85px;
