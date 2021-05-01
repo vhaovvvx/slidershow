@@ -15,6 +15,7 @@
 
 .nav-container {
   display: flex;
+  height: 72px;
 }
 
 .navBtn {

@@ -208,10 +208,7 @@ window.onscroll = function () {
 const nav = document.getElementById("nav");
 
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 700 ||
-    document.documentElement.scrollTop > 700
-  ) {
+  if (document.documentElement.scrollTop > 700) {
     nav.style.position = "fixed";
     nav.style.width = "100%";
     nav.style.zIndex = "9999";
