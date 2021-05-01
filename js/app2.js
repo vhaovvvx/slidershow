@@ -50,12 +50,14 @@ carouselSlide.addEventListener("transitionend", () => {
 });
 
 //dropdown nav
+
 const itemsDrp = document.querySelectorAll(".flag img");
 let i;
 let timeDeplay = 0;
 let a = 100;
 clickHandlerNav = () => {
   const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
+
   if (btnDrp == true) {
     timeDeplay = 0;
     for (i of itemsDrp) {
@@ -206,6 +208,10 @@ window.onscroll = function () {
 };
 
 const nav = document.getElementById("nav");
+const hiddenNavClick = document.getElementsByClassName(
+  "country-navigation-wrapper"
+);
+console.log(hiddenNavClick);
 
 function scrollFunction() {
   if (document.documentElement.scrollTop > 700) {
@@ -214,12 +220,13 @@ function scrollFunction() {
     nav.style.zIndex = "9999";
     nav.style.top = "0";
     nav.style.backgroundColor = "black";
+    hiddenNavClick[0].style.display = "none";
   } else {
     nav.style.top = "0px";
     nav.style.position = "initial";
     nav.style.width = "100%";
     nav.style.zIndex = "9999";
-    nav.style.top = "0";
     nav.style.backgroundColor = "transparent";
+    hiddenNavClick[0].style.display = "block";
   }
 }
