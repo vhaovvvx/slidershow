@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>p5s</title>
+    <title>P5S | Official Website</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,7 +26,7 @@
   <body>
     <div class="app">
       <div class="nav-top">
-        <nav>
+        <nav id="nav">
           <div class="nav-nav grid wide">
             <section class="nav-container">
               <div class="nav-logo col">
@@ -37,13 +40,13 @@
               </div>
               <div class="nav-ul c-10">
                 <ul class="ul-list">
-                  <a href="#media">
+                  <a href="#media" class="navBtn">
                     <li class="li-listitems">media</li>
                   </a>
-                  <a href="#features">
+                  <a href="#features" class="navBtn">
                     <li class="li-listitems">features</li>
                   </a>
-                  <a href="">
+                  <a href="#character" class="navBtn">
                     <li class="li-listitems">characters</li>
                   </a>
                 </ul>
@@ -438,9 +441,9 @@
             <div class="choose-flatform">
               <h2 class="heading-flatform">choose a platform</h2>
               <div class="choose-box-contain">
-                <button class="choose-box selected">Nintendo Switch™</button>
-                <button class="choose-box">PlayStation®4</button>
-                <button class="choose-box" name="steam">steam</button>
+                <div class="choose-box selected">Nintendo Switch™</div>
+                <div class="choose-box">PlayStation®4</div>
+                <div class="choose-box" id="steam">steam</div>
               </div>
             </div>
           </div>
@@ -457,11 +460,7 @@
                 <h3 class="versionTitle">Select A Version</h3>
                 <div class="versionButtonsContainer">
                   <h3 class="versionButton VersionActive">retail</h3>
-                  <h3
-                    class="versionButton digitalText"
-                    name="digital"
-                    id="digital"
-                  >
+                  <h3 class="versionButton digitalText" id="digital">
                     digital
                   </h3>
                 </div>
@@ -473,17 +472,21 @@
                 >
                   <img src="img/purchase/p5s_sq.jpg" alt="" />
                   <p class="launch-header">launch edition</p>
-                  <button class="buynowButton">buy now</button>
+                  <label
+                    class="buynowButton launchEdition"
+                    for="checked-buy-now"
+                    >buy now</label
+                  >
                 </div>
                 <div class="gameCoverRetail steelToHide" style="width: 33%">
                   <img src="img/purchase/steelbook.jpg" alt="" />
                   <p class="launch-header">steelbook edition</p>
-                  <button class="buynowButton">buy now</button>
+                  <label class="buynowButton steelbookEdition">buy now</label>
                 </div>
                 <div class="gameCoverRetail gwpToHide" style="width: 33%">
                   <img src="img/purchase/gwp.jpg" alt="" />
                   <p class="launch-header">gift with purchase</p>
-                  <button class="buynowButton">buy now</button>
+                  <label class="buynowButton giftWithPurchase">buy now</label>
                 </div>
               </div>
             </section>
@@ -741,6 +744,44 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <input
+              type="checkbox"
+              class="checked-input"
+              hidden
+              id="checked-buy-now"
+            />
+
+            <label
+              class="launch-edition"
+              id="launch-edition"
+              for="checked-buy-now"
+            >
+            </label>
+
+            <div class="click-buy__launch-edition">
+              <label class="close" for="checked-buy-now">X</label>
+
+              <h3 class="heading-click-buy">launch edition</h3>
+              <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
+              <div class="link-buy">
+                <a
+                  href="https://www.amazon.com/Persona-5-Strikers-PlayStation-4/dp/B08Q6QMND4"
+                >
+                  <div class="link-button">amazon</div>
+                </a>
+                <a
+                  href="https://www.videogamesplus.ca/persona-strikers-switch-plus-points-free-shipping-p-28218.html"
+                >
+                  <div class="link-button">vgp.ca</div>
+                </a>
+                <a
+                  href="https://www.ebgames.ca/Switch/Games/879427/persona-5-strikers"
+                >
+                  <div class="link-button">ebgames.ca</div>
+                </a>
+              </div>
+              <img src="img/purchase/glamshot_us.jpg" alt="glamshot" />
             </div>
           </div>
         </div>

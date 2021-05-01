@@ -8,7 +8,7 @@ const nextBtn = document.querySelector("#trailer-next__btn");
 //counter
 let counter = 1;
 const changImg = 13.4;
-//Button Listeners
+//slidershow
 function next() {
   if (counter >= carouselVideos.length - 1) return;
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
@@ -49,11 +49,11 @@ carouselSlide.addEventListener("transitionend", () => {
   }
 });
 
+//dropdown nav
 const itemsDrp = document.querySelectorAll(".flag img");
 let i;
 let timeDeplay = 0;
 let a = 100;
-let btnDrpIndex = itemsDrp.length - 1;
 clickHandlerNav = () => {
   const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
   if (btnDrp == true) {
@@ -80,6 +80,7 @@ var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
 
 const imgElement = document.getElementsByClassName("character-img");
 const charactersRender = document.getElementById("render-character");
+const charactersRenderImg = document.getElementById("img-append");
 
 let charactersHTML = "";
 
@@ -106,7 +107,7 @@ function clickHandler() {
           `;
         charactersRender.innerHTML = charactersHTML;
 
-        //add class after click
+        //add class after click and render
         let charElements = [
           ...document.getElementsByClassName("character-persona"),
         ];
@@ -119,8 +120,8 @@ function clickHandler() {
             );
             this.classList += " characterActive";
             characters[0].en.forEach((char) => {
-              let selectedCharacterId = charEl.getAttribute("name");
-              let a = char[`${selectedCharacterId}`]; // luoi dat ten class qua
+              let selectedCharacterName = charEl.getAttribute("name");
+              let a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
               let c = a[0];
               charactersRender.innerHTML = `
               <p class="character-info-heading">
@@ -129,7 +130,7 @@ function clickHandler() {
               <p class="character-info"> ${c.desc}
               </p>
                 `;
-              document.getElementById("img-append").innerHTML = `
+              charactersRenderImg.innerHTML = `
               <img src=${c.image}>
               `;
             });
@@ -144,6 +145,20 @@ function clickHandler() {
 }
 
 //purchar
+
+function openSmallContent() {
+  smallScreenElement.style.display = "block";
+  largeScreenElement.style.display = "none";
+  largeContent.style.display = "none";
+  smallContent.style.display = "block";
+}
+
+function openLargeContent() {
+  smallScreenElement.style.display = "none";
+  largeScreenElement.style.display = "block";
+  largeContent.style.display = "block";
+  smallContent.style.display = "none";
+}
 const largeScreenElement = document.getElementById("largeSreenElement");
 const largeContent = document.getElementById("largeContent");
 const smallScreenElement = document.getElementById("smallSreenElement");
@@ -157,20 +172,14 @@ for (i = 0; i < chooseBox.length; i++) {
     current[0].className = current[0].className.replace(" selected", "");
     this.className += " selected";
 
-    let steamHiddenElement = e.target.name == "steam";
-    if (steamHiddenElement) {
-      smallScreenElement.style.display = "block";
-      largeScreenElement.style.display = "none";
-      largeContent.style.display = "none";
-      smallContent.style.display = "block";
+    let steamHiddenElement = e.target.id == "steam";
+    if (steamHiddenElement === true) {
+      openSmallContent();
     } else {
       let current = document.getElementsByClassName("VersionActive");
       current[0].className = current[0].className.replace(" VersionActive", "");
       versionBtn[0].className += " VersionActive";
-      largeScreenElement.style.display = "block";
-      largeContent.style.display = "block";
-      smallContent.style.display = "none";
-      smallScreenElement.style.display = "none";
+      openLargeContent();
     }
   });
 }
@@ -183,11 +192,37 @@ for (i = 0; i < versionBtn.length; i++) {
     current[0].className = current[0].className.replace(" VersionActive", "");
     this.className += " VersionActive";
     let digitalHidden = e.target.id == "digital";
-    if (digitalHidden) {
-      smallScreenElement.style.display = "block";
-      largeScreenElement.style.display = "none";
-      largeContent.style.display = "none";
-      smallContent.style.display = "block";
+    console.log(digitalHidden);
+    if (digitalHidden === true) {
+      openSmallContent();
     }
   });
+}
+
+const openAndCloseBuy = document.getElementById("launch-edition");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+const nav = document.getElementById("nav");
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 700 ||
+    document.documentElement.scrollTop > 700
+  ) {
+    nav.style.position = "fixed";
+    nav.style.width = "100%";
+    nav.style.zIndex = "9999";
+    nav.style.top = "0";
+    nav.style.backgroundColor = "black";
+  } else {
+    nav.style.top = "0px";
+    nav.style.position = "initial";
+    nav.style.width = "100%";
+    nav.style.zIndex = "9999";
+    nav.style.top = "0";
+    nav.style.backgroundColor = "transparent";
+  }
 }
