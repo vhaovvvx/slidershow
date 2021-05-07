@@ -6,10 +6,6 @@
     <title>P5S | Official Website</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,14 +19,17 @@
       media="screen"
       href="./css/main2.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
   </head>
   <body>
-    <div class="app">
+    <div class="App">
+      <!-- Start Nav -->
       <div class="nav-top">
         <nav id="nav">
           <div class="nav-nav grid wide">
             <section class="nav-container">
-              <div class="nav-logo col">
+              <div class="nav-logo c-1">
                 <a href="#">
                   <img
                     src="img/hero/p5s_logo.png"
@@ -39,7 +38,7 @@
                   />
                 </a>
               </div>
-              <div class="nav-ul c-10">
+              <div class="nav-ul c-7">
                 <ul class="ul-list">
                   <a href="#media" class="navBtn">
                     <li class="li-listitems">media</li>
@@ -52,7 +51,20 @@
                   </a>
                 </ul>
               </div>
-              <div class="country-navigation-wrapper">
+              <div class="nav-buy c-3">
+                <label class="newsletter">
+                  <div class="buynowButton newletter__text" id="newsletter">
+                    newsletter
+                  </div>
+                </label>
+                <div class="uppercase buy-now__newsletter">
+                  <a href="#avaliable">
+                    <h5 class="buy-oder">buy now</h5>
+                  </a>
+                </div>
+              </div>
+
+              <div class="country-navigation-wrapper c-1">
                 <div class="country-nav__selected" onclick="clickHandlerNav()">
                   <img
                     src="img/common/us_flag.jpg"
@@ -97,7 +109,9 @@
           </div>
         </nav>
       </div>
+      <!-- End Nav -->
 
+      <!-- Start Video Hero -->
       <div id="hero">
         <video class="hero-video" autoplay loop muted>
           <source src="img/video/bgVideo.mp4" muted onerror="" />
@@ -122,6 +136,8 @@
           </div>
         </div>
       </div>
+      <!-- End Video Hero -->
+      <!-- Start Media-->
       <div id="media" class="media">
         <div class="inner-container grid-l wide">
           <h2 class="media-title">STRIKE BACK!</h2>
@@ -134,11 +150,11 @@
             CRISIS!
           </p>
           <br />
-          <div class="trailer-container">
+          <div class="trailer-container grid wide">
             <img src="img/media/arrow_lt.png" alt="" id="trailer-prev__btn" />
             <div class="trailer-siema">
               <div class="trailer-siema__slider">
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
                     target="_blank"
@@ -157,7 +173,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=21yPAJnm2ck&feature=emb_title"
                     target="_blank"
@@ -175,7 +191,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=nihTJrochFI"
                     target="_blank"
@@ -193,7 +209,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
                   >
@@ -210,7 +226,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
                   >
@@ -227,7 +243,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
                   >
@@ -244,7 +260,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
                   >
@@ -261,7 +277,7 @@
                     ></video>
                   </a>
                 </div>
-                <div class="slider-videos">
+                <div class="slider-videos c-6 l-12 m-12">
                   <a
                     href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
                   >
@@ -285,6 +301,9 @@
           </div>
         </div>
       </div>
+      <!-- End Media -->
+      <!-- Start features -->
+
       <div id="features" class="features">
         <div class="grid-l features-group">
           <div class="grid wide">
@@ -366,6 +385,9 @@
           </div>
         </div>
       </div>
+      <!-- End features -->
+      <!-- Start Characters -->
+
       <div class="character" id="character">
         <div class="grid-l character-group">
           <div class="character grid wide">
@@ -435,6 +457,9 @@
           </div>
         </div>
       </div>
+      <!-- End Characters -->
+      <!-- Start Buy -->
+
       <div class="available-now" id="avaliable">
         <div class="grid-l">
           <div class="available-group">
@@ -466,28 +491,34 @@
                   </h3>
                 </div>
               </section>
-              <div class="titleGroup">
-                <div
-                  class="gameCoverRetail launchToHide"
-                  style="width: 33%; max-width: 33%"
-                >
+              <div class="titleGroup grid wide">
+                <div class="gameCoverRetail launchToHide">
                   <img src="img/purchase/p5s_sq.jpg" alt="" />
                   <p class="launch-header">launch edition</p>
                   <label
                     class="buynowButton launchEdition"
                     for="checked-buy-now"
+                    id="launch-edition-buy"
                     >buy now</label
                   >
                 </div>
-                <div class="gameCoverRetail steelToHide" style="width: 33%">
+                <div class="gameCoverRetail steelToHide">
                   <img src="img/purchase/steelbook.jpg" alt="" />
                   <p class="launch-header">steelbook edition</p>
-                  <label class="buynowButton steelbookEdition">buy now</label>
+                  <label
+                    class="buynowButton steelbookEdition"
+                    id="steelbook-edition-buy"
+                    >buy now</label
+                  >
                 </div>
-                <div class="gameCoverRetail gwpToHide" style="width: 33%">
+                <div class="gameCoverRetail gwpToHide">
                   <img src="img/purchase/gwp.jpg" alt="" />
                   <p class="launch-header">gift with purchase</p>
-                  <label class="buynowButton giftWithPurchase">buy now</label>
+                  <label
+                    class="buynowButton giftWithPurchase"
+                    id="gift-with-purchase"
+                    >buy now</label
+                  >
                 </div>
               </div>
             </section>
@@ -506,7 +537,7 @@
                   </h3>
                 </div>
               </section>
-              <div class="titleGroup">
+              <div class="titleGroup grid wide">
                 <div class="gameCoverRetail launchToHide">
                   <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
                   <p class="launch-header">launch edition</p>
@@ -746,19 +777,14 @@
                 </div>
               </div>
             </div>
-            <input
+            <!-- Open buy now overlay -->
+            <!-- <input
               type="checkbox"
               class="checked-input"
               hidden
               id="checked-buy-now"
-            />
-
-            <label
-              class="launch-edition"
-              id="launch-edition"
-              for="checked-buy-now"
-            >
-            </label>
+            />-->
+            <div class="overlay" for="checked-buy-now"></div>
 
             <div class="click-buy__launch-edition">
               <label class="close" for="checked-buy-now">X</label>
@@ -784,9 +810,98 @@
               </div>
               <img src="img/purchase/glamshot_us.jpg" alt="glamshot" />
             </div>
+            <div class="click-buy__steelbook-edition">
+              <div class="close">X</div>
+
+              <h3 class="heading-click-buy">STEELBOOK EDITION</h3>
+              <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
+              <div class="link-buy">
+                <a
+                  href="https://www.bestbuy.com/site/persona-5-strikers-nintendo-switch/6444163.p?skuId=6444163"
+                  target="_blank"
+                >
+                  <div class="link-button">best buy</div>
+                </a>
+              </div>
+              <img src="img/purchase/steelbook_us.jpg" alt="glamshot" />
+            </div>
+            <div class="click-buy__gift-with-purchase">
+              <div class="close">X</div>
+
+              <h3 class="heading-click-buy">giftWithPurchase</h3>
+              <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
+              <div class="link-buy">
+                <a
+                  href="https://www.gamestop.com/video-games/switch/games/products/persona-5-strikers/11112907.html?condition=New"
+                  target="_blank"
+                >
+                  <div class="link-button">best buy</div>
+                </a>
+              </div>
+              <img src="img/purchase/gwp_us.jpg" alt="glamshot" />
+            </div>
+            <div class="click-buy__newsletter">
+              <div class="close">X</div>
+              <div class="newsletter-container">
+                <div class="signup-logo">
+                  <img src="img/hero/p5s_logo.png" alt="logop5s" />
+                </div>
+                <div class="signup-content">
+                  <h3 class="heading-click-buy">SIGN UP</h3>
+                  <h3 class="heading-click-buy-small">Receive updates on</h3>
+                  <h3 class="heading-click-buy-small">Persona 5 Strikers</h3>
+                </div>
+              </div>
+              <div class="Email-container">
+                <label for="checked-email" class="email" id="email"
+                  >Email</label
+                >
+                <input
+                  type="text"
+                  id="checked-email"
+                  class="cheked-email"
+                  placeholder="enter your email"
+                />
+              </div>
+              <div class="input-check-tick">
+                <div class="input-check-tick__content">
+                  <input type="checkbox" id="content-label" hidden />
+                  <label class="input-custom" for="content-label"
+                    ><img src="img/purchase/checkmark.png" alt=""
+                  /></label>
+                  <label for="content-label" class="content-label">
+                    I acknowledge that I have read and understood the practices
+                    set out in the &nbsp
+                    <a href="https://www.sega.com/Privacy">Privacy Policy</a>
+                  </label>
+                </div>
+
+                <div class="input-check-tick__content">
+                  <input type="checkbox" id="content-label-2" hidden />
+                  <label class="input-custom" for="content-label-2"
+                    ><img src="img/purchase/checkmark.png" alt=""
+                  /></label>
+                  <label for="content-label-2" class="content-label">
+                    I would like to receive updates by email about products and
+                    services, news, and invitations to events from any of the
+                    SEGA group companies and Atlus (please tick if you consent).
+                    You may opt-out of receiving these communications at any
+                    time by using the unsubscribe link in our emails.
+                  </label>
+                </div>
+                <div class="subscribe-to-letter">
+                  <p class="subscribe-to-letter__text">
+                    subcribe to the letter
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- End Buy -->
+      <!-- Start Footer -->
+
       <div class="footer" id="footer">
         <div class="whitebox-connect"></div>
         <div class="topbar-footer row">
@@ -824,15 +939,13 @@
               </li>
             </ul>
           </div>
-          <div class="subscribe-btn l-4">
-            <a href="">
-              <div class="subscribe-btn__content">
-                subcribe to the newsletter
-              </div>
-            </a>
+          <div class="buynowButton subscribe-btn l-4">
+            <div class="subscribe-btn__content" id="newsletter2">
+              subcribe to the newsletter
+            </div>
           </div>
         </div>
-        <div class="logo-group grid wide">
+        <div class="logo-group grid wide row">
           <img src="img/footer/atlus_logo.png" alt="" class="atlus-logo" />
           <img src="img/footer/P-Studio.png" alt="" class="p-studio" />
           <img
@@ -867,7 +980,10 @@
           >
         </div>
       </div>
+      <!-- End Footer -->
+
       <script src="./js/app2.js"></script>
+      <script src="./js/green.js"></script>
     </div>
   </body>
 </html>

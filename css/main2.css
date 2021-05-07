@@ -53,8 +53,43 @@
   z-index: 99;
 }
 
+.nav-buy {
+  margin: auto 0;
+  display: flex;
+  visibility: hidden;
+}
+
+.buy-now__newsletter,
+.newsletter {
+  max-width: 135px;
+  width: 100%;
+  background-color: var(--yellow);
+  margin-right: 10px;
+  height: 34px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buynowButton.newletter__text,
+.buy-oder {
+  background-color: var(--yellow);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px 18px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .country-navigation-wrapper {
   position: relative;
+}
+
+.country-nav {
+  max-width: 50px;
 }
 
 .country-nav div {
@@ -233,11 +268,11 @@
   margin: 0 auto;
 }
 
-.trailer-container {
+.trailer-container.grid.wide {
   margin: 0 auto;
   position: relative;
   text-align: center;
-  max-width: 1350px;
+  max-width: 1250px;
 }
 
 #trailer-prev__btn {
@@ -256,14 +291,25 @@
 
 .trailer-siema__slider {
   display: flex;
-  width: 5000px;
   height: 369px;
 }
 
 .slider-videos {
-  border: 5px solid #ffffff;
   position: relative;
-  margin: 0 10px;
+  margin: 0 28px;
+  max-height: 325px;
+  height: 100%;
+  max-width: 570px;
+  width: 100%;
+}
+.slider-videos video {
+  border: 5px solid #ffffff;
+  box-shadow: 4px 4px #000;
+
+  max-height: 325px;
+  height: 100%;
+  max-width: 570px;
+  width: 100%;
 }
 
 #trailer-next__btn {
@@ -327,6 +373,7 @@
   background-position: center;
   background-size: cover;
   cursor: pointer;
+  width: 100%;
 }
 
 .features-content-2 {
@@ -337,7 +384,11 @@
 }
 
 .description-box {
+  padding: 0 30px;
   color: var(--white);
+}
+
+.small-feature-group {
 }
 
 .small-feature-group > div {
@@ -382,7 +433,7 @@
   position: relative;
   border-radius: 12px;
   background-position: top center;
-  width: 400px;
+  width: 360px;
   height: 535px;
   margin: 0 auto;
 }
@@ -600,14 +651,13 @@
   background-color: var(--red);
 }
 
-.titleGroup {
+.titleGroup.grid.wide {
   max-width: 725px;
   width: 65.5%;
   left: 35%;
   position: relative;
-  margin: 0;
-  padding: 0;
   display: flex;
+  margin: 0 0;
 }
 
 .gameCoverRetail {
@@ -770,9 +820,14 @@
   margin: auto 0;
   padding-left: 40px;
   margin-bottom: 16px;
+  max-width: none;
+  background: none;
+  padding-top: 20px;
+  cursor: inherit;
 }
 
 .subscribe-btn__content {
+  max-width: none;
   background-color: var(--white);
   color: black;
   text-transform: uppercase;
@@ -780,14 +835,15 @@
   padding: 14px 0;
   overflow: hidden;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .logo-group.grid.wide {
-  max-width: 1050px;
-  display: flex;
+  max-width: 1200px;
   margin: 0 auto;
   align-items: center;
   padding: 15px 0;
+  justify-content: center;
 }
 
 .logo-group .atlus-logo {
@@ -834,7 +890,7 @@
   margin: 0 10px;
 }
 
-.launch-edition {
+.overlay {
   background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
   left: 0;
@@ -893,6 +949,8 @@
   justify-content: center;
 }
 
+.click-buy__gift-with-purchase img,
+.click-buy__steelbook-edition img,
 .click-buy__launch-edition img {
   max-width: 95%;
   position: absolute;
@@ -915,6 +973,168 @@
   display: block;
 }
 
-#checked-buy-now:checked ~ .launch-edition {
+#checked-buy-now:checked ~ .overlay {
   display: block;
+}
+
+#checked-buy-now:checked ~ .newsletter {
+  display: block;
+}
+
+.click-buy__steelbook-edition {
+  height: 600px;
+  max-width: 800px;
+  width: 100%;
+  background: #313c46;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  display: none;
+  z-index: 9999;
+}
+
+.click-buy__gift-with-purchase {
+  height: 600px;
+  max-width: 800px;
+  width: 100%;
+  background: #313c46;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  display: none;
+  z-index: 9999;
+}
+
+.click-buy__newsletter {
+  height: 510px;
+  max-width: 600px;
+  width: 100%;
+  background: #313c46;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  display: none;
+  z-index: 9999;
+}
+
+.newsletter-container {
+  display: flex;
+}
+
+.signup-logo img {
+  width: 100%;
+  max-width: 220px;
+  margin-right: 10px;
+}
+
+.signup-content .heading-click-buy {
+  font-size: 63px;
+  font-weight: bold;
+}
+
+.signup-content .heading-click-buy-small {
+  font-size: 27px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.email {
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.cheked-email {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #13181c;
+  outline: none;
+  height: 46px;
+  text-transform: uppercase;
+  padding-left: 1%;
+  font-size: 13px;
+}
+
+.input-check-tick {
+  margin-top: 24px;
+}
+
+.input-check-tick__content {
+  display: flex;
+  padding-left: 4%;
+  font-size: 12px;
+  margin: 25px auto;
+}
+
+.input-check-tick__content input {
+  opacity: 0;
+}
+
+.input-check-tick__content input:checked ~ .input-custom img {
+  display: block;
+}
+.input-custom {
+  position: relative;
+}
+.input-custom2 img,
+.input-custom img {
+  position: absolute;
+  display: none;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+.input-custom2,
+.input-check-tick__content .input-custom {
+  width: 30px;
+  height: 30px;
+  background-color: #13181c;
+  margin-right: 3%;
+  cursor: pointer;
+  padding-right: 6%;
+}
+
+.content-label > a {
+  text-decoration-line: underline !important;
+}
+
+.content-label {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subscribe-to-letter {
+  background-color: var(--yellow);
+  width: 100%;
+  font-size: 16px;
+  bottom: 5%;
+}
+
+.subscribe-to-letter__text {
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  padding: 13px 0;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) and (max-width: 1311px) {
+  .trailer-container.grid.wide {
+    max-width: 700px;
+    width: 100%;
+  }
+  .slider-videos {
+    margin: 0;
+  }
 }
