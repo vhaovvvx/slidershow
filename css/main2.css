@@ -412,9 +412,6 @@
   color: var(--white);
 }
 
-.small-feature-group {
-}
-
 .small-feature-group > div {
   padding: 20px;
 }
@@ -580,7 +577,7 @@
 
 .choose-box {
   background: none;
-  margin-right: 10px;
+  margin: 10px 10px 10px 0;
   border: 2px solid var(--red);
   width: 189px;
   height: 35px;
@@ -600,14 +597,11 @@
 }
 
 .available-content {
-  margin-top: 50px;
+  margin: 50px auto;
 }
 
 #img-append > img {
-  transition: fadeIn 0.5s ease-in-out;
-}
-
-.available-group.available-content {
+  transition: fadeIn 2s;
 }
 
 .grid.wide.available-content2 {
@@ -709,12 +703,6 @@
   max-width: 200px;
 }
 
-.steelToHide {
-}
-
-.gwpToHide {
-}
-
 .launch-header {
   font-weight: bold;
   font-size: 14px;
@@ -783,9 +771,6 @@
 }
 .base-game.start {
   border-radius: 10px 0 0 0;
-}
-
-#footer {
 }
 
 .footer {
@@ -872,6 +857,7 @@
 }
 
 .subscribe-btn__content {
+  width: 100%;
   max-width: none;
   background-color: var(--white);
   color: black;
@@ -936,13 +922,13 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.35);
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 9;
   display: none;
 }
 
@@ -978,7 +964,7 @@
 
 .link-buy a {
   width: 100%;
-  max-width: 370px;
+  max-width: 390px;
 }
 
 .link-button {
@@ -991,12 +977,13 @@
   color: black;
   align-items: center;
   justify-content: center;
+  width: 95%;
 }
 
 .click-buy__gift-with-purchase img,
 .click-buy__steelbook-edition img,
 .click-buy__launch-edition img {
-  max-width: 95%;
+  max-width: 100%;
 }
 
 .heading-click-buy {
@@ -1331,6 +1318,12 @@
   }
 }
 @media (max-width: 768px) {
+  .available-heading {
+    font-size: 56px;
+  }
+  .choose-box-contain {
+    flex-wrap: wrap;
+  }
   .media-title {
     font-size: 64px;
   }

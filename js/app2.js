@@ -1,28 +1,24 @@
 const carouselSlide = document.querySelector(".trailer-siema__slider");
+const carouselSlide2 = document.querySelector(".trailer-container");
+const carouselVideos = document.querySelectorAll(".slider-videos video");
 const availableSlide = document.querySelector(".valiable-siema__slider");
 const availableSlide2 = document.querySelector(
   ".valiable-siema__slider-playtation"
 );
-
-const carouselVideos = document.querySelectorAll(".slider-videos video");
-const videos = document.getElementsByTagName("video");
+const availableSlider = document.getElementsByClassName("ipad-container");
+const availableSlider2 = document.getElementsByClassName("ipad-container-2");
 //buttons
 const prevBtn = document.querySelector("#trailer-prev__btn");
 const nextBtn = document.querySelector("#trailer-next__btn");
 const prevBtn2 = document.querySelector("#available-prev__btn");
 const nextBtn2 = document.querySelector("#available-next__btn");
-const availableSlider = document.getElementsByClassName("ipad-container");
-const availableSlider2 = document.getElementsByClassName("ipad-container-2");
+availableSlide.style.transform = "translateX(" + -100 + "%)";
+availableSlide2.style.transform = "translateX(" + -100 + "%)";
 
 //counter
 var counter = 1;
-const carouselSlide2 = document.querySelector(".trailer-container");
 const widthhhh = carouselSlide2.clientWidth / 2;
-
 //slidershow
-function next() {}
-
-function prev() {}
 
 nextBtn.addEventListener("click", () => {
   let widthhh = carouselSlide2.clientWidth;
@@ -71,7 +67,7 @@ nextBtn3.addEventListener("click", () => {
   counter++;
 });
 prevBtn3.addEventListener("click", () => {
-  if (counter < 0) {
+  if (counter <= 0) {
     return;
   }
   counter--;
@@ -82,19 +78,20 @@ prevBtn3.addEventListener("click", () => {
 availableSlide2.addEventListener("transitionend", () => {
   if (availableSlider2[counter].id === "lastClone3") {
     availableSlide2.style.transition = "none";
-    counter = availableSlider2.length - 2;
+    counter = availableSlider2.length - 3;
     availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
   }
 });
 availableSlide2.addEventListener("transitionend", () => {
   if (availableSlider2[counter].id === "firstClone3") {
     availableSlide2.style.transition = "none";
-    counter = availableSlider2.length - counter - 1;
+    counter = availableSlider2.length - counter;
     availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
   }
 });
 //small container slider available start
 nextBtn2.addEventListener("click", () => {
+  console.log(counter);
   if (counter >= availableSlider.length - 1) {
     return;
   }
@@ -107,22 +104,22 @@ prevBtn2.addEventListener("click", () => {
     return;
   }
   counter--;
+
   availableSlide.style.transition = "transform 0.4s ease-in-out";
   availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
 });
 
 availableSlide.addEventListener("transitionend", () => {
   if (availableSlider[counter].id === "lastClone2") {
-    console.log("lastClone");
     availableSlide.style.transition = "none";
-    counter = availableSlider.length - 1;
+    counter = availableSlider.length - 3;
     availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
   }
 });
 availableSlide.addEventListener("transitionend", () => {
   if (availableSlider[counter].id === "firstClone2") {
     availableSlide.style.transition = "none";
-    counter = availableSlider.length - counter - 1;
+    counter = availableSlider.length - counter;
     availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
   }
 });
@@ -173,84 +170,12 @@ clickDropDown.addEventListener("click", function (e) {
     }
   }
 });
-
 //event target available now
-
-//ActiveElement
-var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
-
-const imgElement = document.getElementsByClassName("character-img");
-const charactersRender = document.getElementById("render-character");
-const charactersRenderImg = document.getElementById("img-append");
-
-let charactersHTML = "";
-
-function getCharacter() {
-  return fetch(charactersApi).then((res) => res.json());
-}
-
-function start() {
-  clickHandler();
-}
-start();
-
-function clickHandler() {
-  getCharacter()
-    .then((characters) => {
-      characters[0].en.forEach((character) => {
-        let joker = character.joker[0];
-        charactersHTML += `
-          <p class="character-info-heading">
-            ${joker.name}
-          <p>
-          <p class="character-info"> ${joker.desc}
-          </p>
-          `;
-        charactersRender.innerHTML = charactersHTML;
-
-        //add class after click and render
-        let charElements = [
-          ...document.getElementsByClassName("character-persona"),
-        ];
-        charElements.forEach((charEl) => {
-          charEl.addEventListener("click", function (e) {
-            let current = document.getElementsByClassName("characterActive");
-            current[0].className = current[0].className.replace(
-              " characterActive",
-              ""
-            );
-            this.classList += " characterActive";
-            characters[0].en.forEach((char) => {
-              let selectedCharacterName = charEl.getAttribute("name");
-              let a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
-              let c = a[0];
-              charactersRender.innerHTML = `
-              <p class="character-info-heading">
-                  ${c.name}
-              <p>
-              <p class="character-info"> ${c.desc}
-              </p>
-                `;
-              charactersRenderImg.innerHTML = `
-              <img src=${c.image}>
-              `;
-            });
-          });
-        });
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-    .finally();
-}
-
 //purchar
 const width222 = document.getElementById("avaliable");
 const width333 = document.getElementsByClassName("available-content");
 const containerPlaytation = document.getElementById("valiable-ipad-playtation");
 function openSmallContent() {
-  // if (width333.clientWidth > 954) {
   versionBtn[0].style.display = "none";
   valiableIpad.style.display = "block";
   containerPlaytation.style.display = "none";
@@ -258,15 +183,11 @@ function openSmallContent() {
   largeScreenElement.style.display = "none";
   largeContent.style.display = "none";
   smallContent.style.display = "block";
-  // } else {
-  //   console.log("smallscreen");
-  // }
 }
 const valiableIpad = document.getElementById("valiable-ipad");
 
 function openLargeContent() {
   containerPlaytation.style.display = "block";
-
   valiableIpad.style.display = "none";
   versionBtn[0].style.display = "block";
   smallScreenElement.style.display = "none";
@@ -286,7 +207,6 @@ for (i = 0; i < chooseBox.length; i++) {
     let current = document.getElementsByClassName("selected");
     current[0].className = current[0].className.replace(" selected", "");
     this.className += " selected";
-
     let steamHiddenElement = e.target.id == "steam";
     if (steamHiddenElement === true) {
       openSmallContent();
@@ -299,7 +219,6 @@ for (i = 0; i < chooseBox.length; i++) {
   });
 }
 let current = document.getElementsByClassName("VersionActive");
-
 const versionBtn = document.getElementsByClassName("versionButton");
 for (i = 0; i < versionBtn.length; i++) {
   versionBtn[i].addEventListener("click", function (e) {
@@ -314,13 +233,10 @@ for (i = 0; i < versionBtn.length; i++) {
     }
   });
 }
-
 const openAndCloseBuy = document.getElementById("launch-edition");
-
 window.onscroll = function () {
   scrollFunction();
 };
-
 const nav = document.getElementById("nav");
 const hiddenNavClick = document.getElementsByClassName(
   "country-navigation-wrapper"
@@ -346,7 +262,6 @@ function scrollFunction() {
     hiddenNavBuy[0].style.visibility = "hidden";
   }
 }
-
 const overlay = document.getElementsByClassName("overlay");
 const lauchEditionClickOverlay = document.getElementsByClassName(
   "click-buy__launch-edition"
@@ -365,7 +280,6 @@ const buttonNewsLetter = document.getElementsByClassName(
 );
 const logoBtn = document.getElementById("logo-bar");
 const topdownMenuBtn = document.getElementsByClassName("topdown-menu");
-
 elementClickOverlay.forEach((Elmt) => {
   Elmt.addEventListener("click", function (e) {
     e.preventDefault();
@@ -380,7 +294,6 @@ elementClickOverlay.forEach((Elmt) => {
     let subscribeToTheNewsLetter = e.target.id == "newsletter2";
     let logoBar = e.target.id == "btn__logo-bar";
     let logoBar2 = e.target.id == "logo-bar";
-
     if (buyButtonLaunchEdition || buyButtonLaunchEdition2) {
       overlay[0].style.display = "block";
       lauchEditionClickOverlay[0].style.display = "block";
@@ -423,3 +336,64 @@ overlay[0].addEventListener("click", function () {
   buttonNewsLetter[0].style.display = "none";
   topdownMenuBtn[0].style.transform = "translateY(-200%)";
 });
+//ActiveElement
+var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
+const imgElement = document.getElementsByClassName("character-img");
+const charactersRender = document.getElementById("render-character");
+const charactersRenderImg = document.getElementById("img-append");
+let charactersHTML = "";
+function getCharacter() {
+  return fetch(charactersApi).then((res) => res.json());
+}
+function start() {
+  clickHandler();
+}
+start();
+function clickHandler() {
+  getCharacter()
+    .then((characters) => {
+      characters[0].en.forEach((character) => {
+        let joker = character.joker[0];
+        charactersHTML += `
+          <p class="character-info-heading">
+            ${joker.name}
+          <p>
+          <p class="character-info"> ${joker.desc}
+          </p>
+          `;
+        charactersRender.innerHTML = charactersHTML;
+        let charElements = [
+          ...document.getElementsByClassName("character-persona"),
+        ];
+        charElements.forEach((charEl) => {
+          charEl.addEventListener("click", function (e) {
+            let current = document.getElementsByClassName("characterActive");
+            current[0].className = current[0].className.replace(
+              " characterActive",
+              ""
+            );
+            this.classList += " characterActive";
+            characters[0].en.forEach((char) => {
+              let selectedCharacterName = charEl.getAttribute("name");
+              let a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
+              let c = a[0];
+              charactersRender.innerHTML = `
+              <p class="character-info-heading">
+                  ${c.name}
+              <p>
+              <p class="character-info"> ${c.desc}
+              </p>
+                `;
+              charactersRenderImg.innerHTML = `
+              <img src=${c.image}>
+              `;
+            });
+          });
+        });
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    .finally();
+}
