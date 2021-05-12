@@ -1,66 +1,162 @@
 const carouselSlide = document.querySelector(".trailer-siema__slider");
-// console.log(carouselSlide);
+const availableSlide = document.querySelector(".valiable-siema__slider");
+const availableSlide2 = document.querySelector(
+  ".valiable-siema__slider-playtation"
+);
+
 const carouselVideos = document.querySelectorAll(".slider-videos video");
-console.log(carouselVideos[0]);
 const videos = document.getElementsByTagName("video");
 //buttons
 const prevBtn = document.querySelector("#trailer-prev__btn");
 const nextBtn = document.querySelector("#trailer-next__btn");
+const prevBtn2 = document.querySelector("#available-prev__btn");
+const nextBtn2 = document.querySelector("#available-next__btn");
+const availableSlider = document.getElementsByClassName("ipad-container");
+const availableSlider2 = document.getElementsByClassName("ipad-container-2");
+
 //counter
-let counter = 1;
+var counter = 1;
 const carouselSlide2 = document.querySelector(".trailer-container");
+const widthhhh = carouselSlide2.clientWidth / 2;
 
-const widthhh = carouselSlide2.clientWidth / 2;
 //slidershow
-function next() {
-  if (counter >= carouselVideos.length - 1) return;
-  carouselSlide.style.transition = "transform 0.4s ease-in-out";
-  carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
-  counter++;
-}
+function next() {}
 
-function prev() {
-  if (counter <= 0) return;
-  carouselSlide.style.transition = "transform 0.4s ease-in-out";
-  counter--;
-  carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
-}
+function prev() {}
 
 nextBtn.addEventListener("click", () => {
-  next();
-});
-prevBtn.addEventListener("click", () => {
-  prev();
-});
-
-setInterval(() => {
-  // next();
-}, 4 * 1000);
-
-carouselSlide.addEventListener("transitionend", () => {
-  if (carouselVideos[counter].id === "lastClone") {
-    carouselSlide.style.transition = "none";
-    counter = carouselVideos.length - 2;
-    carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
+  let widthhh = carouselSlide2.clientWidth;
+  if (counter >= carouselVideos.length - 1) {
+    return;
+  } else if (widthhh > 700) {
+    let widthhh = carouselSlide2.clientWidth;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    carouselSlide.style.transform =
+      "translateX(" + -(widthhh / 2) * counter + "px)";
+    counter++;
+  } else {
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    carouselSlide.style.transform =
+      "translateX(" + -(widthhh - 10) * counter + "px)";
+    counter++;
   }
 });
+
+prevBtn.addEventListener("click", () => {
+  let widthhh = carouselSlide2.clientWidth;
+  if (counter <= 0) {
+    return;
+  } else if (widthhh > 700) {
+    let widthhh = carouselSlide2.clientWidth / 2;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
+  } else {
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform =
+      "translateX(" + -(widthhh - 20) * counter + "px)";
+  }
+});
+const prevBtn3 = document.querySelector("#available-prev__btn2");
+const nextBtn3 = document.querySelector("#available-next__btn2");
+
+nextBtn3.addEventListener("click", () => {
+  if (counter >= availableSlider2.length - 1) {
+    return;
+  }
+  availableSlide2.style.transition = "transform 0.4s ease-in-out";
+
+  availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+  counter++;
+});
+prevBtn3.addEventListener("click", () => {
+  if (counter < 0) {
+    return;
+  }
+  counter--;
+  availableSlide2.style.transition = "transform 0.4s ease-in-out";
+  availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+});
+
+availableSlide2.addEventListener("transitionend", () => {
+  if (availableSlider2[counter].id === "lastClone3") {
+    availableSlide2.style.transition = "none";
+    counter = availableSlider2.length - 2;
+    availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+  }
+});
+availableSlide2.addEventListener("transitionend", () => {
+  if (availableSlider2[counter].id === "firstClone3") {
+    availableSlide2.style.transition = "none";
+    counter = availableSlider2.length - counter - 1;
+    availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+  }
+});
+//small container slider available start
+nextBtn2.addEventListener("click", () => {
+  if (counter >= availableSlider.length - 1) {
+    return;
+  }
+  availableSlide.style.transition = "transform 0.4s ease-in-out";
+  availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+  counter++;
+});
+prevBtn2.addEventListener("click", () => {
+  if (counter <= 0) {
+    return;
+  }
+  counter--;
+  availableSlide.style.transition = "transform 0.4s ease-in-out";
+  availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+});
+
+availableSlide.addEventListener("transitionend", () => {
+  if (availableSlider[counter].id === "lastClone2") {
+    console.log("lastClone");
+    availableSlide.style.transition = "none";
+    counter = availableSlider.length - 1;
+    availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+  }
+});
+availableSlide.addEventListener("transitionend", () => {
+  if (availableSlider[counter].id === "firstClone2") {
+    availableSlide.style.transition = "none";
+    counter = availableSlider.length - counter - 1;
+    availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+  }
+});
+//small container slider available end
+
+carouselSlide.addEventListener("transitionend", () => {
+  if (carouselVideos[counter].id == "lastClone") {
+    let widthhh = carouselSlide2.clientWidth;
+    carouselSlide.style.transition = "none";
+    counter = carouselVideos.length - 5;
+    carouselSlide.style.transform =
+      "translateX(" + -(widthhh - 20) * counter + "px)";
+  }
+});
+
 carouselSlide.addEventListener("transitionend", () => {
   if (carouselVideos[counter].id === "firstClone") {
+    let widthhh = carouselSlide2.clientWidth;
     carouselSlide.style.transition = "none";
     counter = carouselVideos.length - counter;
-    carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
+    carouselSlide.style.transform =
+      "translateX(" + -(widthhh - 20) * counter + "px)";
   }
 });
 
 //dropdown nav
-
+const clickDropDown = document.getElementById("click-dropdown");
+const btnDrp2 = document.getElementById("myDropdown");
 const itemsDrp = document.querySelectorAll(".flag img");
 let i;
 let timeDeplay = 0;
 let a = 100;
-clickHandlerNav = () => {
+clickDropDown.addEventListener("click", function (e) {
   const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
-
   if (btnDrp == true) {
     timeDeplay = 0;
     for (i of itemsDrp) {
@@ -76,7 +172,7 @@ clickHandlerNav = () => {
       i.style.transform = "translateX(" + a + "px)";
     }
   }
-};
+});
 
 //event target available now
 
@@ -150,15 +246,29 @@ function clickHandler() {
 }
 
 //purchar
-
+const width222 = document.getElementById("avaliable");
+const width333 = document.getElementsByClassName("available-content");
+const containerPlaytation = document.getElementById("valiable-ipad-playtation");
 function openSmallContent() {
+  // if (width333.clientWidth > 954) {
+  versionBtn[0].style.display = "none";
+  valiableIpad.style.display = "block";
+  containerPlaytation.style.display = "none";
   smallScreenElement.style.display = "block";
   largeScreenElement.style.display = "none";
   largeContent.style.display = "none";
   smallContent.style.display = "block";
+  // } else {
+  //   console.log("smallscreen");
+  // }
 }
+const valiableIpad = document.getElementById("valiable-ipad");
 
 function openLargeContent() {
+  containerPlaytation.style.display = "block";
+
+  valiableIpad.style.display = "none";
+  versionBtn[0].style.display = "block";
   smallScreenElement.style.display = "none";
   largeScreenElement.style.display = "block";
   largeContent.style.display = "block";
@@ -183,11 +293,12 @@ for (i = 0; i < chooseBox.length; i++) {
     } else {
       let current = document.getElementsByClassName("VersionActive");
       current[0].className = current[0].className.replace(" VersionActive", "");
-      versionBtn[0].className += " VersionActive";
+      versionBtn[2].className += " VersionActive";
       openLargeContent();
     }
   });
 }
+let current = document.getElementsByClassName("VersionActive");
 
 const versionBtn = document.getElementsByClassName("versionButton");
 for (i = 0; i < versionBtn.length; i++) {
@@ -197,8 +308,8 @@ for (i = 0; i < versionBtn.length; i++) {
     current[0].className = current[0].className.replace(" VersionActive", "");
     this.className += " VersionActive";
     let digitalHidden = e.target.id == "digital";
-    console.log(digitalHidden);
-    if (digitalHidden === true) {
+    let digitalHidden2 = e.target.id == "digital-small";
+    if (digitalHidden || digitalHidden2) {
       openSmallContent();
     }
   });
@@ -243,7 +354,6 @@ const lauchEditionClickOverlay = document.getElementsByClassName(
 const elementClickOverlay = [
   ...document.getElementsByClassName("buynowButton"),
 ];
-console.log(elementClickOverlay);
 const steelbookEditionClickOverlay = document.getElementsByClassName(
   "click-buy__steelbook-edition"
 );
@@ -253,6 +363,8 @@ const giftWithPurchaseClickOverlay = document.getElementsByClassName(
 const buttonNewsLetter = document.getElementsByClassName(
   "click-buy__newsletter"
 );
+const logoBtn = document.getElementById("logo-bar");
+const topdownMenuBtn = document.getElementsByClassName("topdown-menu");
 
 elementClickOverlay.forEach((Elmt) => {
   Elmt.addEventListener("click", function (e) {
@@ -260,22 +372,32 @@ elementClickOverlay.forEach((Elmt) => {
     let buyButtonLaunchEdition = e.target.id == "launch-edition-buy";
     let buyButtonSteelBookEdition = e.target.id == "steelbook-edition-buy";
     let buyButtonGiftWithPurchase = e.target.id == "gift-with-purchase";
+    let buyButtonLaunchEdition2 = e.target.id == "launch-edition-buy2";
+    let buyButtonSteelBookEdition2 = e.target.id == "steelbook-edition-buy2";
+    let buyButtonGiftWithPurchase2 = e.target.id == "gift-with-purchase2";
+
     let buyButtonNewsLetter = e.target.id == "newsletter";
     let subscribeToTheNewsLetter = e.target.id == "newsletter2";
-    console.log(subscribeToTheNewsLetter);
+    let logoBar = e.target.id == "btn__logo-bar";
+    let logoBar2 = e.target.id == "logo-bar";
 
-    if (buyButtonLaunchEdition) {
+    if (buyButtonLaunchEdition || buyButtonLaunchEdition2) {
       overlay[0].style.display = "block";
       lauchEditionClickOverlay[0].style.display = "block";
-    } else if (buyButtonSteelBookEdition) {
+    } else if (buyButtonSteelBookEdition || buyButtonSteelBookEdition2) {
       overlay[0].style.display = "block";
       steelbookEditionClickOverlay[0].style.display = "block";
-    } else if (buyButtonGiftWithPurchase) {
+    } else if (buyButtonGiftWithPurchase || buyButtonGiftWithPurchase2) {
       overlay[0].style.display = "block";
       giftWithPurchaseClickOverlay[0].style.display = "block";
     } else if (buyButtonNewsLetter || subscribeToTheNewsLetter) {
       overlay[0].style.display = "block";
       buttonNewsLetter[0].style.display = "block";
+    } else if (logoBar2) {
+      overlay[0].style.display = "block";
+      topdownMenuBtn[0].style.transition = "transform 0.5s ease-in-out";
+      topdownMenuBtn[0].style.transform = "translateY(0%)";
+      topdownMenuBtn[0].style.display = "block";
     }
   });
 });
@@ -284,7 +406,6 @@ close.forEach((closeElm) => {
   closeElm.addEventListener("click", function (e) {
     e.preventDefault();
     const closeBtn = e.target.className == "close";
-    console.log(closeBtn);
     if (closeBtn) {
       overlay[0].style.display = "none";
       lauchEditionClickOverlay[0].style.display = "none";
@@ -300,4 +421,5 @@ overlay[0].addEventListener("click", function () {
   steelbookEditionClickOverlay[0].style.display = "none";
   giftWithPurchaseClickOverlay[0].style.display = "none";
   buttonNewsLetter[0].style.display = "none";
+  topdownMenuBtn[0].style.transform = "translateY(-200%)";
 });

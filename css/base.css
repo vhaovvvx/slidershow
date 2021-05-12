@@ -753,10 +753,19 @@ summary {
 @keyframes topdown {
   from {
     opacity: 0;
-    top: -100px;
+    transform: translateY(-200%);
   }
   to {
     opacity: 1;
-    top: 0;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes topup {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-300%);
   }
 }

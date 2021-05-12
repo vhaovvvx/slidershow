@@ -8,9 +8,6 @@
   position: relative;
 }
 
-.nav {
-}
-
 .nav-nav {
   height: 74px;
   width: 100%;
@@ -21,9 +18,6 @@
   height: 72px;
 }
 
-.navBtn {
-}
-
 .nav-logo {
   z-index: 99;
   margin: 10px 0;
@@ -32,6 +26,37 @@
 .nav-logo__img {
   width: 60px;
   height: 55px;
+}
+
+.buynowButton.btn-logo {
+  background: transparent !important;
+  width: 40px;
+  height: 40px;
+  z-index: 9999;
+}
+
+#logo-bar {
+  display: none;
+  font-size: 40px;
+  background: transparent !important;
+}
+
+.topdown-menu {
+  display: block;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  left: 0;
+  transform: translateY(-200%);
+  z-index: 10000;
+}
+
+.content-link {
+  text-transform: uppercase;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
 }
 
 .nav-ul {
@@ -281,7 +306,7 @@
   transform: translate(0, -50%);
   left: 0;
   cursor: pointer;
-  z-index: 11;
+  z-index: 9;
 }
 
 .trailer-siema {
@@ -305,9 +330,7 @@
 .slider-videos video {
   border: 5px solid #ffffff;
   box-shadow: 4px 4px #000;
-
   max-height: 325px;
-  height: 100%;
   max-width: 570px;
   width: 100%;
 }
@@ -381,6 +404,7 @@
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 100px;
+  justify-content: center;
 }
 
 .description-box {
@@ -489,12 +513,14 @@
 }
 
 .character-img {
-  padding-top: 70px;
-  padding-left: 100px;
+  width: 100%;
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
 }
 
 .character-img img {
-  position: absolute;
   max-width: 500px;
   width: 100%;
   box-shadow: 5px 5px 0 #000;
@@ -505,7 +531,6 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 900px;
   position: relative;
   overflow: hidden;
 }
@@ -619,6 +644,19 @@
   position: absolute;
   width: 35%;
   text-align: left;
+}
+
+.versionButtonGroup-small {
+  display: none;
+  padding: 0 10px;
+}
+
+.versionButtonGroup-small .versionButtonsContainer {
+  display: flex;
+}
+.versionButtonGroup-small .versionButtonsContainer .versionButton {
+  max-width: 189px;
+  margin-right: 10px;
 }
 
 .versionTitle {
@@ -761,36 +799,42 @@
   background-color: var(--white);
   height: 76px;
   width: 100%;
-  right: 58%;
+  right: 73%;
 }
 
-.whitebox-connect::after {
-  content: "";
-  background: url(../img/purchase//triangle.png) no-repeat;
+.connect-with-atlus::before {
+  background-image: url(../img/purchase/triangle.png);
+  background-repeat: no-repeat;
   background-size: 100%;
-  position: absolute;
-  height: 76px;
-  width: 22.2px;
-  top: 0;
+  content: "";
+  height: 75px;
   right: -22px;
-}
-.topbar-footer {
-  display: flex;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 22px;
 }
 
 .connect-with-atlus {
+  position: relative;
   background: var(--white);
-  margin: auto 0;
   font-weight: bold;
 }
 
 .connect {
-  margin-left: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: black;
   text-transform: uppercase;
+  font-size: 18px;
+  width: 100%;
 }
 
 .topbar-footer {
+  display: flex;
+  overflow: hidden;
   margin: 0 auto;
   max-width: 900px;
   position: relative;
@@ -799,8 +843,9 @@
 }
 
 .navbar-footer {
-  margin: auto 0;
-  padding-left: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__nav-bar {
@@ -817,13 +862,13 @@
 }
 
 .subscribe-btn {
-  margin: auto 0;
-  padding-left: 40px;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: none;
   background: none;
-  padding-top: 20px;
   cursor: inherit;
+  width: auto;
 }
 
 .subscribe-btn__content {
@@ -897,7 +942,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 10;
   display: none;
 }
 
@@ -914,7 +959,6 @@
 }
 
 .click-buy__launch-edition {
-  height: 650px;
   max-width: 800px;
   width: 100%;
   background: #313c46;
@@ -922,7 +966,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px 20px;
+  padding: 10px;
   display: none;
   z-index: 9999;
 }
@@ -953,8 +997,6 @@
 .click-buy__steelbook-edition img,
 .click-buy__launch-edition img {
   max-width: 95%;
-  position: absolute;
-  bottom: 2%;
 }
 
 .heading-click-buy {
@@ -982,7 +1024,6 @@
 }
 
 .click-buy__steelbook-edition {
-  height: 600px;
   max-width: 800px;
   width: 100%;
   background: #313c46;
@@ -996,7 +1037,6 @@
 }
 
 .click-buy__gift-with-purchase {
-  height: 600px;
   max-width: 800px;
   width: 100%;
   background: #313c46;
@@ -1004,13 +1044,12 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px 20px;
+  padding: 10px;
   display: none;
   z-index: 9999;
 }
 
 .click-buy__newsletter {
-  height: 510px;
   max-width: 600px;
   width: 100%;
   background: #313c46;
@@ -1018,7 +1057,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px 20px;
+  padding: 10px;
   display: none;
   z-index: 9999;
 }
@@ -1129,12 +1168,329 @@
   cursor: pointer;
 }
 
+.available-group.available-content #available-next__btn,
+.available-group.available-content #available-next__btn2 {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  cursor: pointer;
+  display: none;
+  z-index: 9;
+}
+
+.available-group.available-content #available-prev__btn,
+.available-group.available-content #available-prev__btn2 {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  cursor: pointer;
+  display: none;
+  z-index: 9;
+}
+
+.grid.wide.available-content-small-ipad {
+  position: relative;
+  display: none;
+}
+.grid.wide.available-content-small-ipad.row {
+  display: none;
+}
+.grid.wide.available-content-small-ipad.row
+  .base-game-container
+  .row
+  .base-game.start {
+  display: block;
+}
+
+#smallSreenElement-ipad .editionText {
+  display: none;
+}
+
+#smallSreenElement-ipad .versionButtonGroup {
+  display: block;
+  left: 2%;
+  position: relative;
+  width: 100%;
+}
+
+#smallSreenElement-ipad .versionButtonsContainer {
+  display: flex;
+}
+#smallSreenElement-ipad .versionButton {
+  max-width: 190px;
+  margin-right: 10px;
+}
+
+#smallSreenElement-ipad .titleGroup.grid.wide {
+  left: 0%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#smallSreenElement-ipad .gameCoverRetail.launchToHide {
+  margin-top: 20px;
+  width: 50%;
+}
+
+#smallContent-ipad .base-game-container {
+  margin: 25px auto;
+}
+#smallContent-ipad .base-game {
+  width: 30%;
+  max-width: 30%;
+}
+#smallContent-ipad .base-game.start,
+#smallContent-ipad .base-game.header,
+#smallContent-ipad .base-game.end {
+  width: 70%;
+  max-width: 70%;
+}
+
+.valiable-siema.grid.wide {
+  overflow: hidden;
+}
+
+.ipad-container,
+.ipad-container-2 {
+  padding: 0 8px;
+}
+.valiable-siema__slider,
+.valiable-siema__slider-playtation {
+  display: flex;
+}
+
+/* Media Query */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #available-next__btn {
+    display: block !important;
+  }
+  #available-prev__btn {
+    display: block !important;
+  }
+  .versionButtonGroup-small {
+    display: block;
+  }
+  .valiable-ipad-large {
+    display: none;
+  }
+  .valiable-ipad {
+    display: none;
+  }
+  .ipad-container {
+    padding: 0 8px;
+  }
+  .features-content.row {
+    flex-direction: column-reverse;
+  }
+  .nav-ul.c-7 {
+    transition: all 0.3s ease-out;
+    transform: translateY(-300%);
+    z-index: 9999;
+  }
+  .nav-logo__img {
+    display: none;
+  }
+  #logo-bar {
+    display: block;
+  }
+  .buynowButton.newletter__text,
+  .buy-oder {
+    padding: 4px 5px;
+    font-size: 11px;
+  }
+  .character {
+    display: block;
+  }
+  .character-img {
+    display: block;
+  }
+  .character-selector {
+    justify-content: center;
+    max-width: none;
+  }
+}
+@media (min-width: 748px) and (max-width: 1023px) {
+  .trailer-container.grid.wide {
+    max-width: 630px;
+  }
+}
+@media (max-width: 748px) {
+  .navbar-footer {
+  }
+  .trailer-container.grid.wide {
+    max-width: 500px;
+  }
+  .slider-videos {
+    padding: 0px 50px;
+    margin: 0px -7px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .media-title {
+    font-size: 64px;
+  }
+  .connect-with-atlus {
+    display: block;
+    height: 77px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .whitebox-connect {
+    width: 100%;
+    right: 0;
+  }
+  .topbar-footer {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+  }
+  .navbar-footer {
+    width: 100%;
+    display: flex;
+    margin: 11px auto;
+  }
+  .buynowButton.subscribe-btn {
+    display: block;
+  }
+  .versionButtonGroup-small {
+    display: block;
+  }
+  #available-next__btn {
+    display: block !important;
+  }
+  #available-prev__btn {
+    display: block !important;
+  }
+  .valiable-ipad-large {
+    display: none;
+  }
+  .valiable-ipad {
+    display: none;
+  }
+  .features-content.row {
+    flex-direction: column-reverse;
+  }
+  .nav-ul.c-7 {
+    transition: all 0.3s ease-out;
+    transform: translateY(-300%);
+    z-index: 9999;
+  }
+  .nav-logo__img {
+    display: none;
+  }
+  #logo-bar {
+    display: block;
+  }
+  .buynowButton.newletter__text,
+  .buy-oder {
+    padding: 0;
+    font-size: 11px;
+  }
+  .character {
+    display: block;
+  }
+  .character-img {
+    display: block;
+  }
+  .character-selector {
+    justify-content: center;
+    max-width: none;
+  }
+  .features-heading {
+    font-size: 82px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1311px) {
+  #available-next__btn,
+  #avaliable-prev__btn {
+    display: none;
+  }
+  .buy {
+    display: block;
+  }
+  .buy .buy-now {
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    margin: 10px 0;
+  }
+  .buy .watch-trailer {
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    display: flex;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1311px) {
+  #available-next__btn,
+  #avaliable-prev__btn {
+    display: none;
+  }
+  .valiable-ipad {
+    display: none;
+  }
+  .nav-ul.c-7 {
+    transition: all 0.3s ease-out;
+    transform: translateY(0%);
+    z-index: 9999;
+  }
+  .buy {
+    display: block;
+  }
+  .buy .buy-now {
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    margin: 10px 0;
+  }
+  .buy .watch-trailer {
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    display: flex;
+  }
   .trailer-container.grid.wide {
     max-width: 700px;
     width: 100%;
   }
   .slider-videos {
     margin: 0;
+  }
+  .features-heading {
+    font-size: 82px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #available-prev__btn2,
+  #available-next__btn2 {
+    display: block !important;
+  }
+
+  .flatform-playtation {
+    display: none;
+  }
+  .grid.wide.available-content2 {
+    display: none;
+  }
+  #largeContent {
+    display: none;
+  }
+  .grid.wide.available-content-small-ipad {
+    display: block;
+  }
+  .grid.wide.available-content-small-ipad.row {
+    display: block;
   }
 }
