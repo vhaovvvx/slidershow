@@ -922,7 +922,7 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.55);
   position: fixed;
   left: 0;
   top: 0;
@@ -1304,8 +1304,6 @@
   }
 }
 @media (max-width: 748px) {
-  .navbar-footer {
-  }
   .trailer-container.grid.wide {
     max-width: 500px;
   }
