@@ -43,7 +43,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
   </head>
   <body>
-    <div class="App">
+    <div class="app" id="app">
       <!-- Start Nav -->
       <div class="nav-top">
         <nav id="nav">
@@ -52,7 +52,7 @@
               <div class="nav-logo c-1">
                 <a href="#">
                   <img
-                    src="img/hero/p5s_logo.png"
+                    src="./img/hero/p5s_logo.png"
                     alt=""
                     class="nav-logo__img"
                   />
@@ -62,26 +62,26 @@
                 </div>
                 <div class="topdown-menu">
                   <a href="#media" class="topdown-link"
-                    ><p class="content-link">media</p></a
+                    ><p class="content-link close-element">media</p></a
                   >
                   <a href="#features" class="topdown-link"
-                    ><p class="content-link">features</p></a
+                    ><p class="content-link close-element">features</p></a
                   >
-                  <a href="#character" class="topdown-link"
-                    ><p class="content-link">characters</p></a
+                  <a href="#characters" class="topdown-link"
+                    ><p class="content-link close-element">characters</p></a
                   >
                 </div>
               </div>
               <div class="nav-ul c-7">
                 <ul class="ul-list">
-                  <a href="#media" class="navBtn">
-                    <li class="li-listitems">media</li>
+                  <a href="#media" class="navBtn" name="link-media">
+                    <li class="li-listitems"></li>
                   </a>
-                  <a href="#features" class="navBtn">
-                    <li class="li-listitems">features</li>
+                  <a href="#features" class="navBtn" name="link-features">
+                    <li class="li-listitems"></li>
                   </a>
-                  <a href="#character" class="navBtn">
-                    <li class="li-listitems">characters</li>
+                  <a href="#characters" class="navBtn" name="link-characters">
+                    <li class="li-listitems"></li>
                   </a>
                 </ul>
               </div>
@@ -144,29 +144,36 @@
         </nav>
       </div>
       <!-- End Nav -->
+      <!-- loading -->
+      <section class="loader" id="loading">
+        <div class="loadingImageGroup">
+          <img class="part1" src="./img/loader/bus.png" alt="" />
+          <img class="part2" src="./img/loader/wheel.png" alt="" />
+          <img class="part3" src="./img/loader/wheel.png" alt="" />
+        </div>
+      </section>
+      <!-- End loading -->
 
       <!-- Start Video Hero -->
       <div id="hero">
         <video class="hero-video" autoplay loop muted>
-          <source src="img/video/bgVideo.mp4" muted onerror="" />
-          <img src="img/hero/bg_video_desktop.png" class="hero-img" alt="" />
+          
+          <img  class="hero-img" alt="" />
         </video>
         <div class="img-esrb">
-          <img src="img/common/esrb_m.png" alt="Esrb" />
+          <img  alt="Esrb" />
         </div>
         <div class="hero-center">
           <div class="logo-center">
-            <img src="img/hero/p5s_logo.png" alt="" />
+            <img  alt="" />
           </div>
-          <div class="text-bottom">available now</div>
+          <div class="text-bottom"></div>
           <br />
           <div class="buy">
-            <a href="#"><div class="buy-now">buy now</div></a>
-            <a
-              href="https://www.youtube.com/watch?v=nihTJrochFI"
-              target="_blank"
-              ><div class="watch-trailer">watch the trailer</div></a
-            >
+            <a href="#avaliable"><div class="buy-now"></div></a>
+            <a target="_blank" class="watch-trailer-link"
+              ><div class="watch-trailer"></div
+            ></a>
           </div>
         </div>
       </div>
@@ -174,15 +181,9 @@
       <!-- Start Media-->
       <div id="media" class="media">
         <div class="inner-container grid-l wide">
-          <h2 class="media-title">STRIKE BACK!</h2>
+          <h2 class="media-title"></h2>
           <br />
-          <p class="media-main__text">
-            JOIN THE PHANTOM THIEVES AND STRIKE BACK AGAINST THE CORRUPTION
-            OVERTAKING CITIES ACROSS JAPAN. A SUMMER VACATION WITH CLOSE FRIENDS
-            TAKES A SUDDEN TURN AS A DISTORTED REALITY EMERGES; REVEAL THE TRUTH
-            AND REDEEM THE HEARTS OF THOSE IMPRISONED AT THE CENTER OF THE
-            CRISIS!
-          </p>
+          <p class="media-main__text"></p>
           <br />
           <div class="trailer-container grid wide">
             <img src="img/media/arrow_lt.png" alt="" id="trailer-prev__btn" />
@@ -341,78 +342,31 @@
       <div id="features" class="features">
         <div class="grid-l features-group">
           <div class="grid wide">
-            <h1 class="features-heading">features</h1>
+            <h1 class="features-heading"></h1>
 
             <div class="features-content row">
-              <div class="description-text l-3">
-                <p>
-                  Looking for some rest and relaxation, the Phantom Thieves set
-                  out to begin their road trip, until a ruthless Kyoto detective
-                  enlists their help investigating a series of strange cases
-                  occurring across Japan... otherwise, he'll arrest Joker. As
-                  they dig deeper into the mystery, they discover another realm
-                  where innocent people are being jailed and forced to forfeit
-                  their hearts' desires by the whims of its ruler. In typical
-                  Phantom Thieves style, they're going to use everything they've
-                  got to liberate the imprisoned, return their hearts, and
-                  strike back against the corruption in their most explosive
-                  fight yet!
-                </p>
+              <div class="description-text l-3">        
               </div>
-              <div class="features-img l-9"></div>
+              <img class="features-img l-9"></img>
             </div>
           </div>
 
           <div class="features-content-2 row">
             <div class="description-box l-4">
               <div class="small-feature-group bg-1">
-                <div>
-                  <h4>NEW STORY AND SIGHTS</h4>
-                  <p class="description-text-2">
-                    Persona 5 Strikers features a deep story campaign and
-                    thrilling combat that makes for a true Persona experience.
-                    Visit 6 different cities across Japan, cook tantalizing
-                    regional recipes, and lend a helping hand to those in need.
-                    Then, fight against the Shadows to uncover the source of the
-                    corruption within the Metaverse dungeons. Jump into the
-                    story whether you are a newcomer to the series or a longtime
-                    fan!
-                  </p>
-                  <div class="description-img ss1"></div>
+                <div class="render-features content1">
                 </div>
               </div>
             </div>
             <div class="description-box l-4">
               <div class="small-feature-group bg-2">
-                <div>
-                  <h4>FIGHT WITH STYLE</h4>
-                  <p class="description-text-2">
-                    Attack enemies in the hybrid battle system that fuses
-                    explosive action-combat with pause-and-plan sequences to
-                    decide your next strategic move. Gain an advantage over your
-                    enemies by ambushing them, striking their elemental
-                    weaknesses to knock them down, and deal the finishing blow
-                    with an All-Out Attack!
-                  </p>
-                  <div class="description-img ss2"></div>
+                <div class="render-features content2">
                 </div>
               </div>
             </div>
             <div class="description-box l-4">
               <div class="small-feature-group bg-3">
-                <div>
-                  <h4>HARNESS THE PHANTOM THIEVES' FULL STRENGTH</h4>
-                  <p class="description-text-2">
-                    All Phantom Thieves are fully playable, so utilize each
-                    character's specific skills and summon their Personas for
-                    smooth, elegant combat! Strengthen their skills and
-                    abilities and fight with your own style. Each character has
-                    their own unique suite of wide-ranging, flashy spells and
-                    magic to clear out big hordes. Have you ever wanted to fight
-                    as a giant cat bus? Well, look no further. Persona 5
-                    Strikers is purrfect for you.
-                  </p>
-                  <div class="description-img ss3"></div>
+                <div class="render-features content3">
                 </div>
               </div>
             </div>
@@ -422,12 +376,11 @@
       <!-- End features -->
       <!-- Start Characters -->
 
-      <div class="character" id="character">
+      <div class="character" id="characters">
         <div class="grid-l character-group">
           <div class="character grid wide">
             <div class="character-heading l-6">
-              <h1 class="features-heading">character</h1>
-
+              <h1 class="features-heading">characters</h1>
               <ul class="character-selector row" id="activeElements">
                 <li
                   class="character-persona characterActive"
@@ -497,21 +450,20 @@
       <div class="available-now" id="avaliable">
         <div class="grid-l">
           <div class="available-group">
-            <h1 class="available-heading">available now</h1>
+            <h1 class="available-heading"></h1>
             <div class="choose-flatform">
-              <h2 class="heading-flatform">choose a platform</h2>
+              <h2 class="heading-flatform"></h2>
               <div class="choose-box-contain">
-                <div class="choose-box selected">Nintendo Switch™</div>
-                <div class="choose-box">PlayStation®4</div>
-                <div class="choose-box" id="steam">steam</div>
+                <div class="choose-box nintendo selected"></div>
+                <div class="choose-box ps4"></div>
+                <div class="choose-box steam" id="steam"></div>
               </div>
             </div>
             <div class="versionButtonGroup-small">
-              <h3 class="versionTitle">Select A Version</h3>
+              <h3 class="versionTitle"></h3>
               <div class="versionButtonsContainer">
-                <h3 class="versionButton">retail</h3>
+                <h3 class="versionButton retailText"></h3>
                 <h3 class="versionButton digitalText" id="digital-small">
-                  digital
                 </h3>
               </div>
             </div>
@@ -527,41 +479,40 @@
                   <h3 class="editionTitle">Select An Edition</h3>
                 </div>
                 <section class="versionButtonGroup">
-                  <h3 class="versionTitle">Select A Version</h3>
+                  <h3 class="versionTitle"></h3>
                   <div class="versionButtonsContainer">
-                    <h3 class="versionButton VersionActive">retail</h3>
+                    <h3 class="versionButton retailText VersionActive"></h3>
                     <h3 class="versionButton digitalText" id="digital">
-                      digital
                     </h3>
                   </div>
                 </section>
                 <div class="titleGroup grid wide">
                   <div class="gameCoverRetail launchToHide">
-                    <img src="img/purchase/p5s_sq.jpg" alt="" />
-                    <p class="launch-header">launch edition</p>
+                    <img  alt="" />
+                    <p class="launch-header edition"></p>
                     <label
                       class="buynowButton launchEdition"
                       for="checked-buy-now"
                       id="launch-edition-buy"
-                      >buy now</label
+                      ></label
                     >
                   </div>
                   <div class="gameCoverRetail steelToHide">
-                    <img src="img/purchase/steelbook.jpg" alt="" />
-                    <p class="launch-header">steelbook edition</p>
+                    <img  alt="" />
+                    <p class="launch-header steelbook"></p>
                     <label
                       class="buynowButton steelbookEdition"
                       id="steelbook-edition-buy"
-                      >buy now</label
+                      ></label
                     >
                   </div>
                   <div class="gameCoverRetail gwpToHide">
-                    <img src="img/purchase/gwp.jpg" alt="" />
-                    <p class="launch-header">gift with purchase</p>
+                    <img  alt="" />
+                    <p class="launch-header gwp"></p>
                     <label
                       class="buynowButton giftWithPurchase"
                       id="gift-with-purchase"
-                      >buy now</label
+                      ></label
                     >
                   </div>
                 </div>
@@ -570,136 +521,116 @@
                 <div class="base-game-container">
                   <div class="row">
                     <div
-                      class="base-game start"
-                      style="width: 35%; max-width: 35%"
+                      class="base-game heading start"
                     >
                       <h3 class="base-game-header">base game</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game gwpToHide"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">soundtrack</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game gwpToHide"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">DIGITAL ART BOOK</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game gwpToHide"
-                      style="max-width: 21.66667%; width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">BEHIND-THE-SCENES VIDEO</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game gwpToHide"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">STEELBOOK</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     ></div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game gwpToHide"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     ></div>
                   </div>
                   <div class="row">
                     <div
-                      class="base-game end"
-                      style="width: 35%; max-width: 35%"
+                      class="base-game heading end"
                     >
                       <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     ></div>
                     <div
                       class="base-game"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     ></div>
                     <div
                       class="base-game gwpToHide"
-                      style="width: 21.66667%; max-width: 21.66667%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
@@ -714,37 +645,36 @@
                 id="smallSreenElement"
               >
                 <div class="editionText">
-                  <h3 class="editionTitle">Select An Edition</h3>
+                  <h3 class="editionTitle"></h3>
                 </div>
                 <section class="versionButtonGroup">
-                  <h3 class="versionTitle">Select A Version</h3>
+                  <h3 class="versionTitle"></h3>
                   <div class="versionButtonsContainer">
                     <h3 class="versionButton VersionActive digitalText">
-                      digital
                     </h3>
                   </div>
                 </section>
                 <div class="titleGroup grid wide">
-                  <div class="gameCoverRetail launchToHide">
+                  <div class="gameCoverRetail launchToHide deluxe">
                     <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
-                    <p class="launch-header">launch edition</p>
+                    <p class="launch-header editon"></p>
 
                     <a
                       href="https://store.steampowered.com/app/1382330"
                       target="_blank"
                     >
-                      <button class="buynowButton">buy now</button>
+                      <label class="buynowButton"></label>
                     </a>
                   </div>
-                  <div class="gameCoverRetail steelToHide">
+                  <div class="gameCoverRetail launchToHide standard">
                     <img src="img/purchase/p5s_sq_standard.jpg" alt="" />
-                    <p class="launch-header">steelbook edition</p>
+                    <p class="launch-header steelbook"></p>
 
                     <a
                       href="https://store.steampowered.com/app/1382330"
                       target="_blank"
                     >
-                      <button class="buynowButton">buy now</button>
+                      <label class="buynowButton"></label>
                     </a>
                   </div>
                 </div>
@@ -756,103 +686,90 @@
                 <div class="base-game-container">
                   <div class="row">
                     <div
-                      class="base-game start"
-                      style="width: 35%; max-width: 35%"
+                      class="base-game heading start"
                     >
                       <h3 class="base-game-header">base game</h3>
                     </div>
-                    <div class="base-game" style="width: 32.5%">
+                    <div class="base-game" >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">soundtrack</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">DIGITAL ART BOOK</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">BEHIND-THE-SCENES VIDEO</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="base-game" style="width: 35%; max-width: 35%">
+                    <div class="base-game heading" >
                       <h3 class="base-game-header">STEELBOOK</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     ></div>
                   </div>
                   <div class="row">
                     <div
-                      class="base-game end"
-                      style="width: 35%; max-width: 35%"
+                      class="base-game heading end"
                     >
                       <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     >
                       <img src="img/purchase/checkmark.png" alt="" />
                     </div>
                     <div
                       class="base-game"
-                      style="width: 32.5%; max-width: 32.5%"
                     ></div>
                   </div>
                 </div>
@@ -883,13 +800,12 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
-                          <img src="img/purchase/gwp.jpg" alt="" />
-                          <p class="launch-header">gift with purchase</p>
+                        <div class="gameCoverRetail gwpToHide">
+                          <img alt="" />
+                          <p class="launch-header gwp"></p>
 
-                          <button class="buynowButton" id="gift-with-purchase2">
-                            buy now
-                          </button>
+                          <label class="buynowButton" id="gift-with-purchase2">
+                          </label>
                         </div>
                       </div>
                     </section>
@@ -899,7 +815,7 @@
                     >
                       <div class="base-game-container">
                         <div class="row">
-                          <div class="base-game start">
+                          <div class="base-game header start">
                             <h3 class="base-game-header">base game</h3>
                           </div>
                           <div class="base-game">
@@ -960,12 +876,11 @@
 
                       <div class="titleGroup grid wide">
                         <div class="gameCoverRetail launchToHide">
-                          <img src="./img/purchase/p5s_sq.jpg" alt="" />
-                          <p class="launch-header">launch edition</p>
+                          <img alt="" />
+                          <p class="launch-header edition"></p>
 
-                          <button class="buynowButton" id="launch-edition-buy2">
-                            buy now
-                          </button>
+                          <label class="buynowButton" id="launch-edition-buy2">
+                          </label>
                         </div>
                       </div>
                     </section>
@@ -1033,16 +948,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
-                          <img src="img/purchase/steelbook.jpg" alt="" />
-                          <p class="launch-header">steelbook edition</p>
+                        <div class="gameCoverRetail steelToHide">
+                          <img  alt="" />
+                          <p class="launch-header steelbook"></p>
 
-                          <button
+                          <label
                             class="buynowButton"
                             id="steelbook-edition-buy2"
                           >
-                            buy now
-                          </button>
+                          </label>
                         </div>
                       </div>
                     </section>
@@ -1112,13 +1026,12 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
-                          <img src="img/purchase/gwp.jpg" alt="" />
-                          <p class="launch-header">gift with purchase</p>
+                        <div class="gameCoverRetail gwpToHide">
+                          <img  alt="" />
+                          <p class="launch-header gwp"></p>
 
-                          <button class="buynowButton" id="gift-with-purchase2">
-                            buy now
-                          </button>
+                          <label class="buynowButton" id="gift-with-purchase2">
+                          </label>
                         </div>
                       </div>
                     </section>
@@ -1174,83 +1087,6 @@
                           <div class="base-game">
                             <img src="img/purchase/checkmark.png" alt="" />
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="ipad-container-2 c-12">
-                    <section
-                      class="grid wide available-content-small-ipad"
-                      id="smallSreenElement-ipad"
-                    >
-                      <div class="editionText">
-                        <h3 class="editionTitle">Select An Edition</h3>
-                      </div>
-
-                      <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
-                          <img src="img/purchase/p5s_sq.jpg" alt="" />
-                          <p class="launch-header">launch edition</p>
-
-                          <a
-                            href="https://store.steampowered.com/app/1382330"
-                            target="_blank"
-                          >
-                            <button class="buynowButton">buy now</button>
-                          </a>
-                        </div>
-                      </div>
-                    </section>
-                    <div
-                      class="grid wide available-content-small-ipad row"
-                      id="smallContent-ipad"
-                    >
-                      <div class="base-game-container">
-                        <div class="row">
-                          <div class="base-game start">
-                            <h3 class="base-game-header">base game</h3>
-                          </div>
-                          <div class="base-game">
-                            <img src="img/purchase/checkmark.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="base-game header">
-                            <h3 class="base-game-header">soundtrack</h3>
-                          </div>
-                          <div class="base-game">
-                            <img src="img/purchase/checkmark.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="base-game header">
-                            <h3 class="base-game-header">DIGITAL ART BOOK</h3>
-                          </div>
-                          <div class="base-game">
-                            <img src="img/purchase/checkmark.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="base-game header">
-                            <h3 class="base-game-header">
-                              BEHIND-THE-SCENES VIDEO
-                            </h3>
-                          </div>
-                          <div class="base-game">
-                            <img src="img/purchase/checkmark.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="base-game header">
-                            <h3 class="base-game-header">steell book</h3>
-                          </div>
-                          <div class="base-game"></div>
-                        </div>
-                        <div class="row">
-                          <div class="base-game end">
-                            <h3 class="base-game-header">gift with purchase</h3>
-                          </div>
-                          <div class="base-game"></div>
                         </div>
                       </div>
                     </div>
@@ -1266,14 +1102,14 @@
 
                       <div class="titleGroup grid wide">
                         <div class="gameCoverRetail launchToHide">
-                          <img src="img/purchase/p5s_sq.jpg" alt="" />
-                          <p class="launch-header">launch edition</p>
+                          <img  alt="" />
+                          <p class="launch-header edition"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1360,15 +1196,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
+                        <div class="gameCoverRetail launchToHide standard">
                           <img src="img/purchase/p5s_sq_standard.jpg" alt="" />
-                          <p class="launch-header">digital standard</p>
+                          <p class="launch-header digitalStandard"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1439,15 +1275,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
+                        <div class="gameCoverRetail launchToHide deluxe">
                           <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
-                          <p class="launch-header">launch edition</p>
+                          <p class="launch-header edition"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1522,15 +1358,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
+                        <div class="gameCoverRetail launchToHide standard">
                           <img src="img/purchase/p5s_sq_standard.jpg" alt="" />
-                          <p class="launch-header">digital standard</p>
+                          <p class="launch-header digitalStandard"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1601,15 +1437,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
+                        <div class="gameCoverRetail launchToHide deluxe">
                           <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
-                          <p class="launch-header">launch edition</p>
+                          <p class="launch-header edition"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1674,7 +1510,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ipad-container c-12" id="firstClone2">
+                  <div class="ipad-container c-12">
                     <section
                       class="grid wide available-content-small-ipad"
                       id="smallSreenElement-ipad"
@@ -1684,15 +1520,15 @@
                       </div>
 
                       <div class="titleGroup grid wide">
-                        <div class="gameCoverRetail launchToHide">
+                        <div class="gameCoverRetail launchToHide standard">
                           <img src="img/purchase/p5s_sq_standard.jpg" alt="" />
-                          <p class="launch-header">digital standard</p>
+                          <p class="launch-header digitalStandard"></p>
 
                           <a
                             href="https://store.steampowered.com/app/1382330"
                             target="_blank"
                           >
-                            <button class="buynowButton">buy now</button>
+                            <label class="buynowButton"></label>
                           </a>
                         </div>
                       </div>
@@ -1753,6 +1589,89 @@
                       </div>
                     </div>
                   </div>
+                  <div class="ipad-container c-12" id="firstClone2">
+                    <section
+                      class="grid wide available-content-small-ipad"
+                      id="smallSreenElement-ipad"
+                    >
+                      <div class="editionText">
+                        <h3 class="editionTitle">Select An Edition</h3>
+                      </div>
+
+                      <div class="titleGroup grid wide">
+                        <div class="gameCoverRetail launchToHide deluxe">
+                          <img src="img/purchase/p5s_sq_deluxe.jpg" alt="" />
+                          <p class="launch-header edition"></p>
+
+                          <a
+                            href="https://store.steampowered.com/app/1382330"
+                            target="_blank"
+                          >
+                            <label class="buynowButton"></label>
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                    <div
+                      class="grid wide available-content-small-ipad row"
+                      id="smallContent-ipad"
+                    >
+                      <div class="base-game-container">
+                        <div class="row">
+                          <div class="base-game start">
+                            <h3 class="base-game-header">base game</h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="base-game header">
+                            <h3 class="base-game-header">soundtrack</h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="base-game header">
+                            <h3 class="base-game-header">DIGITAL ART BOOK</h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="base-game header">
+                            <h3 class="base-game-header">
+                              BEHIND-THE-SCENES VIDEO
+                            </h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="base-game header">
+                            <h3 class="base-game-header">PERSONA LEGACY BGM</h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="base-game end">
+                            <h3 class="base-game-header">
+                              ALL-OUT ATTACK PACK
+                            </h3>
+                          </div>
+                          <div class="base-game">
+                            <img src="img/purchase/checkmark.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1764,80 +1683,77 @@
               <div class="base-game-container">
                 <div class="row">
                   <div
-                    class="base-game start"
-                    style="width: 35%; max-width: 35%"
+                    class="base-game heading start"
                   >
                     <h3 class="base-game-header">base game</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="base-game" style="width: 35%; max-width: 35%">
+                  <div class="base-game heading" >
                     <h3 class="base-game-header">soundtrack</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="base-game" style="width: 35%; max-width: 35%">
+                  <div class="base-game heading" >
                     <h3 class="base-game-header">DIGITAL ART BOOK</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="base-game" style="width: 35%; max-width: 35%">
+                  <div class="base-game heading" >
                     <h3 class="base-game-header">BEHIND-THE-SCENES VIDEO</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="base-game" style="width: 35%; max-width: 35%">
+                  <div class="base-game heading" >
                     <h3 class="base-game-header">STEELBOOK</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
                     class="base-game"
-                    style="width: 32.5%; max-width: 32.5%"
                   ></div>
                 </div>
                 <div class="row">
-                  <div class="base-game end" style="width: 35%; max-width: 35%">
+                  <div class="base-game heading end" >
                     <h3 class="base-game-header">GIFT WITH PURCHASE</h3>
                   </div>
-                  <div class="base-game" style="width: 32.5%; max-width: 32.5%">
+                  <div class="base-game" >
                     <img src="img/purchase/checkmark.png" alt="" />
                   </div>
                   <div
                     class="base-game"
-                    style="width: 32.5%; max-width: 32.5%"
                   ></div>
                 </div>
               </div>
             </div>
             <div class="overlay" for="checked-buy-now"></div>
             <div class="click-buy__launch-edition">
-              <label class="close" for="checked-buy-now">X</label>
+              <label class="close close-element" for="checked-buy-now">X</label>
               <h3 class="heading-click-buy">launch edition</h3>
               <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
               <div class="link-buy">
@@ -1860,7 +1776,7 @@
               <img src="img/purchase/glamshot_us.jpg" alt="glamshot" />
             </div>
             <div class="click-buy__steelbook-edition">
-              <div class="close">X</div>
+              <div class="close close-element">X</div>
               <h3 class="heading-click-buy">STEELBOOK EDITION</h3>
               <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
               <div class="link-buy">
@@ -1874,7 +1790,7 @@
               <img src="img/purchase/steelbook_us.jpg" alt="glamshot" />
             </div>
             <div class="click-buy__gift-with-purchase">
-              <div class="close">X</div>
+              <div class="close close-element">X</div>
               <h3 class="heading-click-buy">giftWithPurchase</h3>
               <h3 class="heading-click-buy-small">CHOOSE A RETAILER</h3>
               <div class="link-buy">
@@ -1888,7 +1804,7 @@
               <img src="img/purchase/gwp_us.jpg" alt="glamshot" />
             </div>
             <div class="click-buy__newsletter">
-              <div class="close">X</div>
+              <div class="close close-element">X</div>
               <div class="newsletter-container">
                 <div class="signup-logo">
                   <img src="img/hero/p5s_logo.png" alt="logop5s" />
@@ -1955,32 +1871,19 @@
           </div>
           <div class="navbar-footer l-4 m-4">
             <ul class="footer__nav-bar">
-              <li class="nav-items">
-                <a href="https://www.facebook.com/AtlusWest/" target="_blank">
-                  <img src="img/footer/facebook_icon.png" alt="facebook" />
-                </a>
+              <li class="nav-items facebook">
               </li>
-              <li class="nav-items">
-                <a href="https://twitter.com/atlus_west" target="_blank"
-                  ><img src="img/footer/twitter_icon.png" alt="twitter_icon"
-                /></a>
+              <li class="nav-items twitter">
+                
               </li>
-              <li class="nav-items">
-                <a href="https://www.youtube.com/c/atlus" target="_blank"
-                  ><img src="img/footer/youtube_icon.png" alt="youtube_icon"
-                /></a>
+              <li class="nav-items youtube">
+                
               </li>
-              <li class="nav-items">
-                <a href="https://www.twitch.tv/atlus_west" target="_blank"
-                  ><img src="img/footer/twitch_icon.png" alt="twitch_icon"
-                /></a>
+              <li class="nav-items twitch">
+                
               </li>
-              <li class="nav-items">
-                <a href="https://www.instagram.com/atlus_west/" target="_blank"
-                  ><img
-                    src="img/footer/instagram_icon.png"
-                    alt="instagram_icon"
-                /></a>
+              <li class="nav-items instagram">
+               
               </li>
             </ul>
           </div>
@@ -1991,42 +1894,26 @@
           </div>
         </div>
         <div class="logo-group grid wide row">
-          <img src="img/footer/atlus_logo.png" alt="" class="atlus-logo" />
-          <img src="img/footer/P-Studio.png" alt="" class="p-studio" />
+          <img   class="atlus-logo" />
+          <img   class="p-studio" />
           <img
-            src="img/footer/platform_switch.png"
-            alt=""
             class="nintendo-switch"
           />
-          <img src="img/footer/ps4.png" alt="" class="ps4" />
-          <img src="img/footer/steam.png" alt="" class="steam" />
-          <a href="https://www.esrb.org/EPCConfirm/896/" target="_blank">
-            <img src="img/footer/esrb_privacycert.png" alt="" class="esrb" />
-          </a>
-          <img src="img/footer/esrb_m.png" alt="" class="esrb-2" />
+          <img  class="ps4" />
+          <img  class="steam" />
+          <div class="esrb-3"></div>
+          <img  alt="" class="esrb-2" />
         </div>
         <p class="footer-copy">
-          ©ATLUS. ©SEGA. / ©KOEI TECMO GAMES. All rights reserved.<br />
-          ATLUS and SEGA are registered in the U.S. Patent and Trademark Office.
-          ATLUS, the ATLUS logo, PERSONA and PERSONA 5 STRIKERS are either
-          registered trademarks or trademarks of ATLUS Co., Ltd. or its
-          affiliates. SEGA is either a registered trademark or a trademark of
-          SEGA CORPORATION. All other trademarks, logos and copyrights are
-          property of their respective owners.<br />
-          The ESRB rating icons are registered trademarks of the Entertainment
-          Software Association.
+          
         </p>
         <div class="policy-group">
-          <a href="https://www.sega.com/cookiepolicy" target="_blank"
-            >COOKIE POLICY</a
-          >
-          <a href="https://www.sega.com/Privacy" target="_blank"
-            >PRIVACY POLICY</a
-          >
+          
         </div>
       </div>
       <!-- End Footer -->
       <script src="./js/app2.js"></script>
+      <script src="./js/render.js"></script>
       <script src="./js/green.js"></script>
     </div>
   </body>

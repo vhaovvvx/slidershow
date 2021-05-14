@@ -12,14 +12,19 @@ const prevBtn = document.querySelector("#trailer-prev__btn");
 const nextBtn = document.querySelector("#trailer-next__btn");
 const prevBtn2 = document.querySelector("#available-prev__btn");
 const nextBtn2 = document.querySelector("#available-next__btn");
+const prevBtn3 = document.querySelector("#available-prev__btn2");
+const nextBtn3 = document.querySelector("#available-next__btn2");
+
 availableSlide.style.transform = "translateX(" + -100 + "%)";
 availableSlide2.style.transform = "translateX(" + -100 + "%)";
 
 //counter
 var counter = 1;
+var counter2 = 1;
+var counter3 = 1;
+
 const widthhhh = carouselSlide2.clientWidth / 2;
 //slidershow
-
 nextBtn.addEventListener("click", () => {
   let widthhh = carouselSlide2.clientWidth;
   if (counter >= carouselVideos.length - 1) {
@@ -33,7 +38,7 @@ nextBtn.addEventListener("click", () => {
   } else {
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 10) * counter + "px)";
+      "translateX(" + -(widthhh - 20) * counter + "px)";
     counter++;
   }
 });
@@ -54,94 +59,95 @@ prevBtn.addEventListener("click", () => {
       "translateX(" + -(widthhh - 20) * counter + "px)";
   }
 });
-const prevBtn3 = document.querySelector("#available-prev__btn2");
-const nextBtn3 = document.querySelector("#available-next__btn2");
 
 nextBtn3.addEventListener("click", () => {
-  if (counter >= availableSlider2.length - 1) {
+  if (counter3 >= availableSlider2.length - 1) {
     return;
   }
+  counter3++;
   availableSlide2.style.transition = "transform 0.4s ease-in-out";
-
-  availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
-  counter++;
+  availableSlide2.style.transform = "translateX(" + -100 * counter3 + "%)";
 });
 prevBtn3.addEventListener("click", () => {
-  if (counter <= 0) {
+  if (counter3 <= 0) {
     return;
   }
-  counter--;
+  counter3--;
   availableSlide2.style.transition = "transform 0.4s ease-in-out";
-  availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+  availableSlide2.style.transform = "translateX(" + -100 * counter3 + "%)";
 });
 
 availableSlide2.addEventListener("transitionend", () => {
-  if (availableSlider2[counter].id === "lastClone3") {
+  if (availableSlider2[counter3].id === "lastClone3") {
     availableSlide2.style.transition = "none";
-    counter = availableSlider2.length - 3;
-    availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+    counter3 = availableSlider2.length - 2;
+    availableSlide2.style.transform = "translateX(" + -100 * counter3 + "%)";
   }
 });
 availableSlide2.addEventListener("transitionend", () => {
-  if (availableSlider2[counter].id === "firstClone3") {
+  if (availableSlider2[counter3].id === "firstClone3") {
     availableSlide2.style.transition = "none";
-    counter = availableSlider2.length - counter;
-    availableSlide2.style.transform = "translateX(" + -100 * counter + "%)";
+    counter3 = availableSlider2.length - counter3;
+    availableSlide2.style.transform = "translateX(" + -100 * counter3 + "%)";
   }
 });
 //small container slider available start
 nextBtn2.addEventListener("click", () => {
-  console.log(counter);
-  if (counter >= availableSlider.length - 1) {
+  if (counter2 >= availableSlider.length - 1) {
     return;
   }
+  counter2++;
   availableSlide.style.transition = "transform 0.4s ease-in-out";
-  availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
-  counter++;
+  availableSlide.style.transform = "translateX(" + -100 * counter2 + "%)";
 });
 prevBtn2.addEventListener("click", () => {
-  if (counter <= 0) {
+  if (counter2 <= 0) {
     return;
   }
-  counter--;
-
+  counter2--;
   availableSlide.style.transition = "transform 0.4s ease-in-out";
-  availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+  availableSlide.style.transform = "translateX(" + -100 * counter2 + "%)";
 });
 
 availableSlide.addEventListener("transitionend", () => {
-  if (availableSlider[counter].id === "lastClone2") {
+  if (availableSlider[counter2].id === "lastClone2") {
     availableSlide.style.transition = "none";
-    counter = availableSlider.length - 3;
-    availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+    counter2 = availableSlider.length - 3;
+    availableSlide.style.transform = "translateX(" + -100 * counter2 + "%)";
   }
 });
 availableSlide.addEventListener("transitionend", () => {
-  if (availableSlider[counter].id === "firstClone2") {
+  if (availableSlider[counter2].id === "firstClone2") {
     availableSlide.style.transition = "none";
-    counter = availableSlider.length - counter;
-    availableSlide.style.transform = "translateX(" + -100 * counter + "%)";
+    counter2 = availableSlider.length - counter2;
+    availableSlide.style.transform = "translateX(" + -100 * counter2 + "%)";
   }
 });
 //small container slider available end
-
 carouselSlide.addEventListener("transitionend", () => {
-  if (carouselVideos[counter].id == "lastClone") {
+  if (carouselVideos[counter2].id == "lastClone") {
     let widthhh = carouselSlide2.clientWidth;
     carouselSlide.style.transition = "none";
-    counter = carouselVideos.length - 5;
+    counter2 = carouselVideos.length - 5;
     carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 20) * counter + "px)";
+      "translateX(" + -(widthhh - 20) * counter2 + "px)";
   }
 });
 
 carouselSlide.addEventListener("transitionend", () => {
   if (carouselVideos[counter].id === "firstClone") {
     let widthhh = carouselSlide2.clientWidth;
-    carouselSlide.style.transition = "none";
-    counter = carouselVideos.length - counter;
-    carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 20) * counter + "px)";
+    if (widthhh > 700) {
+      carouselSlide.style.transition = "none";
+      counter = carouselVideos.length - counter;
+      carouselSlide.style.transform =
+        "translateX(" + (-(widthhh - 20) / 2) * counter + "px)";
+    } else {
+      carouselSlide.style.transition = "none";
+      counter = carouselVideos.length - counter;
+      carouselSlide.style.transform =
+        "translateX(" + -(widthhh - 20) * counter + "px)";
+    }
   }
 });
 
@@ -172,8 +178,6 @@ clickDropDown.addEventListener("click", function (e) {
 });
 //event target available now
 //purchar
-const width222 = document.getElementById("avaliable");
-const width333 = document.getElementsByClassName("available-content");
 const containerPlaytation = document.getElementById("valiable-ipad-playtation");
 function openSmallContent() {
   versionBtn[0].style.display = "none";
@@ -314,12 +318,13 @@ elementClickOverlay.forEach((Elmt) => {
     }
   });
 });
-const close = [...document.getElementsByClassName("close")];
+const close = [...document.getElementsByClassName("close-element")];
 close.forEach((closeElm) => {
   closeElm.addEventListener("click", function (e) {
     e.preventDefault();
-    const closeBtn = e.target.className == "close";
+    const closeBtn = e.target.classList.contains("close-element");
     if (closeBtn) {
+      topdownMenuBtn[0].style.removeProperty("transform");
       overlay[0].style.display = "none";
       lauchEditionClickOverlay[0].style.display = "none";
       steelbookEditionClickOverlay[0].style.display = "none";
@@ -337,63 +342,3 @@ overlay[0].addEventListener("click", function () {
   topdownMenuBtn[0].style.transform = "translateY(-200%)";
 });
 //ActiveElement
-var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
-const imgElement = document.getElementsByClassName("character-img");
-const charactersRender = document.getElementById("render-character");
-const charactersRenderImg = document.getElementById("img-append");
-let charactersHTML = "";
-function getCharacter() {
-  return fetch(charactersApi).then((res) => res.json());
-}
-function start() {
-  clickHandler();
-}
-start();
-function clickHandler() {
-  getCharacter()
-    .then((characters) => {
-      characters[0].en.forEach((character) => {
-        let joker = character.joker[0];
-        charactersHTML += `
-          <p class="character-info-heading">
-            ${joker.name}
-          <p>
-          <p class="character-info"> ${joker.desc}
-          </p>
-          `;
-        charactersRender.innerHTML = charactersHTML;
-        let charElements = [
-          ...document.getElementsByClassName("character-persona"),
-        ];
-        charElements.forEach((charEl) => {
-          charEl.addEventListener("click", function (e) {
-            let current = document.getElementsByClassName("characterActive");
-            current[0].className = current[0].className.replace(
-              " characterActive",
-              ""
-            );
-            this.classList += " characterActive";
-            characters[0].en.forEach((char) => {
-              let selectedCharacterName = charEl.getAttribute("name");
-              let a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
-              let c = a[0];
-              charactersRender.innerHTML = `
-              <p class="character-info-heading">
-                  ${c.name}
-              <p>
-              <p class="character-info"> ${c.desc}
-              </p>
-                `;
-              charactersRenderImg.innerHTML = `
-              <img src=${c.image}>
-              `;
-            });
-          });
-        });
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-    .finally();
-}

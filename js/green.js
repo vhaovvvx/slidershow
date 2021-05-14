@@ -1,4 +1,5 @@
 // Detect if a link's href goes to the current page
+
 function getSamePageAnchor(link) {
   if (
     link.protocol !== window.location.protocol ||
@@ -30,3 +31,9 @@ document.querySelectorAll("a[href]").forEach((a) => {
 
 // Scroll to the element in the URL's hash on load
 scrollToHash(window.location.hash);
+
+//load
+//
+window.onload = function loadBus() {
+  document.getElementById("loading").style.display = "none";
+};

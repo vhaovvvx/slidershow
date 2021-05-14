@@ -2,12 +2,10 @@
   font-family: "Roboto" !important;
   color: var(--white);
 }
-
 .nav-top {
   height: 0;
   position: relative;
 }
-
 .nav-nav {
   height: 74px;
   width: 100%;
@@ -151,9 +149,9 @@
   cursor: pointer;
 }
 
+/* section Hero */
 #hero {
   overflow: hidden;
-
   position: relative;
   width: 100%;
   height: 870px;
@@ -242,7 +240,9 @@
   height: 100%;
   z-index: 1;
 }
+/* end Header */
 
+/* Media */
 #media {
   position: relative;
   width: 100%;
@@ -349,7 +349,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+/* end media */
 
+/* features */
 #features {
   position: relative;
 }
@@ -365,7 +367,7 @@
   max-width: 1980px;
   margin: 0 auto;
   position: relative;
-  width: 95%;
+  width: 96%;
 }
 
 .features-heading {
@@ -391,10 +393,7 @@
 
 .features-img {
   border: 3px solid var(--white);
-  height: 490px;
-  background: url(../img/features/mainimage.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
+  max-height: 580px;
   cursor: pointer;
   width: 100%;
 }
@@ -419,6 +418,7 @@
 .small-feature-group h4 {
   font-size: 19px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .small-feature-group p {
   font-size: 14px;
@@ -432,22 +432,6 @@
   height: 200px;
   width: 90%;
   bottom: 4%;
-}
-
-.description-img.ss1 {
-  background: url(../img/features/ss1.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.description-img.ss2 {
-  background: url(../img/features/ss2.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.description-img.ss3 {
-  background: url(../img/features/ss3.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .small-feature-group {
@@ -469,7 +453,10 @@
   background: url(../img/features/red_bg3.png) no-repeat;
 }
 
-#character {
+/* end features */
+
+/* characters */
+#characters {
   position: relative;
   width: 100%;
   background: url(../img/characters/characters_bg.jpg) no-repeat;
@@ -479,6 +466,9 @@
 
 .character {
   display: flex;
+}
+.character-heading .features-heading {
+  font-size: 90px;
 }
 
 .character-selector {
@@ -514,15 +504,18 @@
   display: block;
   align-items: center;
   text-align: center;
-  margin-top: 80px;
+  margin: auto 0;
 }
 
 .character-img img {
+  animation: 0.5s linear fadeIn;
   max-width: 500px;
   width: 100%;
   box-shadow: 5px 5px 0 #000;
 }
+/* end characters */
 
+/* avaliable now */
 #avaliable {
   background: url(../img/purchase/purchase_bg.jpg) no-repeat;
   background-position: center;
@@ -600,10 +593,6 @@
   margin: 50px auto;
 }
 
-#img-append > img {
-  transition: fadeIn 2s;
-}
-
 .grid.wide.available-content2 {
   position: relative;
   max-width: 1070px;
@@ -627,6 +616,11 @@
   width: 30%;
   bottom: 0;
   left: 2%;
+}
+
+.base-game.heading {
+  width: 35%;
+  max-width: 35%;
 }
 
 .editionTitle {
@@ -712,6 +706,7 @@
 }
 
 .buynowButton {
+  font-size: 13px;
   background: var(--red);
   max-width: 135px;
   width: 100%;
@@ -741,8 +736,10 @@
 }
 
 .base-game {
+  width: 21.66667%;
+  max-width: 21.66667%;
   padding: 10px 0;
-  background-color: yellow;
+  background-color: var(--yellow);
   color: #000;
   text-align: center;
   border: 1px solid black;
@@ -773,6 +770,9 @@
   border-radius: 10px 0 0 0;
 }
 
+/* end available */
+
+/* footer */
 .footer {
   background-color: #262626;
   width: 100%;
@@ -1217,8 +1217,16 @@
 }
 
 #smallSreenElement-ipad .gameCoverRetail.launchToHide {
-  margin-top: 20px;
   width: 50%;
+}
+
+#smallContent .base-game.heading {
+  max-width: 35%;
+  width: 35%;
+}
+#smallContent .base-game {
+  max-width: 32.5%;
+  width: 32.5%;
 }
 
 #smallContent-ipad .base-game-container {
@@ -1228,6 +1236,7 @@
   width: 30%;
   max-width: 30%;
 }
+
 #smallContent-ipad .base-game.start,
 #smallContent-ipad .base-game.header,
 #smallContent-ipad .base-game.end {
@@ -1296,6 +1305,8 @@
   .character-selector {
     justify-content: center;
     max-width: none;
+    max-width: 530px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 748px) and (max-width: 1023px) {
@@ -1316,6 +1327,24 @@
   }
 }
 @media (max-width: 768px) {
+  .character-selector li {
+    margin: 4px;
+  }
+  .character-info-heading {
+    margin-top: 0;
+  }
+  .character-info {
+    margin: 0;
+  }
+  .character-img {
+    margin-top: 0;
+  }
+  .signup-content .heading-click-buy {
+    font-size: 60px;
+  }
+  .signup-content .heading-click-buy-small {
+    font-size: 26px;
+  }
   .available-heading {
     font-size: 56px;
   }
@@ -1392,14 +1421,20 @@
   .character-selector {
     justify-content: center;
     max-width: none;
+    max-width: 475px;
+    margin: 0 auto;
   }
   .features-heading {
-    font-size: 82px;
+    font-size: 72px;
     text-align: center;
   }
 }
 
 @media (max-width: 1311px) {
+  .character-heading .features-heading {
+    font-size: 76px;
+    text-align: center;
+  }
   #available-next__btn,
   #avaliable-prev__btn {
     display: none;
@@ -1484,4 +1519,43 @@
   .grid.wide.available-content-small-ipad.row {
     display: block;
   }
+}
+
+/* loader bus */
+.loader {
+  background: #000;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9200;
+}
+.loadingImageGroup {
+  animation: moveBus 2s 0.1s infinite;
+  bottom: 0;
+  height: 43px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  transition: all 2s ease 0s;
+  transform: translateX(150px);
+  width: 72px;
+}
+.part1 {
+  width: 72px;
+  animation: loadingAnim 0.2s infinite;
+}
+.part2 {
+  animation: loadingAnim2 0.2s infinite;
+  left: 8px;
+  position: absolute;
+  top: 28px;
+  width: 12px;
+}
+.part3 {
+  animation: loadingAnim2 0.2s 0.1s infinite;
+  left: 44px;
+  position: absolute;
+  top: 28px;
+  width: 12px;
 }

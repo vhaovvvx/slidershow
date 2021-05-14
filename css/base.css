@@ -769,3 +769,62 @@ summary {
     transform: translateY(-300%);
   }
 }
+
+@keyframes moveBus {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(-15vw);
+    transform: translateX(-15vw);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateX(40vw);
+    transform: translateX(40vw);
+  }
+  100% {
+    opacity: 0.4;
+    -webkit-transform: translateX(120vw);
+    transform: translateX(120vw);
+  }
+}
+@keyframes loadingAnim {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  15% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  30% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  45% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  60% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes loadingAnim2 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+}
