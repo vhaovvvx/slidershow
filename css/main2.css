@@ -1091,7 +1091,7 @@
   margin: 10px 0;
 }
 
-.checked-email {
+#email {
   margin-top: 5px;
   display: block;
   width: 100%;
@@ -1166,6 +1166,11 @@
   padding: 13px 0;
   border: 2px solid black;
   cursor: pointer;
+}
+
+.subscribe-to-letter__text.btn--disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .available-group.available-content #available-next__btn,

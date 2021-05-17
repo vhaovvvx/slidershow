@@ -151,31 +151,6 @@ carouselSlide.addEventListener("transitionend", () => {
   }
 });
 
-//dropdown nav
-const clickDropDown = document.getElementById("click-dropdown");
-const btnDrp2 = document.getElementById("myDropdown");
-const itemsDrp = document.querySelectorAll(".flag img");
-let i;
-let timeDeplay = 0;
-let a = 100;
-clickDropDown.addEventListener("click", function (e) {
-  const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
-  if (btnDrp == true) {
-    timeDeplay = 0;
-    for (i of itemsDrp) {
-      timeDeplay += 0.1;
-      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
-      i.style.transform = "translateX(0px)";
-    }
-  } else {
-    timeDeplay = 0;
-    for (i of itemsDrp) {
-      timeDeplay += 0.1;
-      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
-      i.style.transform = "translateX(" + a + "px)";
-    }
-  }
-});
 //event target available now
 //purchar
 const containerPlaytation = document.getElementById("valiable-ipad-playtation");

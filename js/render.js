@@ -1,4 +1,6 @@
 const navBtn = document.querySelectorAll(".navBtn li");
+let count;
+let newFlag = "";
 let newStory = "";
 let fightStyle = "";
 let harnessFullStreng = "";
@@ -52,6 +54,7 @@ const headerStandard = [
     ".gameCoverRetail.launchToHide.standard .launch-header"
   ),
 ];
+var jsonObject = {};
 
 var radr;
 fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
@@ -68,6 +71,22 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
     document.querySelector(".nav-logo img").src = `${navLink.logo}`;
     document.querySelector(".logo-center img").src = `${containerLink.logo}`;
     document.querySelector(".img-esrb img").src = `${containerLink.esrb}`;
+    document.querySelector(".nav-country-logo__img").src = `${navLink.flagUs}`;
+    json.forEach((flags) => {
+      let flagss = navLink.flag;
+      for (let flag in flagss) {
+        newFlag += `
+        <div class="flag">
+          <a href="#" id="${flag}">
+            <img src=${flagss[flag]} data="${flag}">
+          </a>
+       </div> `;
+      }
+      document.getElementById("myDropdown").innerHTML += newFlag;
+
+      clickDropdownItems(flags);
+    });
+
     document.querySelector(".text-bottom").innerHTML = containerLink.heading;
     document.querySelector(".buy-now").innerHTML = containerLink.buynow;
     document.querySelector(".watch-trailer").innerHTML =
@@ -266,6 +285,7 @@ function clickHandler() {
     })
     .finally();
 }
+const unDisabledBtn = document.querySelector(".subscribe-to-letter__text");
 
 // validator
 function Validator(options) {
@@ -432,3 +452,41 @@ Validator({
     innterText();
   },
 });
+
+function clickDropdownItems(flags) {
+  // console.log(flags.data);
+  const clickDropDown2 = document.getElementById("click-dropdown");
+  const itemsDrp2 = [...document.querySelectorAll(".flag img")];
+  let i;
+  let timeDeplay = 0;
+  let a = 100;
+  clickDropDown2.addEventListener("click", function (e) {
+    e.preventDefault();
+    const btnDrp = document
+      .getElementById("myDropdown")
+      .classList.toggle("show");
+    if (btnDrp == true) {
+      timeDeplay = 0;
+      for (i of itemsDrp2) {
+        timeDeplay += 0.1;
+        i.style.transition = "transform " + timeDeplay + "s ease-in-out";
+        i.style.transform = "translateX(0px)";
+      }
+    } else {
+      timeDeplay = 0;
+      for (i of itemsDrp2) {
+        timeDeplay += 0.1;
+        i.style.transition = "transform " + timeDeplay + "s ease-in-out";
+        i.style.transform = "translateX(" + a + "px)";
+      }
+    }
+  });
+  // itemsDrp2.forEach((flagss) => {
+  //   flagss.addEventListener("click", function () {
+  //     const selectedFlagAttr = flagss.getAttribute("data");
+  //     console.log(selectedFlagAttr);
+  //     const selectedflag = flags.find((flag) => flag.data == selectedFlagAttr);
+  //     console.log(selectedflag);
+  //   });
+  // });
+}
