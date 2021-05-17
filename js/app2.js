@@ -38,7 +38,7 @@ nextBtn.addEventListener("click", () => {
   } else {
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 20) * counter + "px)";
+      "translateX(" + -(widthhh - 10) * counter + "px)";
     counter++;
   }
 });
@@ -238,6 +238,8 @@ for (i = 0; i < versionBtn.length; i++) {
   });
 }
 const openAndCloseBuy = document.getElementById("launch-edition");
+
+// scroll event
 window.onscroll = function () {
   scrollFunction();
 };
@@ -341,4 +343,3 @@ overlay[0].addEventListener("click", function () {
   buttonNewsLetter[0].style.display = "none";
   topdownMenuBtn[0].style.transform = "translateY(-200%)";
 });
-//ActiveElement

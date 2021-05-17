@@ -1,53 +1,53 @@
-let navBtn = document.querySelectorAll(".navBtn li");
+const navBtn = document.querySelectorAll(".navBtn li");
 let newStory = "";
 let fightStyle = "";
 let harnessFullStreng = "";
-let buttonAvailable = [...document.getElementsByClassName("versionTitle")];
-let retail = [
+const buttonAvailable = [...document.getElementsByClassName("versionTitle")];
+const retail = [
   ...document.querySelectorAll(
     ".versionButtonsContainer .versionButton.retailText"
   ),
 ];
-let digital = [
+const digital = [
   ...document.querySelectorAll(
     ".versionButtonsContainer .versionButton.digitalText"
   ),
 ];
-let buynow = [...document.querySelectorAll(".gameCoverRetail .buynowButton")];
-let headingGameCoverRetailEdition = [
+const buynow = [...document.querySelectorAll(".gameCoverRetail .buynowButton")];
+const headingGameCoverRetailEdition = [
   ...document.querySelectorAll(".gameCoverRetail .launch-header.edition"),
 ];
-let headingGameCoverRetailSteelBook = [
+const headingGameCoverRetailSteelBook = [
   ...document.querySelectorAll(".gameCoverRetail .launch-header.steelbook"),
 ];
-let headingGameCoverRetailGWP = [
+const headingGameCoverRetailGWP = [
   ...document.querySelectorAll(".gameCoverRetail .launch-header.gwp"),
 ];
 
-let imgGameCoverRetailLaunchToHide = [
+const imgGameCoverRetailLaunchToHide = [
   ...document.querySelectorAll(".gameCoverRetail.launchToHide img"),
 ];
 
-let imgGameCoverRetailSteelToHide = [
+const imgGameCoverRetailSteelToHide = [
   ...document.querySelectorAll(".gameCoverRetail.steelToHide img"),
 ];
-let imgGameCoverRetailGWP = [
+const imgGameCoverRetailGWP = [
   ...document.querySelectorAll(".gameCoverRetail.gwpToHide img"),
 ];
 
-let imgLaunchDeluxe = [
+const imgLaunchDeluxe = [
   ...document.querySelectorAll(".gameCoverRetail.launchToHide.deluxe img"),
 ];
-let imgLaunchstandard = [
+const imgLaunchstandard = [
   ...document.querySelectorAll(".gameCoverRetail.launchToHide.standard img"),
 ];
 
-let headerDeluxe = [
+const headerDeluxe = [
   ...document.querySelectorAll(
     ".gameCoverRetail.launchToHide.deluxe .launch-header"
   ),
 ];
-let headerStandard = [
+const headerStandard = [
   ...document.querySelectorAll(
     ".gameCoverRetail.launchToHide.standard .launch-header"
   ),
@@ -59,8 +59,8 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
   .then((json) => {
     var radr = JSON.stringify(json);
     var aaaa = JSON.parse(radr);
-    let navLink = aaaa[0].header.navbar;
-    let containerLink = aaaa[0].header.container;
+    const navLink = aaaa[0].header.navbar;
+    const containerLink = aaaa[0].header.container;
     //header
     navBtn[0].innerHTML = navLink.link.media;
     navBtn[1].innerHTML = navLink.link.features;
@@ -86,13 +86,12 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
     ).src = `${containerLink.flagUs}`;
 
     //media
-    let media = aaaa[0].media;
+    const media = aaaa[0].media;
     document.querySelector(".media-title").innerHTML = media.heading;
     document.querySelector(".media-main__text").innerHTML = media.textHeading;
 
     //features
-    let features = aaaa[0].features;
-    console.log(features);
+    const features = aaaa[0].features;
     document.querySelector(".features-heading").innerHTML = features.heading;
     document.querySelector(".description-text").innerHTML =
       features.textHeading;
@@ -122,7 +121,7 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
       harnessFullStreng;
 
     //available now
-    let availableRender = aaaa[0].available;
+    const availableRender = aaaa[0].available;
     document.querySelector(".available-heading").innerHTML =
       availableRender.heading;
     document.querySelector(".choose-flatform .heading-flatform").innerHTML =
@@ -179,8 +178,10 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
       element.textContent = availableRender.deluxe;
     });
     //footer
-    let footerRender = aaaa[0].footer;
-    let logoNav = footerRender.footerNav.imgLogo;
+    const footerRender = aaaa[0].footer;
+    const logoNav = footerRender.footerNav.imgLogo;
+    document.querySelector(".connect-with-atlus .connect").innerHTML =
+      footerRender.connectWith;
     document.querySelector(".nav-items.facebook").innerHTML =
       footerRender.footerNav.facebook;
     document.querySelector(".nav-items.twitter").innerHTML =
@@ -265,3 +266,169 @@ function clickHandler() {
     })
     .finally();
 }
+
+// validator
+function Validator(options) {
+  function getParent(element, selector) {
+    while (element.parentElement) {
+      if (element.parentElement.matches(selector)) {
+        return element.parentElement;
+      }
+      element = element.parentElement;
+    }
+  }
+  let formElement = document.querySelector(options.form);
+
+  let selectorRules = {};
+
+  function Validate(inputElement, rule) {
+    let errorMessage;
+    let errorElement = getParent(
+      inputElement,
+      options.formGroupSelector
+    ).querySelector(options.errorSelector);
+    // lấy ra các rules của selector
+    let rules = selectorRules[rule.selector];
+
+    //lặp qua từng rule & kiểm tra
+    //nếu có lỗi thì dừng việc kiểm tra
+    for (let i = 0; i < rules.length; ++i) {
+      errorMessage = rules[i](inputElement.value);
+      if (errorMessage) break;
+    }
+    if (errorMessage) {
+      errorElement.innerText = errorMessage;
+      inputElement.classList.add("invalid");
+    } else {
+      errorElement.innerText = "";
+      inputElement.classList.remove("invalid");
+    }
+    return !errorMessage;
+  }
+
+  if (formElement) {
+    //onsubmit
+    formElement.onsubmit = function (e) {
+      e.preventDefault();
+      let isFormValid = true;
+      // lặp qua từng rules và validate
+      options.rules.forEach(function (rule) {
+        let inputElement = formElement.querySelector(rule.selector);
+
+        let isValid = Validate(inputElement, rule);
+        if (!isValid) {
+          isFormValid = false;
+        }
+      });
+
+      if (isFormValid) {
+        //Trường hợp submit với javascript
+        if (typeof options.onSubmit === "function") {
+          let enableInputs = formElement.querySelectorAll(
+            "[name]:not([disabled])"
+          );
+          let formValues = Array.from(enableInputs).reduce(function (
+            values,
+            input
+          ) {
+            values[input.name] = input.value;
+            return values;
+          },
+          {});
+          options.onSubmit(formValues);
+        }
+        //submit với hành vi mặc định
+      } else {
+        console.log("có lỗi");
+        // formElement.submit();
+      }
+    };
+    //Lặp qua mỗi rule và xử lý ( lắng nghe sự kiện blur , input ,...)
+    options.rules.forEach(function (rule) {
+      // Lưu lại các rules cho mỗi input
+      if (Array.isArray(selectorRules[rule.selector])) {
+        selectorRules[rule.selector].push(rule.test);
+      } else {
+        selectorRules[rule.selector] = [rule.test];
+      }
+      let inputElement = formElement.querySelector(rule.selector);
+      // console.log(inputElement);
+
+      if (inputElement) {
+        //xử lý trường hợp blur khỏi input
+        inputElement.onblur = function () {
+          Validate(inputElement, rule);
+        };
+        //xử lý mỗi khi người dùng nhập vào input
+        inputElement.oninput = function () {
+          let errorElement = getParent(
+            inputElement,
+            options.formGroupSelector
+          ).querySelector(options.errorSelector);
+          errorElement.innerText = "";
+          getParent(inputElement, options.formGroupSelector).classList.remove(
+            "invalid"
+          );
+        };
+      }
+    });
+  }
+}
+
+//Nguyên tắc của các rules:
+//1. Khi có lỗi => trả message lỗi
+//2. khi hợp lệ => undefined
+Validator.isRequired = function (selector) {
+  return {
+    selector: selector,
+    test: function (value) {
+      return value.trim() ? undefined : "Vui lòng nhập trường này";
+    },
+  };
+};
+
+Validator.isEmail = function (selector) {
+  return {
+    selector: selector,
+    test: function (value) {
+      let regex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      return regex.test(value) ? undefined : "Trường này phải là Email";
+    },
+  };
+};
+
+var textt = "";
+const renderResponText = document.querySelector("#form-required");
+
+Validator({
+  form: "#form-required",
+  formGroupSelector: ".form-group",
+  errorSelector: ".form-message",
+  rules: [Validator.isRequired("#email"), Validator.isEmail("#email")],
+  onSubmit: function (data) {
+    var emailApi = "https://608619ffd14a870017578a86.mockapi.io/persona/email";
+    var options = {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    };
+    fetch(emailApi, options).then((res) => res.json());
+    function innterText(text) {
+      var emailApi =
+        "https://608619ffd14a870017578a86.mockapi.io/persona/email";
+
+      fetch(emailApi)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data[0].text);
+          textt = `<p class="responText">${data[0].text}</p>`;
+          console.log(textt);
+          renderResponText.innerHTML = textt;
+        });
+    }
+    innterText();
+  },
+});

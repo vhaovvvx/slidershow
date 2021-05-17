@@ -1815,18 +1815,19 @@
                   <h3 class="heading-click-buy-small">Persona 5 Strikers</h3>
                 </div>
               </div>
-              <div class="Email-container">
-                <label for="checked-email" class="email" id="email"
+              <form action="" id="form-required">
+              <div class="Email-container form-group">
+                <label for="email" class="email" 
                   >Email</label
                 >
                 <input
                   type="text"
-                  id="checked-email"
-                  class="cheked-email"
-                  placeholder="enter your email"
+                  id="email"
+                  name="email"
+                  class="checked-email"
+                  placeholder="ENTER EMAIL"
                 />
-              </div>
-              <div class="input-check-tick">
+                <span class="form-message"></span>
                 <div class="input-check-tick__content">
                   <input type="checkbox" id="content-label" hidden />
                   <label class="input-custom" for="content-label"
@@ -1851,11 +1852,11 @@
                     time by using the unsubscribe link in our emails.
                   </label>
                 </div>
-                <div class="subscribe-to-letter">
-                  <p class="subscribe-to-letter__text">
-                    subcribe to the letter
-                  </p>
-                </div>
+                <button class="subscribe-to-letter__text">đăng kí</button>
+              </form>
+
+              </div>
+              
               </div>
             </div>
           </div>
@@ -1867,7 +1868,7 @@
         <div class="whitebox-connect"></div>
         <div class="topbar-footer row">
           <div class="connect-with-atlus l-4 m-4">
-            <p class="connect">connect with atlus</p>
+            <p class="connect"></p>
           </div>
           <div class="navbar-footer l-4 m-4">
             <ul class="footer__nav-bar">
@@ -1915,6 +1916,7 @@
       <script src="./js/app2.js"></script>
       <script src="./js/render.js"></script>
       <script src="./js/green.js"></script>
+      
     </div>
   </body>
 </html>
