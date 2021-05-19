@@ -1,5 +1,11 @@
 const navBtn = document.querySelectorAll(".navBtn li");
+const unDisabledBtn = document.querySelector(".subscribe-to-letter__text");
+
 let count;
+let image = "";
+let newString = "";
+let newString2 = "";
+
 let newFlag = "";
 let newStory = "";
 let fightStyle = "";
@@ -57,9 +63,14 @@ const headerStandard = [
 var jsonObject = {};
 
 var radr;
-fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
-  .then((response) => response.json())
-  .then((json) => {
+function callApi() {
+  return fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s").then(
+    (response) => response.json()
+  );
+}
+
+function render() {
+  callApi().then((json) => {
     var radr = JSON.stringify(json);
     var aaaa = JSON.parse(radr);
     const navLink = aaaa[0].header.navbar;
@@ -76,15 +87,14 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
       let flagss = navLink.flag;
       for (let flag in flagss) {
         newFlag += `
-        <div class="flag">
-          <a href="#" id="${flag}">
-            <img src=${flagss[flag]} data="${flag}">
+        <div class="flag" id="${flag}">
+          <a href="#">
+            <img src=${flagss[flag]} data="${flag}" name="${flag}" />
           </a>
        </div> `;
       }
       document.getElementById("myDropdown").innerHTML += newFlag;
-
-      clickDropdownItems(flags);
+      clickDropdownItems();
     });
 
     document.querySelector(".text-bottom").innerHTML = containerLink.heading;
@@ -224,7 +234,7 @@ fetch("https://608619ffd14a870017578a86.mockapi.io/persona//p5s")
     document.querySelector(".policy-group").innerHTML +=
       footerRender.policyGroup;
   });
-
+}
 var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
 const imgElement = document.getElementsByClassName("character-img");
 const charactersRender = document.getElementById("render-character");
@@ -235,6 +245,7 @@ function getCharacter() {
 }
 function start() {
   clickHandler();
+  render();
 }
 start();
 function clickHandler() {
@@ -285,7 +296,6 @@ function clickHandler() {
     })
     .finally();
 }
-const unDisabledBtn = document.querySelector(".subscribe-to-letter__text");
 
 // validator
 function Validator(options) {
@@ -453,40 +463,54 @@ Validator({
   },
 });
 
-function clickDropdownItems(flags) {
-  // console.log(flags.data);
-  const clickDropDown2 = document.getElementById("click-dropdown");
+function clickDropdownItems() {
+  callApi().then((data) => {
+    const clickDropDown2 = document.getElementById("click-dropdown");
+    const itemsDrp2 = [...document.querySelectorAll(".flag img")];
+
+    clickDropDown2.addEventListener("click", function (e) {
+      e.preventDefault();
+      translateItems();
+    });
+
+    itemsDrp2.forEach((flagss) => {
+      flagss.addEventListener("click", function (e) {
+        if (e.target) {
+          translateItems();
+        }
+        const selectedFlagAttr = flagss.getAttribute("data");
+        data.forEach((flags) => {
+          let selectedFlag = flags.header.navbar.flag[`${selectedFlagAttr}`];
+          newString = `${selectedFlag}`;
+          document.querySelector("#click-dropdown .nav-country-logo__img").src =
+            newString;
+        });
+      });
+    });
+  });
+}
+
+function translateItems() {
   const itemsDrp2 = [...document.querySelectorAll(".flag img")];
   let i;
   let timeDeplay = 0;
   let a = 100;
-  clickDropDown2.addEventListener("click", function (e) {
-    e.preventDefault();
-    const btnDrp = document
-      .getElementById("myDropdown")
-      .classList.toggle("show");
-    if (btnDrp == true) {
-      timeDeplay = 0;
-      for (i of itemsDrp2) {
-        timeDeplay += 0.1;
-        i.style.transition = "transform " + timeDeplay + "s ease-in-out";
-        i.style.transform = "translateX(0px)";
-      }
-    } else {
-      timeDeplay = 0;
-      for (i of itemsDrp2) {
-        timeDeplay += 0.1;
-        i.style.transition = "transform " + timeDeplay + "s ease-in-out";
-        i.style.transform = "translateX(" + a + "px)";
-      }
+  const btnDrp = document.getElementById("myDropdown").classList.toggle("show");
+  if (btnDrp) {
+    timeDeplay = 0;
+    for (i of itemsDrp2) {
+      timeDeplay += 0.1;
+      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
+      i.style.transform = "translateX(0px)";
     }
-  });
-  // itemsDrp2.forEach((flagss) => {
-  //   flagss.addEventListener("click", function () {
-  //     const selectedFlagAttr = flagss.getAttribute("data");
-  //     console.log(selectedFlagAttr);
-  //     const selectedflag = flags.find((flag) => flag.data == selectedFlagAttr);
-  //     console.log(selectedflag);
-  //   });
-  // });
+  } else {
+    timeDeplay = 0;
+    for (i of itemsDrp2) {
+      timeDeplay += 0.1;
+      i.style.transition = "transform " + timeDeplay + "s ease-in-out";
+      i.style.transform = "translateX(" + a + "px)";
+    }
+  }
 }
+
+const test222 = document.querySelector("#hero div");

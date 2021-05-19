@@ -12,6 +12,11 @@
       media="screen"
       href="./css/base.css"
     />
+    <link
+      rel="stylesheet"
+      href="./owlcarousel/assets/owl.theme.default.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -33,6 +38,7 @@
       rel="stylesheet"
     />
     <link href="./fontawesome-free-5.15.3-web/css/solid.css" rel="stylesheet" />
+    <script src="./js/appJquery.js"></script>
     <script defer src="./fontawesome-free-5.15.3-web/js/solid.js"></script>
     <script defer src="./fontawesome-free-5.15.3-web/js/brands.js"></script>
     <script
@@ -149,7 +155,8 @@
       </div>
       <!-- End Video Hero -->
       <!-- Start Media-->
-      <div id="media" class="media">
+      <!-- normal  -->
+      <!-- <div id="media" class="media">
         <div class="inner-container grid-l wide">
           <h2 class="media-title"></h2>
           <br />
@@ -305,7 +312,164 @@
             <img src="img/media/arrow_rt.png" alt="" id="trailer-next__btn" />
           </div>
         </div>
-      </div>
+      </div> -->
+
+      <!-- jquery  -->
+      <div id="media" class="media">
+        <div class="inner-container grid-l wide">
+          <h2 class="media-title"></h2>
+          <br />
+          <p class="media-main__text"></p>
+          <br />
+          <div class="trailer-container grid wide">
+            <div class="trailer-siema">
+              <div class="trailer-siema__slider owl-carousel owl-theme">
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
+                    target="_blank"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/liberatehearts.mp4"
+                      autoplay
+                      loop
+                      muted
+                      id="lastClone"
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=21yPAJnm2ck&feature=emb_title"
+                    target="_blank"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/actionTrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI"
+                    target="_blank"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/announceTrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/launchtrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/sizzleTrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=mtegLxhhtkc&feature=emb_title"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/sizzleTrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=nihTJrochFI&feature=emb_title"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      src="./img/video/launchtrailer.mp4"
+                      autoplay
+                      loop
+                      muted
+                    ></video>
+                  </a>
+                </div>
+                <div class="slider-videos item">
+                  <a
+                    href="https://www.youtube.com/watch?v=BDEX6tWwn3o&feature=emb_title"
+                  >
+                    <img
+                      src="./img/media/playbutton.png"
+                      alt=""
+                      class="play-button"
+                    />
+                    <video
+                      muted
+                      src="./img/video/liberatehearts.mp4"
+                      autoplay
+                      loop
+                      id="firstClone"
+                    ></video>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
       <!-- End Media -->
       <!-- Start features -->
 
@@ -1886,7 +2050,7 @@
       <script src="./js/render.js"></script>
       <script src="./js/app2.js"></script>
       <script src="./js/green.js"></script>
-      
+      <script src="./owlcarousel/owl.carousel.min.js"></script>
     </div>
   </body>
 </html>

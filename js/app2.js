@@ -8,8 +8,6 @@ const availableSlide2 = document.querySelector(
 const availableSlider = document.getElementsByClassName("ipad-container");
 const availableSlider2 = document.getElementsByClassName("ipad-container-2");
 //buttons
-const prevBtn = document.querySelector("#trailer-prev__btn");
-const nextBtn = document.querySelector("#trailer-next__btn");
 const prevBtn2 = document.querySelector("#available-prev__btn");
 const nextBtn2 = document.querySelector("#available-next__btn");
 const prevBtn3 = document.querySelector("#available-prev__btn2");
@@ -25,40 +23,6 @@ var counter3 = 1;
 
 const widthhhh = carouselSlide2.clientWidth / 2;
 //slidershow
-nextBtn.addEventListener("click", () => {
-  let widthhh = carouselSlide2.clientWidth;
-  if (counter >= carouselVideos.length - 1) {
-    return;
-  } else if (widthhh > 700) {
-    let widthhh = carouselSlide2.clientWidth;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    carouselSlide.style.transform =
-      "translateX(" + -(widthhh / 2) * counter + "px)";
-    counter++;
-  } else {
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 10) * counter + "px)";
-    counter++;
-  }
-});
-
-prevBtn.addEventListener("click", () => {
-  let widthhh = carouselSlide2.clientWidth;
-  if (counter <= 0) {
-    return;
-  } else if (widthhh > 700) {
-    let widthhh = carouselSlide2.clientWidth / 2;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = "translateX(" + -widthhh * counter + "px)";
-  } else {
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform =
-      "translateX(" + -(widthhh - 20) * counter + "px)";
-  }
-});
 
 nextBtn3.addEventListener("click", () => {
   if (counter3 >= availableSlider2.length - 1) {
@@ -214,35 +178,11 @@ for (i = 0; i < versionBtn.length; i++) {
 }
 const openAndCloseBuy = document.getElementById("launch-edition");
 
-// scroll event
-window.onscroll = function () {
-  scrollFunction();
-};
 const nav = document.getElementById("nav");
 const hiddenNavClick = document.getElementsByClassName(
   "country-navigation-wrapper"
 );
 const hiddenNavBuy = document.getElementsByClassName("nav-buy");
-
-function scrollFunction() {
-  if (document.documentElement.scrollTop > 700) {
-    nav.style.position = "fixed";
-    nav.style.width = "100%";
-    nav.style.zIndex = "999";
-    nav.style.top = "0";
-    nav.style.backgroundColor = "black";
-    hiddenNavClick[0].style.display = "none";
-    hiddenNavBuy[0].style.visibility = "initial";
-  } else {
-    nav.style.top = "0px";
-    nav.style.position = "initial";
-    nav.style.width = "100%";
-    nav.style.zIndex = "999";
-    nav.style.backgroundColor = "transparent";
-    hiddenNavClick[0].style.display = "block";
-    hiddenNavBuy[0].style.visibility = "hidden";
-  }
-}
 const overlay = document.getElementsByClassName("overlay");
 const lauchEditionClickOverlay = document.getElementsByClassName(
   "click-buy__launch-edition"
@@ -270,7 +210,6 @@ elementClickOverlay.forEach((Elmt) => {
     let buyButtonLaunchEdition2 = e.target.id == "launch-edition-buy2";
     let buyButtonSteelBookEdition2 = e.target.id == "steelbook-edition-buy2";
     let buyButtonGiftWithPurchase2 = e.target.id == "gift-with-purchase2";
-
     let buyButtonNewsLetter = e.target.id == "newsletter";
     let subscribeToTheNewsLetter = e.target.id == "newsletter2";
     let logoBar = e.target.id == "btn__logo-bar";
@@ -301,8 +240,8 @@ close.forEach((closeElm) => {
     e.preventDefault();
     const closeBtn = e.target.classList.contains("close-element");
     if (closeBtn) {
-      topdownMenuBtn[0].style.removeProperty("transform");
       overlay[0].style.display = "none";
+      topdownMenuBtn[0].style.removeProperty("transform");
       lauchEditionClickOverlay[0].style.display = "none";
       steelbookEditionClickOverlay[0].style.display = "none";
       giftWithPurchaseClickOverlay[0].style.display = "none";
