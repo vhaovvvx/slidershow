@@ -239,6 +239,7 @@ var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
 const imgElement = document.getElementsByClassName("character-img");
 const charactersRender = document.getElementById("render-character");
 const charactersRenderImg = document.getElementById("img-append");
+const characterRenderLi = document.getElementById("activeElements");
 let charactersHTML = "";
 function getCharacter() {
   return fetch(charactersApi).then((res) => res.json());
@@ -252,6 +253,22 @@ function clickHandler() {
   getCharacter()
     .then((characters) => {
       characters[0].en.forEach((character) => {
+        let liCharacters = character;
+        delete liCharacters.title;
+        for (let abcc in liCharacters) {
+          let newCharacters = "";
+          newCharacters += `<li
+            class="character-persona"
+            id="${abcc}"
+            name="${abcc}"
+            value="${abcc}"
+            data="${abcc}"
+          >
+            <img src="${liCharacters[abcc][0].thumbimage}"/>
+          </li>`;
+          characterRenderLi.innerHTML += newCharacters;
+        }
+        document.getElementById("joker").classList += " characterActive";
         let joker = character.joker[0];
         charactersHTML += `
           <p class="character-info-heading">
@@ -453,7 +470,6 @@ Validator({
       fetch(emailApi)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data[0].text);
           textt = `<p class="responText">${data[0].text}</p>`;
           console.log(textt);
           renderResponText.innerHTML = textt;

@@ -1,0 +1,9 @@
+.invalid {
+  border: 1px solid red !important;
+}
+
+.textbox input:not(.invalid):hover {
+  border: 1px solid #9ca8b4;
+  box-shadow: 0px 1px 3px rgba(46, 59, 95, 0.08);
+  transition: 0.5s;
+}

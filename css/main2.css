@@ -417,7 +417,6 @@
 
 .trailer-siema__slider {
   display: flex;
-  height: 369px;
 }
 
 .slider-videos {
@@ -1672,13 +1671,13 @@
     height: 40px;
     display: flex;
   }
-  .trailer-container.grid.wide {
+  /* .trailer-container.grid.wide {
     max-width: 700px;
     width: 100%;
   }
   .slider-videos {
     margin: 0;
-  }
+  } */
   .features-heading {
     font-size: 82px;
   }
