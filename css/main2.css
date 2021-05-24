@@ -1508,6 +1508,12 @@
     align-items: center;
   } */
 }
+@media (max-width: 600px) {
+  .hero-center {
+    width: 90%;
+  }
+}
+
 @media (max-width: 768px) {
   .img-esrb {
     left: 1%;

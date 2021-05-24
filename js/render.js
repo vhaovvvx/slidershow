@@ -1,4 +1,8 @@
-const navBtn = document.querySelectorAll(".navBtn li");
+const $$ = document.querySelector.bind(document);
+
+const $$$ = document.querySelectorAll.bind(document);
+
+const navBtn = $$$(".navBtn li");
 const unDisabledBtn = document.querySelector(".subscribe-to-letter__text");
 
 let count;
@@ -11,54 +15,38 @@ let newStory = "";
 let fightStyle = "";
 let harnessFullStreng = "";
 const buttonAvailable = [...document.getElementsByClassName("versionTitle")];
-const retail = [
-  ...document.querySelectorAll(
-    ".versionButtonsContainer .versionButton.retailText"
-  ),
-];
-const digital = [
-  ...document.querySelectorAll(
-    ".versionButtonsContainer .versionButton.digitalText"
-  ),
-];
-const buynow = [...document.querySelectorAll(".gameCoverRetail .buynowButton")];
+const retail = [...$$$(".versionButtonsContainer .versionButton.retailText")];
+const digital = [...$$$(".versionButtonsContainer .versionButton.digitalText")];
+const buynow = [...$$$(".gameCoverRetail .buynowButton")];
 const headingGameCoverRetailEdition = [
-  ...document.querySelectorAll(".gameCoverRetail .launch-header.edition"),
+  ...$$$(".gameCoverRetail .launch-header.edition"),
 ];
 const headingGameCoverRetailSteelBook = [
-  ...document.querySelectorAll(".gameCoverRetail .launch-header.steelbook"),
+  ...$$$(".gameCoverRetail .launch-header.steelbook"),
 ];
 const headingGameCoverRetailGWP = [
-  ...document.querySelectorAll(".gameCoverRetail .launch-header.gwp"),
+  ...$$$(".gameCoverRetail .launch-header.gwp"),
 ];
 
 const imgGameCoverRetailLaunchToHide = [
-  ...document.querySelectorAll(".gameCoverRetail.launchToHide img"),
+  ...$$$(".gameCoverRetail.launchToHide img"),
 ];
 
 const imgGameCoverRetailSteelToHide = [
-  ...document.querySelectorAll(".gameCoverRetail.steelToHide img"),
+  ...$$$(".gameCoverRetail.steelToHide img"),
 ];
-const imgGameCoverRetailGWP = [
-  ...document.querySelectorAll(".gameCoverRetail.gwpToHide img"),
-];
+const imgGameCoverRetailGWP = [...$$$(".gameCoverRetail.gwpToHide img")];
 
-const imgLaunchDeluxe = [
-  ...document.querySelectorAll(".gameCoverRetail.launchToHide.deluxe img"),
-];
+const imgLaunchDeluxe = [...$$$(".gameCoverRetail.launchToHide.deluxe img")];
 const imgLaunchstandard = [
-  ...document.querySelectorAll(".gameCoverRetail.launchToHide.standard img"),
+  ...$$$(".gameCoverRetail.launchToHide.standard img"),
 ];
 
 const headerDeluxe = [
-  ...document.querySelectorAll(
-    ".gameCoverRetail.launchToHide.deluxe .launch-header"
-  ),
+  ...$$$(".gameCoverRetail.launchToHide.deluxe .launch-header"),
 ];
 const headerStandard = [
-  ...document.querySelectorAll(
-    ".gameCoverRetail.launchToHide.standard .launch-header"
-  ),
+  ...$$$(".gameCoverRetail.launchToHide.standard .launch-header"),
 ];
 var jsonObject = {};
 
@@ -79,10 +67,10 @@ function render() {
     navBtn[0].innerHTML = navLink.link.media;
     navBtn[1].innerHTML = navLink.link.features;
     navBtn[2].innerHTML = navLink.link.characters;
-    document.querySelector(".nav-logo img").src = `${navLink.logo}`;
-    document.querySelector(".logo-center img").src = `${containerLink.logo}`;
-    document.querySelector(".img-esrb img").src = `${containerLink.esrb}`;
-    document.querySelector(".nav-country-logo__img").src = `${navLink.flagUs}`;
+    $$(".nav-logo img").src = `${navLink.logo}`;
+    $$(".logo-center img").src = `${containerLink.logo}`;
+    $$(".img-esrb img").src = `${containerLink.esrb}`;
+    $$(".nav-country-logo__img").src = `${navLink.flagUs}`;
     json.forEach((flags) => {
       let flagss = navLink.flag;
       for (let flag in flagss) {
@@ -97,36 +85,26 @@ function render() {
       clickDropdownItems();
     });
 
-    document.querySelector(".text-bottom").innerHTML = containerLink.heading;
-    document.querySelector(".buy-now").innerHTML = containerLink.buynow;
-    document.querySelector(".watch-trailer").innerHTML =
-      containerLink.watchtrailer.text;
-    document.querySelector(
-      ".watch-trailer-link"
-    ).href = `${containerLink.watchtrailer.link}`;
-    document.querySelector(
+    $$(".text-bottom").innerHTML = containerLink.heading;
+    $$(".buy-now").innerHTML = containerLink.buynow;
+    $$(".watch-trailer").innerHTML = containerLink.watchtrailer.text;
+    $$(".watch-trailer-link").href = `${containerLink.watchtrailer.link}`;
+    $$(
       ".hero-video"
     ).innerHTML += `<source src="./img/video/bgVideo.mp4" muted  />`;
-    document.querySelector(
-      ".hero-video img"
-    ).src = `${containerLink.imagebgvideo}`;
-    document.querySelector(
-      "#click-dropdown img"
-    ).src = `${containerLink.flagUs}`;
+    $$(".hero-video img").src = `${containerLink.imagebgvideo}`;
+    $$("#click-dropdown img").src = `${containerLink.flagUs}`;
 
     //media
     const media = aaaa[0].media;
-    document.querySelector(".media-title").innerHTML = media.heading;
-    document.querySelector(".media-main__text").innerHTML = media.textHeading;
+    $$(".media-title").innerHTML = media.heading;
+    $$(".media-main__text").innerHTML = media.textHeading;
 
     //features
     const features = aaaa[0].features;
-    document.querySelector(".features-heading").innerHTML = features.heading;
-    document.querySelector(".description-text").innerHTML =
-      features.textHeading;
-    document.querySelector(
-      ".features-content.row img"
-    ).src = `${features.imageHeading}`;
+    $$(".features-heading").innerHTML = features.heading;
+    $$(".description-text").innerHTML = features.textHeading;
+    $$(".features-content.row img").src = `${features.imageHeading}`;
 
     newStory += `
        <h4>${features.newStory.heading}</h4>
@@ -144,28 +122,24 @@ function render() {
        ${features.harnessFullStreng.img}
     `;
 
-    document.querySelector(".render-features.content1").innerHTML += newStory;
-    document.querySelector(".render-features.content2").innerHTML += fightStyle;
-    document.querySelector(".render-features.content3").innerHTML +=
-      harnessFullStreng;
+    $$(".render-features.content1").innerHTML += newStory;
+    $$(".render-features.content2").innerHTML += fightStyle;
+    $$(".render-features.content3").innerHTML += harnessFullStreng;
 
     //available now
     const availableRender = aaaa[0].available;
-    document.querySelector(".available-heading").innerHTML =
-      availableRender.heading;
-    document.querySelector(".choose-flatform .heading-flatform").innerHTML =
+    $$(".available-heading").innerHTML = availableRender.heading;
+    $$(".choose-flatform .heading-flatform").innerHTML =
       availableRender.platforms;
-    document.querySelector(".choose-box.nintendo").innerHTML =
-      availableRender.nitendo;
+    $$(".choose-box.nintendo").innerHTML = availableRender.nitendo;
 
-    document.querySelector(".choose-box.ps4").innerHTML = availableRender.ps4;
-    document.querySelector(".choose-box.steam").innerHTML =
-      availableRender.steam;
+    $$(".choose-box.ps4").innerHTML = availableRender.ps4;
+    $$(".choose-box.steam").innerHTML = availableRender.steam;
 
     buttonAvailable.forEach((element) => {
       element.textContent = availableRender.version;
     });
-    document.querySelector(".editionTitle").innerHTML = availableRender.edition;
+    $$(".editionTitle").innerHTML = availableRender.edition;
     retail.forEach((element) => {
       element.textContent = availableRender.retail;
     });
@@ -209,30 +183,21 @@ function render() {
     //footer
     const footerRender = aaaa[0].footer;
     const logoNav = footerRender.footerNav.imgLogo;
-    document.querySelector(".connect-with-atlus .connect").innerHTML =
-      footerRender.connectWith;
-    document.querySelector(".nav-items.facebook").innerHTML =
-      footerRender.footerNav.facebook;
-    document.querySelector(".nav-items.twitter").innerHTML =
-      footerRender.footerNav.twitter;
-    document.querySelector(".nav-items.youtube").innerHTML =
-      footerRender.footerNav.youtube;
-    document.querySelector(".nav-items.twitch").innerHTML =
-      footerRender.footerNav.twitch;
-    document.querySelector(".nav-items.instagram").innerHTML =
-      footerRender.footerNav.instagram;
-    document.querySelector(".atlus-logo").src = `${logoNav.atlus}`;
-    document.querySelector(".p-studio").src = `${logoNav.pStudio}`;
-    document.querySelector(
-      ".nintendo-switch"
-    ).src = `${logoNav.platformSwitch}`;
-    document.querySelector(".logo-group .ps4").src = `${logoNav.ps4}`;
-    document.querySelector(".logo-group .steam").src = `${logoNav.steam}`;
-    document.querySelector(".esrb-3").innerHTML += logoNav.esrb;
-    document.querySelector(".esrb-2").src = `${logoNav.esrb2}`;
-    document.querySelector(".footer-copy").innerHTML += footerRender.textCopy;
-    document.querySelector(".policy-group").innerHTML +=
-      footerRender.policyGroup;
+    $$(".connect-with-atlus .connect").innerHTML = footerRender.connectWith;
+    $$(".nav-items.facebook").innerHTML = footerRender.footerNav.facebook;
+    $$(".nav-items.twitter").innerHTML = footerRender.footerNav.twitter;
+    $$(".nav-items.youtube").innerHTML = footerRender.footerNav.youtube;
+    $$(".nav-items.twitch").innerHTML = footerRender.footerNav.twitch;
+    $$(".nav-items.instagram").innerHTML = footerRender.footerNav.instagram;
+    $$(".atlus-logo").src = `${logoNav.atlus}`;
+    $$(".p-studio").src = `${logoNav.pStudio}`;
+    $$(".nintendo-switch").src = `${logoNav.platformSwitch}`;
+    $$(".logo-group .ps4").src = `${logoNav.ps4}`;
+    $$(".logo-group .steam").src = `${logoNav.steam}`;
+    $$(".esrb-3").innerHTML += logoNav.esrb;
+    $$(".esrb-2").src = `${logoNav.esrb2}`;
+    $$(".footer-copy").innerHTML += footerRender.textCopy;
+    $$(".policy-group").innerHTML += footerRender.policyGroup;
   });
 }
 var charactersApi = "https://608619ffd14a870017578a86.mockapi.io/persona/p5s5";
@@ -507,7 +472,7 @@ function clickDropdownItems() {
 }
 
 function translateItems() {
-  const itemsDrp2 = [...document.querySelectorAll(".flag img")];
+  const itemsDrp2 = [...$$$(".flag img")];
   let i;
   let timeDeplay = 0;
   let a = 100;
