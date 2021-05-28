@@ -378,9 +378,11 @@ function Validator(options) {
             options.formGroupSelector
           ).querySelector(options.errorSelector);
           errorElement.innerText = "";
-          getParent(inputElement, options.formGroupSelector).classList.remove(
-            "invalid"
-          );
+          let errorInput = getParent(
+            inputElement,
+            options.formGroupSelector
+          ).querySelector("#email");
+          errorInput.classList.remove("invalid");
         };
       }
     });
