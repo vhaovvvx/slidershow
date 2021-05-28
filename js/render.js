@@ -396,7 +396,7 @@ Validator.isRequired = function (selector) {
   return {
     selector: selector,
     test: function (value) {
-      return value.trim() ? undefined : "Vui lòng nhập trường này";
+      return value.trim() ? undefined : "Please Enter This Field";
     },
   };
 };
@@ -407,7 +407,7 @@ Validator.isEmail = function (selector) {
     test: function (value) {
       let regex =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      return regex.test(value) ? undefined : "Trường này phải là Email";
+      return regex.test(value) ? undefined : "This Field Must Be Email";
     },
   };
 };
