@@ -477,7 +477,7 @@
   width: 100%;
 }
 .owl-carousel .owl-item img {
-  width: auto;
+  /* width: auto; */
 }
 
 .owl-stage-outer {
@@ -561,6 +561,7 @@
 }
 
 .features-content-2 {
+  position: relative;
   max-width: 1380px;
   margin: 0 auto;
   margin-top: 100px;
@@ -1088,10 +1089,16 @@
   position: fixed;
   left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 9;
-  display: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.overlay.openn {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .close {
@@ -1749,4 +1756,64 @@
   position: absolute;
   top: 28px;
   width: 12px;
+}
+
+.full-img {
+  display: none;
+}
+
+.full-img.open-preview {
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+
+.full-img {
+  position: absolute;
+  top: 50%;
+  height: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.img-appendd {
+  cursor: pointer;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+
+.modal .nav-modal {
+  width: 100%;
+  height: 60px;
+  background: black;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-modal .enlarge {
+  height: 60px;
+  width: 60px;
+  background: wheat;
+}
+.nav-modal .close {
+  height: 60px;
+  width: 60px;
+  background: red;
+}
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.enlarge,
+.close {
+  cursor: pointer;
 }

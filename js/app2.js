@@ -12,6 +12,7 @@ const prevBtn2 = document.querySelector("#available-prev__btn");
 const nextBtn2 = document.querySelector("#available-next__btn");
 const prevBtn3 = document.querySelector("#available-prev__btn2");
 const nextBtn3 = document.querySelector("#available-next__btn2");
+const overlay = document.querySelector(".overlay");
 
 availableSlide.style.transform = "translateX(" + -100 + "%)";
 availableSlide2.style.transform = "translateX(" + -100 + "%)";
@@ -122,10 +123,10 @@ function openSmallContent() {
   versionBtn[0].style.display = "none";
   valiableIpad.style.display = "block";
   containerPlaytation.style.display = "none";
-  smallScreenElement.style.display = "block";
   largeScreenElement.style.display = "none";
   largeContent.style.display = "none";
   smallContent.style.display = "block";
+  smallScreenElement.style.display = "block";
 }
 const valiableIpad = document.getElementById("valiable-ipad");
 
@@ -133,19 +134,19 @@ function openLargeContent() {
   containerPlaytation.style.display = "block";
   valiableIpad.style.display = "none";
   versionBtn[0].style.display = "block";
-  smallScreenElement.style.display = "none";
   largeScreenElement.style.display = "block";
   largeContent.style.display = "block";
   smallContent.style.display = "none";
+  smallScreenElement.style.display = "none";
 }
 const largeScreenElement = document.getElementById("largeSreenElement");
 const largeContent = document.getElementById("largeContent");
 const smallScreenElement = document.getElementById("smallSreenElement");
 const smallContent = document.getElementById("smallContent");
-const chooseBox = document.getElementsByClassName("choose-box");
+const chooseBox = [...document.getElementsByClassName("choose-box")];
 
-for (i = 0; i < chooseBox.length; i++) {
-  chooseBox[i].addEventListener("click", function (e) {
+chooseBox.forEach((element) => {
+  element.addEventListener("click", function (e) {
     e.preventDefault();
     let current = document.getElementsByClassName("selected");
     current[0].className = current[0].className.replace(" selected", "");
@@ -160,11 +161,12 @@ for (i = 0; i < chooseBox.length; i++) {
       openLargeContent();
     }
   });
-}
+});
+
 let current = document.getElementsByClassName("VersionActive");
-const versionBtn = document.getElementsByClassName("versionButton");
-for (i = 0; i < versionBtn.length; i++) {
-  versionBtn[i].addEventListener("click", function (e) {
+const versionBtn = [...document.getElementsByClassName("versionButton")];
+versionBtn.forEach((element) => {
+  element.addEventListener("click", function (e) {
     e.preventDefault();
     let current = document.getElementsByClassName("VersionActive");
     current[0].className = current[0].className.replace(" VersionActive", "");
@@ -175,32 +177,27 @@ for (i = 0; i < versionBtn.length; i++) {
       openSmallContent();
     }
   });
-}
+});
 const openAndCloseBuy = document.getElementById("launch-edition");
-
 const nav = document.getElementById("nav");
-const hiddenNavClick = document.getElementsByClassName(
-  "country-navigation-wrapper"
-);
-const hiddenNavBuy = document.getElementsByClassName("nav-buy");
-const overlay = document.getElementsByClassName("overlay");
-const lauchEditionClickOverlay = document.getElementsByClassName(
-  "click-buy__launch-edition"
+const hiddenNavClick = document.querySelector(".country-navigation-wrapper");
+const hiddenNavBuy = document.querySelector(".nav-buy");
+const lauchEditionClickOverlay = document.querySelector(
+  ".click-buy__launch-edition"
 );
 const elementClickOverlay = [
   ...document.getElementsByClassName("buynowButton"),
 ];
-const steelbookEditionClickOverlay = document.getElementsByClassName(
-  "click-buy__steelbook-edition"
+const steelbookEditionClickOverlay = document.querySelector(
+  ".click-buy__steelbook-edition"
 );
-const giftWithPurchaseClickOverlay = document.getElementsByClassName(
-  "click-buy__gift-with-purchase"
+const giftWithPurchaseClickOverlay = document.querySelector(
+  ".click-buy__gift-with-purchase"
 );
-const buttonNewsLetter = document.getElementsByClassName(
-  "click-buy__newsletter"
-);
+const buttonNewsLetter = document.querySelector(".click-buy__newsletter");
+
 const logoBtn = document.getElementById("logo-bar");
-const topdownMenuBtn = document.getElementsByClassName("topdown-menu");
+const topdownMenuBtn = document.querySelector(".topdown-menu");
 elementClickOverlay.forEach((Elmt) => {
   Elmt.addEventListener("click", function (e) {
     e.preventDefault();
@@ -215,45 +212,52 @@ elementClickOverlay.forEach((Elmt) => {
     let logoBar = e.target.id == "btn__logo-bar";
     let logoBar2 = e.target.id == "logo-bar";
     if (buyButtonLaunchEdition || buyButtonLaunchEdition2) {
-      overlay[0].style.display = "block";
-      lauchEditionClickOverlay[0].style.display = "block";
+      open();
+      lauchEditionClickOverlay.style.display = "block";
     } else if (buyButtonSteelBookEdition || buyButtonSteelBookEdition2) {
-      overlay[0].style.display = "block";
-      steelbookEditionClickOverlay[0].style.display = "block";
+      open();
+      steelbookEditionClickOverlay.style.display = "block";
     } else if (buyButtonGiftWithPurchase || buyButtonGiftWithPurchase2) {
-      overlay[0].style.display = "block";
-      giftWithPurchaseClickOverlay[0].style.display = "block";
+      open();
+      giftWithPurchaseClickOverlay.style.display = "block";
     } else if (buyButtonNewsLetter || subscribeToTheNewsLetter) {
-      overlay[0].style.display = "block";
-      buttonNewsLetter[0].style.display = "block";
+      open();
+      buttonNewsLetter.style.display = "block";
     } else if (logoBar2) {
-      overlay[0].style.display = "block";
-      topdownMenuBtn[0].style.transition = "transform 0.5s ease-in-out";
-      topdownMenuBtn[0].style.transform = "translateY(0%)";
-      topdownMenuBtn[0].style.display = "block";
+      open();
+      topdownMenuBtn.style.transition = "transform 0.5s ease-in-out";
+      topdownMenuBtn.style.transform = "translateY(0%)";
+      topdownMenuBtn.style.display = "block";
     }
   });
 });
+
+function open() {
+  overlay.classList.add("openn");
+}
+
 const close = [...document.getElementsByClassName("close-element")];
 close.forEach((closeElm) => {
   closeElm.addEventListener("click", function (e) {
     e.preventDefault();
     const closeBtn = e.target.classList.contains("close-element");
     if (closeBtn) {
-      overlay[0].style.display = "none";
-      topdownMenuBtn[0].style.removeProperty("transform");
-      lauchEditionClickOverlay[0].style.display = "none";
-      steelbookEditionClickOverlay[0].style.display = "none";
-      giftWithPurchaseClickOverlay[0].style.display = "none";
-      buttonNewsLetter[0].style.display = "none";
+      overlay.style.display = "none";
+      topdownMenuBtn.style.removeProperty("transform");
+      lauchEditionClickOverlay.style.display = "none";
+      steelbookEditionClickOverlay.style.display = "none";
+      giftWithPurchaseClickOverlay.style.display = "none";
+      buttonNewsLetter.style.display = "none";
     }
   });
 });
-overlay[0].addEventListener("click", function () {
-  overlay[0].style.display = "none";
-  lauchEditionClickOverlay[0].style.display = "none";
-  steelbookEditionClickOverlay[0].style.display = "none";
-  giftWithPurchaseClickOverlay[0].style.display = "none";
-  buttonNewsLetter[0].style.display = "none";
-  topdownMenuBtn[0].style.transform = "translateY(-200%)";
+overlay.addEventListener("click", function (e) {
+  if (e.target.classList.contains("openn")) {
+    overlay.classList.remove("openn");
+  }
+  lauchEditionClickOverlay.style.display = "none";
+  steelbookEditionClickOverlay.style.display = "none";
+  giftWithPurchaseClickOverlay.style.display = "none";
+  buttonNewsLetter.style.display = "none";
+  topdownMenuBtn.style.transform = "translateY(-200%)";
 });

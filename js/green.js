@@ -50,15 +50,15 @@ function scrollFunction() {
     nav.style.zIndex = "999";
     nav.style.top = "0";
     nav.style.backgroundColor = "black";
-    hiddenNavClick[0].style.display = "none";
-    hiddenNavBuy[0].style.visibility = "initial";
+    hiddenNavClick.style.display = "none";
+    hiddenNavBuy.style.visibility = "initial";
   } else {
     nav.style.top = "0px";
     nav.style.position = "initial";
     nav.style.width = "100%";
     nav.style.zIndex = "999";
     nav.style.backgroundColor = "transparent";
-    hiddenNavClick[0].style.display = "block";
-    hiddenNavBuy[0].style.visibility = "hidden";
+    hiddenNavClick.style.display = "block";
+    hiddenNavBuy.style.visibility = "hidden";
   }
 }

@@ -48,6 +48,10 @@ const headerDeluxe = [
 const headerStandard = [
   ...$$$(".gameCoverRetail.launchToHide.standard .launch-header"),
 ];
+const imageFutures = $$$(".render-features.content1");
+const imageFutures2 = $$$(".render-features.content2");
+const imageFutures3 = $$$(".render-features.content3");
+
 var jsonObject = {};
 
 var radr;
@@ -104,7 +108,9 @@ function render() {
     const features = aaaa[0].features;
     $$(".features-heading").innerHTML = features.heading;
     $$(".description-text").innerHTML = features.textHeading;
-    $$(".features-content.row img").src = `${features.imageHeading}`;
+    const bbbb = ($$(
+      ".features-content.row img"
+    ).src = `${features.imageHeading}`);
 
     newStory += `
        <h4>${features.newStory.heading}</h4>
@@ -205,6 +211,7 @@ const imgElement = document.getElementsByClassName("character-img");
 const charactersRender = document.getElementById("render-character");
 const charactersRenderImg = document.getElementById("img-append");
 const characterRenderLi = document.getElementById("activeElements");
+
 let charactersHTML = "";
 function getCharacter() {
   return fetch(charactersApi).then((res) => res.json());
@@ -218,6 +225,8 @@ function clickHandler() {
   getCharacter()
     .then((characters) => {
       characters[0].en.forEach((character) => {
+        charactersRenderImg.innerHTML = `<img src=${character.joker[0].image} class="img-appendd zoomImg" data-original=${character.joker[0].imgNoBg}
+        id="renderImg">`;
         let liCharacters = character;
         delete liCharacters.title;
         for (let abcc in liCharacters) {
@@ -229,7 +238,7 @@ function clickHandler() {
             value="${abcc}"
             data="${abcc}"
           >
-            <img src="${liCharacters[abcc][0].thumbimage}"/>
+            <img src="${liCharacters[abcc][0].thumbimage}" />
           </li>`;
           characterRenderLi.innerHTML += newCharacters;
         }
@@ -246,6 +255,7 @@ function clickHandler() {
         let charElements = [
           ...document.getElementsByClassName("character-persona"),
         ];
+
         charElements.forEach((charEl) => {
           charEl.addEventListener("click", function (e) {
             let current = document.getElementsByClassName("characterActive");
@@ -253,11 +263,13 @@ function clickHandler() {
               " characterActive",
               ""
             );
+
             this.classList += " characterActive";
             characters[0].en.forEach((char) => {
               let selectedCharacterName = charEl.getAttribute("name");
-              let a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
-              let c = a[0];
+              var a = char[`${selectedCharacterName}`]; // luoi dat ten class qua
+              var c = a[0];
+
               charactersRender.innerHTML = `
               <p class="character-info-heading">
                   ${c.name}
@@ -266,8 +278,30 @@ function clickHandler() {
               </p>
                 `;
               charactersRenderImg.innerHTML = `
-              <img src=${c.image}>
+              <img src=${c.image} class="img-appendd zoomImg" data-original=${c.imgNoBg}>
               `;
+              let previews = [...document.querySelectorAll(".zoomImg")];
+              let original = document.querySelector(".full-img");
+              let hiddenElement = document.querySelectorAll(".hidden");
+              previews.forEach((preview) => {
+                preview.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  overlay.classList.add("openn");
+                  original.classList.add("open-preview");
+                  const originalSrc = preview.getAttribute("data-original");
+                  original.src = `${originalSrc}`;
+                });
+              });
+
+              hiddenElement.forEach((element) => {
+                element.addEventListener("click", function (e) {
+                  if (e.target.classList.contains("hidden")) {
+                    overlay.classList.remove("openn");
+                    original.classList.remove("open-preview");
+                    original.classList.remove("zoom-Toggle");
+                  }
+                });
+              });
             });
           });
         });
@@ -290,9 +324,7 @@ function Validator(options) {
     }
   }
   let formElement = document.querySelector(options.form);
-
   let selectorRules = {};
-
   function Validate(inputElement, rule) {
     let errorMessage;
     let errorElement = getParent(
@@ -301,7 +333,6 @@ function Validator(options) {
     ).querySelector(options.errorSelector);
     // lấy ra các rules của selector
     let rules = selectorRules[rule.selector];
-
     //lặp qua từng rule & kiểm tra
     //nếu có lỗi thì dừng việc kiểm tra
     for (let i = 0; i < rules.length; ++i) {
@@ -317,7 +348,6 @@ function Validator(options) {
     }
     return !errorMessage;
   }
-
   if (formElement) {
     //onsubmit
     formElement.onsubmit = function (e) {
@@ -378,9 +408,11 @@ function Validator(options) {
             options.formGroupSelector
           ).querySelector(options.errorSelector);
           errorElement.innerText = "";
-          getParent(inputElement, options.formGroupSelector).classList.remove(
-            "invalid"
-          );
+          let errorInput = getParent(
+            inputElement,
+            options.formGroupSelector
+          ).querySelector("#email");
+          errorInput.classList.remove("invalid");
         };
       }
     });
@@ -429,14 +461,10 @@ Validator({
     };
     fetch(emailApi, options).then((res) => res.json());
     function innterText(text) {
-      var emailApi =
-        "https://608619ffd14a870017578a86.mockapi.io/persona/email";
-
       fetch(emailApi)
         .then((res) => res.json())
         .then((data) => {
           textt = `<p class="responText">${data[0].text}</p>`;
-          console.log(textt);
           renderResponText.innerHTML = textt;
         });
     }
@@ -494,4 +522,20 @@ function translateItems() {
   }
 }
 
-const test222 = document.querySelector("#hero div");
+function zoomElement() {}
+
+let original = document.querySelector(".full-img");
+original.addEventListener("click", function (e) {
+  if (e.target.classList.contains("open-preview")) {
+    let original = document.querySelector(".full-img");
+
+    let btnZoom = original.classList.toggle("zoom-Toggle");
+    if (btnZoom === true) {
+      console.log("true");
+      original.style.transform = "translate(-50%,-50%) scale(1.5)";
+    } else {
+      console.log("false");
+      original.style.transform = "translate(-50%,-50%) scale(1)";
+    }
+  }
+});
