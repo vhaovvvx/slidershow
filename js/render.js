@@ -331,10 +331,10 @@ function Validator(options) {
       inputElement,
       options.formGroupSelector
     ).querySelector(options.errorSelector);
-    // lấy ra các rules của selector
+
     let rules = selectorRules[rule.selector];
-    //lặp qua từng rule & kiểm tra
-    //nếu có lỗi thì dừng việc kiểm tra
+
+
     for (let i = 0; i < rules.length; ++i) {
       errorMessage = rules[i](inputElement.value);
       if (errorMessage) break;
@@ -349,11 +349,11 @@ function Validator(options) {
     return !errorMessage;
   }
   if (formElement) {
-    //onsubmit
+
     formElement.onsubmit = function (e) {
       e.preventDefault();
       let isFormValid = true;
-      // lặp qua từng rules và validate
+
       options.rules.forEach(function (rule) {
         let inputElement = formElement.querySelector(rule.selector);
 
@@ -364,7 +364,7 @@ function Validator(options) {
       });
 
       if (isFormValid) {
-        //Trường hợp submit với javascript
+
         if (typeof options.onSubmit === "function") {
           let enableInputs = formElement.querySelectorAll(
             "[name]:not([disabled])"
@@ -379,15 +379,15 @@ function Validator(options) {
           {});
           options.onSubmit(formValues);
         }
-        //submit với hành vi mặc định
+
       } else {
         console.log("có lỗi");
         // formElement.submit();
       }
     };
-    //Lặp qua mỗi rule và xử lý ( lắng nghe sự kiện blur , input ,...)
+
     options.rules.forEach(function (rule) {
-      // Lưu lại các rules cho mỗi input
+
       if (Array.isArray(selectorRules[rule.selector])) {
         selectorRules[rule.selector].push(rule.test);
       } else {
@@ -397,11 +397,11 @@ function Validator(options) {
       // console.log(inputElement);
 
       if (inputElement) {
-        //xử lý trường hợp blur khỏi input
+
         inputElement.onblur = function () {
           Validate(inputElement, rule);
         };
-        //xử lý mỗi khi người dùng nhập vào input
+ 
         inputElement.oninput = function () {
           let errorElement = getParent(
             inputElement,
@@ -419,9 +419,7 @@ function Validator(options) {
   }
 }
 
-//Nguyên tắc của các rules:
-//1. Khi có lỗi => trả message lỗi
-//2. khi hợp lệ => undefined
+
 Validator.isRequired = function (selector) {
   return {
     selector: selector,
