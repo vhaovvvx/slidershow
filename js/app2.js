@@ -242,7 +242,7 @@ close.forEach((closeElm) => {
     e.preventDefault();
     const closeBtn = e.target.classList.contains("close-element");
     if (closeBtn) {
-      overlay.style.display = "none";
+     overlay.classList.remove("openn");
       topdownMenuBtn.style.removeProperty("transform");
       lauchEditionClickOverlay.style.display = "none";
       steelbookEditionClickOverlay.style.display = "none";
